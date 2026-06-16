@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dbr46lbyeodql"]
+
+[ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="1_377w7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rd3vj"]
+
+[node name="Node3D" type="Node3D" unique_id=1917726981]
+
+[node name="Player" parent="." unique_id=1936776764 instance=ExtResource("1_377w7")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=876606047]
+transform = Transform3D(1, 0, 0, 0, 0.17364822, 0.9848077, 0, -0.9848077, 0.17364822, 0, 10, 0)
+projection = 1
+size = 20.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2017831416]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, 10.5, 0, 0)
+mesh = SubResource("BoxMesh_rd3vj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1100083718]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, -10.5, 0, 0)
+mesh = SubResource("BoxMesh_rd3vj")
