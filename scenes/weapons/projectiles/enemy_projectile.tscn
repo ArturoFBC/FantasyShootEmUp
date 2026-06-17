@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cl81wk77cyv3n"]
+
+[ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_epyg2"]
+[ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="2_hub03"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2c553"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vcyo"]
+
+[node name="EnemyProjectile" type="Area3D" unique_id=1635210640]
+script = ExtResource("1_epyg2")
+speed = 0.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=443083507]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_2c553")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2106365022]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_1vcyo")
+
+[node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1807766442]
+stream = ExtResource("2_hub03")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

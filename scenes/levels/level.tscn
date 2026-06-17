@@ -8,9 +8,10 @@
 [node name="Node3D" type="Node3D" unique_id=1917726981]
 
 [node name="Player" parent="." unique_id=1936776764 instance=ExtResource("1_377w7")]
+stage_limit = Vector2(20, 20)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=876606047]
-transform = Transform3D(1, 0, 0, 0, 0.17364822, 0.9848077, 0, -0.9848077, 0.17364822, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 0.17364824, 0.9848078, 0, -0.9848078, 0.17364824, 0, 10, 1.6665483)
 projection = 1
 size = 20.0
 
@@ -23,4 +24,4 @@ transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, -10.5, 0, 0)
 mesh = SubResource("BoxMesh_rd3vj")
 
 [node name="TestEnemy" parent="." unique_id=23828234 instance=ExtResource("2_bovvr")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -5.95508)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -5.95508)

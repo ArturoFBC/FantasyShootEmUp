@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://w48vrq870125"]
 
 [ext_resource type="Script" uid="uid://dghp70csaxg6b" path="res://scenes/player/PlayerMovement.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/PlayerHitPoints.gd" id="2_75vfm"]
 [ext_resource type="Script" uid="uid://illaiablnukp" path="res://scenes/player/PlayerWeapon.gd" id="2_gmlin"]
 [ext_resource type="PackedScene" uid="uid://b3qv1ydsp6uk0" path="res://scenes/player/weapons/sword/sword_fire_points_0.tscn" id="3_lvxji"]
-[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/weapons/projectiles/test_projectile.tscn" id="3_p47bc"]
+[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/weapons/projectiles/player_projectile.tscn" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://dteqtkphk4edq" path="res://scenes/player/weapons/sword/sword_fire_points_1.tscn" id="4_p47bc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rd3vj"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_lvxji"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0owmy"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=181546413]
 script = ExtResource("1_dovo2")
@@ -17,9 +18,8 @@ script = ExtResource("1_dovo2")
 mesh = SubResource("BoxMesh_rd3vj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=545999837]
-shape = SubResource("SphereShape3D_lvxji")
-
-[node name="Node" type="Node" parent="CollisionShape3D" unique_id=1974295818]
+shape = SubResource("BoxShape3D_0owmy")
+script = ExtResource("2_75vfm")
 
 [node name="WeaponRight" type="Node3D" parent="." unique_id=1833848699 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("2_gmlin")

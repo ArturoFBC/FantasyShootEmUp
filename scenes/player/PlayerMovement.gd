@@ -19,5 +19,5 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 	# clamp the player, we do this even without moving because the user can resize the window
-	#var half_limits: Vector3 = Vector3(stage_limit.x, 0, stage_limit.y) / 2
-	#position = position.clamp(-half_limits + bounds /2, half_limits - bounds /2)
+	var half_limits: Vector3 = Vector3(stage_limit.x, 0, stage_limit.y) / 2
+	position = position.clamp(-half_limits + bounds /2, half_limits - bounds /2)

@@ -1,9 +1,16 @@
 class_name Projectile
 extends Area3D
 
+enum TargetType
+{
+	Player,
+	Enemy
+}
 
 @export var speed: float = 1  ## How fast the shot moves
 @export var damage: float = 1  ## How much damage the shot does
+
+@export var target_type: TargetType  ## How much damage the shot does
 
 var direction: Vector3 = Vector3.LEFT  ## Direction of the shot
 
@@ -32,11 +39,16 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 ## Called when the shot enters in a body
 func _on_body_entered(body:Node3D) -> void:
+	print("hit")
 	for child in body.get_children():
-		if (child is EnemyHitPoints):
-			var enemyHP = child as EnemyHitPoints
-			child._take_damage(damage)
-			destroy()
+		if (target_type == TargetType.Player):
+			if (child is PlayerHitPoints):
+				child._take_damage(damage)
+				destroy()
+		else:
+			if (child is EnemyHitPoints):
+				child._take_damage(damage)
+				destroy()
 
 
 func destroy() -> void:

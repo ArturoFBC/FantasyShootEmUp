@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c8rq0hmpbv4cv"]
 
 [ext_resource type="Script" uid="uid://rghq7yrwfkpv" path="res://scenes/enemy/EnemyHitPoints.gd" id="1_h8img"]
+[ext_resource type="Script" uid="uid://8w0mh7dy5mee" path="res://scenes/enemy/EnemyWeapon.gd" id="2_d5ohb"]
+[ext_resource type="PackedScene" uid="uid://cl81wk77cyv3n" path="res://scenes/weapons/projectiles/enemy_projectile.tscn" id="3_qx3t2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d5ohb"]
 
@@ -15,3 +17,11 @@ max_hp = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2116116227]
 mesh = SubResource("PrismMesh_qx3t2")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1612296102]
+script = ExtResource("2_d5ohb")
+fire_rate = 1.0
+projectile_scene = ExtResource("3_qx3t2")
+
+[node name="ShotPoint" type="Marker3D" parent="Node3D" unique_id=1341203967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.67122674)

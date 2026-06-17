@@ -2,7 +2,6 @@ class_name EnemyHitPoints
 extends HitPoints
 
 
-
 func _take_damage(damage: float) -> void:
 	if (damage >= current_hp):
 		current_hp = 0
