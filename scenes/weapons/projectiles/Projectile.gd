@@ -12,24 +12,31 @@ var direction: Vector3 = Vector3.LEFT  ## Direction of the shot
 @onready var shot_hit: AudioStreamPlayer3D = $ShotHit  ## Shot hit sound
 
 
+## Initialize the shot when from a spawn point and an energy type
+func init(from: Marker3D, new_damage: float) -> void:
+	global_position = from.global_position
+	global_rotation = from.global_rotation
+	damage = new_damage
+
+
 ## Called every physics iteration, delta is the elapsed time since the previous call, this is FPS independent
 func _physics_process(_delta: float) -> void:
 	global_position += basis.z * speed
 
 
 ## Called when the shot goes off screen
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	# delete the shot
 	queue_free()
+	
 
-
-## Initialize the shot when from a spawn point and an energy type
-func init(from: Marker3D, new_damage: float) -> void:
-	print(from.global_position)
-	print(from.global_rotation)
-	global_position = from.global_position
-	global_rotation = from.global_rotation
-	damage = new_damage
+## Called when the shot enters in a body
+func _on_body_entered(body:Node3D) -> void:
+	for child in body.get_children():
+		if (child is EnemyHitPoints):
+			var enemyHP = child as EnemyHitPoints
+			child._take_damage(damage)
+			destroy()
 
 
 func destroy() -> void:

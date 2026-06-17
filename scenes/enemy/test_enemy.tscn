@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c8rq0hmpbv4cv"]
+
+[ext_resource type="Script" uid="uid://rghq7yrwfkpv" path="res://scenes/enemy/EnemyHitPoints.gd" id="1_h8img"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d5ohb"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_qx3t2"]
+
+[node name="TestEnemy" type="CharacterBody3D" unique_id=23828234]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=364549253]
+shape = SubResource("SphereShape3D_d5ohb")
+script = ExtResource("1_h8img")
+max_hp = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2116116227]
+mesh = SubResource("PrismMesh_qx3t2")

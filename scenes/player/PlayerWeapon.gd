@@ -16,7 +16,6 @@ func _ready() -> void:
 		for child in container.get_children():
 			if child is PlayerProjectileSpawnPoint:
 				points.append(child)
-				print(child.position);
 		spawn_points_by_level.append(points)
 
 

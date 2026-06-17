@@ -19,6 +19,8 @@ mesh = SubResource("BoxMesh_rd3vj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=545999837]
 shape = SubResource("SphereShape3D_lvxji")
 
+[node name="Node" type="Node" parent="CollisionShape3D" unique_id=1974295818]
+
 [node name="WeaponRight" type="Node3D" parent="." unique_id=1833848699 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("2_gmlin")
 shot_point_containers = [NodePath("sword_fire_points_0"), NodePath("sword_fire_points_1")]

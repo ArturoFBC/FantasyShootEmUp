@@ -20,3 +20,5 @@ shape = SubResource("CapsuleShape3D_08xci")
 
 [node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1051832437]
 stream = ExtResource("2_7hcwe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
