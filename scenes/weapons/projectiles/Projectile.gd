@@ -39,7 +39,6 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 ## Called when the shot enters in a body
 func _on_body_entered(body:Node3D) -> void:
-	print("hit")
 	for child in body.get_children():
 		if (target_type == TargetType.Player):
 			if (child is PlayerHitPoints):

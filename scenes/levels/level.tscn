@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dbr46lbyeodql"]
 
 [ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="1_377w7"]
+[ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/test_enemy.tscn" id="2_bovvr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rd3vj"]
 
 [node name="Node3D" type="Node3D" unique_id=1917726981]
+
+[node name="GameHud" parent="." unique_id=152822922 instance=ExtResource("1_b2cq8")]
 
 [node name="Player" parent="." unique_id=1936776764 instance=ExtResource("1_377w7")]
 stage_limit = Vector2(20, 20)
