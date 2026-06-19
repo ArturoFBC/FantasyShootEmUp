@@ -2,26 +2,42 @@
 
 [ext_resource type="Script" uid="uid://rghq7yrwfkpv" path="res://scenes/enemy/EnemyHitPoints.gd" id="1_h8img"]
 [ext_resource type="Script" uid="uid://8w0mh7dy5mee" path="res://scenes/enemy/EnemyWeapon.gd" id="2_d5ohb"]
+[ext_resource type="Script" uid="uid://bfqdbty8ue0jk" path="res://scenes/enemy/ContactDamage.gd" id="2_ffmvs"]
 [ext_resource type="PackedScene" uid="uid://cl81wk77cyv3n" path="res://scenes/weapons/projectiles/enemy_projectile.tscn" id="3_qx3t2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d5ohb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ffmvs"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_qx3t2"]
 
 [node name="TestEnemy" type="CharacterBody3D" unique_id=23828234]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=364549253]
+[node name="EnemyHitPoints" type="CollisionShape3D" parent="." unique_id=364549253]
+unique_name_in_owner = true
 shape = SubResource("SphereShape3D_d5ohb")
 script = ExtResource("1_h8img")
 max_hp = 3.0
 
+[node name="ContactDamage" type="Area3D" parent="." unique_id=1934980670]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+script = ExtResource("2_ffmvs")
+damage = 10.0
+destroy_on_contact = false
+
+[node name="ContactCollision" type="CollisionShape3D" parent="ContactDamage" unique_id=154881717]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_ffmvs")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2116116227]
 mesh = SubResource("PrismMesh_qx3t2")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1612296102]
+[node name="Weapon" type="Node3D" parent="." unique_id=1612296102]
 script = ExtResource("2_d5ohb")
 fire_rate = 1.0
 projectile_scene = ExtResource("3_qx3t2")
 
-[node name="ShotPoint" type="Marker3D" parent="Node3D" unique_id=1341203967]
+[node name="ShotPoint" type="Marker3D" parent="Weapon" unique_id=1341203967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.67122674)
+
+[connection signal="body_entered" from="ContactDamage" to="ContactDamage" method="_on_body_entered"]
