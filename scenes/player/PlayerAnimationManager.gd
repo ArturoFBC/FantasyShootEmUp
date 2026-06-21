@@ -1,0 +1,2 @@
+class_name PlayerAnimationManager
+extends Node3D

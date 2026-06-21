@@ -1,0 +1,14 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bh12nv66pscgq"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2u4wt"]
+animation = &"root|root|walk|Animation Base Layer"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0box1"]
+advance_mode = 2
+
+[resource]
+states/Start/position = Vector2(228, 112)
+"states/root|root|walk|Animation Base Layer/node" = SubResource("AnimationNodeAnimation_2u4wt")
+"states/root|root|walk|Animation Base Layer/position" = Vector2(566.0139, 58)
+transitions = ["Start", "root|root|walk|Animation Base Layer", SubResource("AnimationNodeStateMachineTransition_0box1")]
+graph_offset = Vector2(-232.98605, 0)

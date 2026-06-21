@@ -23,8 +23,8 @@ func _shot_logic() -> void:
 ## Make the shoot
 func _shot() -> void:
 	# spawn the projectiles from the spawn points
-	var shot_instance: Projectile = projectile_scene.instantiate()
-	get_parent().add_child(shot_instance)
-	shot_instance.init(shot_point, damage)
+	var projectile: Projectile = projectile_scene.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	projectile.init(shot_point, damage)
 	
 	weapon_shot.emit()

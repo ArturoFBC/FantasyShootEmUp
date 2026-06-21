@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/test_enemy.tscn" id="2_bovvr"]
-[ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/moving.gd" id="4_urvlt"]
+[ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/Moving.gd" id="4_urvlt"]
 [ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="4_xb4v1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rd3vj"]
@@ -26,7 +26,7 @@ visible = false
 mesh = SubResource("BoxMesh_rd3vj")
 
 [node name="TestEnemy" parent="." unique_id=23828234 instance=ExtResource("2_bovvr")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -5.95508)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.02431798, 0, -11.963362)
 
 [node name="Level1" parent="." unique_id=1322831311 instance=ExtResource("4_xb4v1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
@@ -40,4 +40,5 @@ projection = 1
 size = 20.0
 
 [node name="Player" parent="MovingStage" unique_id=1936776764 instance=ExtResource("1_377w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3394003, 0, 5.6936455)
 stage_limit = Vector2(20, 20)
