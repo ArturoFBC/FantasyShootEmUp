@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_p6wxn"]
 [ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="2_brxnv"]
+[ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="3_brxnv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7hcwe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_08xci"]
 
 [node name="Area3D" type="Area3D" unique_id=214642894]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_p6wxn")
 target_type = 1
 
@@ -22,4 +25,8 @@ shape = SubResource("CapsuleShape3D_08xci")
 [node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1051832437]
 stream = ExtResource("2_brxnv")
 
+[node name="DestroyOutOfBounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=1671871194]
+script = ExtResource("3_brxnv")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="DestroyOutOfBounds" to="DestroyOutOfBounds" method="_on_screen_exited"]
