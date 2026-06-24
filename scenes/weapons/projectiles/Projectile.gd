@@ -7,7 +7,10 @@ enum TargetType
 	Enemy
 }
 
-@export var speed: float = 1  ## How fast the shot moves
+signal destroyed(position: Vector3, rotation: Vector3)
+signal set_side(left: bool)
+
+@export var speed: float = 10  ## How fast the shot moves
 @export var damage: float = 1  ## How much damage the shot does
 
 @export var target_type: TargetType  ## How much damage the shot does
@@ -15,20 +18,20 @@ enum TargetType
 var direction: Vector3 = Vector3.LEFT  ## Direction of the shot
 
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D  ## Collision shape
-@onready var mesh: MeshInstance3D = $MeshInstance3D  ## Shot mesh
 @onready var shot_hit: AudioStreamPlayer3D = $ShotHit  ## Shot hit sound
 
 
 ## Initialize the shot when from a spawn point and an energy type
-func init(from: Marker3D, new_damage: float) -> void:
+func init(from: Marker3D, new_damage: float, left_side: bool) -> void:
 	global_position = from.global_position
 	global_rotation = from.global_rotation
+	set_side.emit(left_side)
 	damage = new_damage
 
 
 ## Called every physics iteration, delta is the elapsed time since the previous call, this is FPS independent
 func _physics_process(_delta: float) -> void:
-	global_position += basis.z * speed
+	global_position += basis.z * speed * _delta
 
 
 ## Called when the shot goes off screen
@@ -43,11 +46,11 @@ func _on_body_entered(body:Node3D) -> void:
 		if (target_type == TargetType.Player):
 			if (child is PlayerHitPoints):
 				child._take_damage(damage)
-				destroy()
 		else:
 			if (child is EnemyHitPoints):
 				child._take_damage(damage)
-				destroy()
+				
+	destroy()
 
 
 func destroy() -> void:
@@ -56,7 +59,8 @@ func destroy() -> void:
 
 	# stop the shot for moving, hide the sprite and play the hit sound
 	direction = Vector3.ZERO
-	mesh.visible = false
 	shot_hit.play()
-
+	
+	destroyed.emit(global_position, global_rotation)
+	
 	queue_free()

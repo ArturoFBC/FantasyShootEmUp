@@ -1,0 +1,36 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dqr0gslf0emip"]
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_p63dd"]
+output_port_for_preview = 0
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_lcshq"]
+output_port_for_preview = 0
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_p63dd"]
+output_port_for_preview = 0
+constant = Color(0, 0.46097267, 0.4609726, 1)
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_qrapx"]
+output_port_for_preview = 0
+default_input_values = [2, true, 3, 1.0]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_m7h4n"]
+output_port_for_preview = 0
+input_name = "normal"
+
+[resource]
+nodes/vertex/0/position = Vector2(1340, -40)
+nodes/vertex/2/node = SubResource("VisualShaderNodeFresnel_qrapx")
+nodes/vertex/2/position = Vector2(720, 40)
+nodes/vertex/3/node = SubResource("VisualShaderNodeInput_m7h4n")
+nodes/vertex/3/position = Vector2(100, 40)
+nodes/vertex/connections = PackedInt32Array(2, 0, 0, 6, 2, 0, 0, 7, 3, 0, 2, 0)
+nodes/fragment/0/position = Vector2(1760, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeFresnel_p63dd")
+nodes/fragment/2/position = Vector2(1140, 280)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_lcshq")
+nodes/fragment/3/position = Vector2(600, 280)
+nodes/fragment/4/node = SubResource("VisualShaderNodeColorConstant_p63dd")
+nodes/fragment/4/position = Vector2(1140, 0)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 1, 2, 0, 0, 5, 3, 0, 2, 0, 4, 0, 0, 0)

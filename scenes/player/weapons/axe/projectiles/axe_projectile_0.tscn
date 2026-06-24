@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://cxr78ec577c24"]
+
+[ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_6dbfv"]
+[ext_resource type="Texture2D" uid="uid://gjspq2equngv" path="res://graphics/props/Textures/colormap.png" id="2_wfg0r"]
+[ext_resource type="ArrayMesh" uid="uid://bkpjgmipswrqv" path="res://graphics/props/axe.res" id="3_q7cwr"]
+[ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="4_cuwsv"]
+[ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="5_vw5mi"]
+[ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="6_l6km4"]
+[ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="8_ib4rg"]
+[ext_resource type="PackedScene" uid="uid://dmo3synhl8cjf" path="res://scenes/entities/vfx/spark_particles.tscn" id="9_wq0v1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiy74"]
+albedo_texture = ExtResource("2_wfg0r")
+metallic = 0.69
+metallic_specular = 0.68
+clearcoat_roughness = 0.37
+anisotropy = 1.0
+backlight = Color(1, 1, 1, 1)
+backlight_texture = ExtResource("2_wfg0r")
+stencil_flags = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_obkmn"]
+
+[sub_resource type="Curve" id="Curve_5mdam"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.4471185, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6dbfv"]
+curve = SubResource("Curve_5mdam")
+
+[sub_resource type="Gradient" id="Gradient_wfg0r"]
+colors = PackedColorArray(0.8862745, 0.8862745, 0, 0.45882353, 0, 1, 1, 0.4509804)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q7cwr"]
+gradient = SubResource("Gradient_wfg0r")
+
+[sub_resource type="Curve" id="Curve_cuwsv"]
+_data = [Vector2(0, 0.50747067), 0.0, 11.74266, 0, 0, Vector2(0.122950815, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.47278553), -1.8766173, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vw5mi"]
+curve = SubResource("Curve_cuwsv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l6km4"]
+direction = Vector3(0.5, 0, -1)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_vw5mi")
+color_ramp = SubResource("GradientTexture1D_q7cwr")
+alpha_curve = SubResource("CurveTexture_6dbfv")
+
+[sub_resource type="Gradient" id="Gradient_tpsn2"]
+offsets = PackedFloat32Array(0, 0.84302324, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ib4rg"]
+gradient = SubResource("Gradient_tpsn2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq0v1"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_ib4rg")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ualpv"]
+material = SubResource("StandardMaterial3D_wq0v1")
+orientation = 1
+
+[node name="Area3D" type="Area3D" unique_id=808620645]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_6dbfv")
+speed = 15.0
+damage = 2.0
+target_type = 1
+
+[node name="Node3D" type="Node3D" parent="." unique_id=366008064]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=809458543]
+transform = Transform3D(3.5, 0, 0, 0, -1.5298986e-07, -3.5, 0, 3.5, -1.5298986e-07, 0, 0, -0.44808674)
+material_override = SubResource("StandardMaterial3D_hiy74")
+mesh = ExtResource("3_q7cwr")
+
+[node name="Spin" type="Node" parent="Node3D" unique_id=1182133491 node_paths=PackedStringArray("target")]
+script = ExtResource("4_cuwsv")
+speed = 20.0
+target = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=403625395]
+shape = SubResource("SphereShape3D_obkmn")
+
+[node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1302224253]
+stream = ExtResource("5_vw5mi")
+
+[node name="DestroyOutOfBounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=352852903]
+layers = 4
+script = ExtResource("6_l6km4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=857302054]
+amount = 5
+lifetime = 0.15000000000000002
+preprocess = 0.5
+process_material = SubResource("ParticleProcessMaterial_l6km4")
+draw_pass_1 = SubResource("QuadMesh_ualpv")
+
+[node name="SpawnOnDestroy" type="Node" parent="." unique_id=134415608]
+script = ExtResource("8_ib4rg")
+scene_to_spawn = ExtResource("9_wq0v1")
+
+[node name="Spin" type="Node" parent="." unique_id=1190451482 node_paths=PackedStringArray("target")]
+script = ExtResource("4_cuwsv")
+speed = 8.0
+deceleration = -25.0
+target = NodePath("..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="destroyed" from="." to="SpawnOnDestroy" method="_on_destroyed"]
+[connection signal="set_side" from="." to="Node3D/Spin" method="_on_area_3d_set_side"]
+[connection signal="set_side" from="." to="Spin" method="_on_area_3d_set_side"]
+[connection signal="screen_exited" from="DestroyOutOfBounds" to="DestroyOutOfBounds" method="_on_screen_exited"]

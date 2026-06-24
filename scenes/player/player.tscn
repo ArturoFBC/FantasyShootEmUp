@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dghp70csaxg6b" path="res://scenes/player/PlayerMovement.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/PlayerHitPoints.gd" id="2_75vfm"]
-[ext_resource type="Script" uid="uid://illaiablnukp" path="res://scenes/player/PlayerWeapon.gd" id="2_gmlin"]
 [ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="2_qek5x"]
-[ext_resource type="PackedScene" uid="uid://b3qv1ydsp6uk0" path="res://scenes/player/weapons/sword/sword_fire_points_0.tscn" id="3_lvxji"]
-[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/weapons/projectiles/player_projectile.tscn" id="3_p47bc"]
-[ext_resource type="PackedScene" uid="uid://dteqtkphk4edq" path="res://scenes/player/weapons/sword/sword_fire_points_1.tscn" id="4_p47bc"]
+[ext_resource type="PackedScene" uid="uid://cni0fwv7swth" path="res://scenes/player/weapons/axe/weapon_axe.tscn" id="3_p47bc"]
+[ext_resource type="PackedScene" uid="uid://cxr78ec577c24" path="res://scenes/player/weapons/axe/projectiles/axe_projectile_0.tscn" id="4_75vfm"]
 [ext_resource type="Script" uid="uid://detew5hkmufpl" path="res://scenes/entities/FlickerOnDamage.gd" id="7_0owmy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0owmy"]
@@ -14,21 +12,18 @@
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=181546413]
 collision_mask = 26
 script = ExtResource("1_dovo2")
+speed = 4.0
+stage_limit = Vector2(5, 10)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=545999837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_0owmy")
 script = ExtResource("2_75vfm")
 
-[node name="WeaponRight" type="Node3D" parent="." unique_id=1833848699 node_paths=PackedStringArray("shot_point_containers")]
+[node name="weapon_axe" parent="." unique_id=2141182344 instance=ExtResource("3_p47bc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("2_gmlin")
-shot_point_containers = [NodePath("sword_fire_points_0"), NodePath("sword_fire_points_1")]
-projectile_scene = ExtResource("3_p47bc")
-
-[node name="sword_fire_points_0" parent="WeaponRight" unique_id=416153641 instance=ExtResource("3_lvxji")]
-
-[node name="sword_fire_points_1" parent="WeaponRight" unique_id=936813169 instance=ExtResource("4_p47bc")]
+fire_rate = 0.2
+projectile_scene = ExtResource("4_75vfm")
 
 [node name="FlickerOnDamage" type="Node" parent="." unique_id=1159092788 node_paths=PackedStringArray("my_mesh")]
 script = ExtResource("7_0owmy")
@@ -37,4 +32,4 @@ flash_time = 0.2
 flash_interval = 0.02
 
 [node name="Knight" parent="." unique_id=890844839 instance=ExtResource("2_qek5x")]
-transform = Transform3D(-2.5, 0, -2.1855695e-07, 0, 2.5, 0, 2.1855695e-07, 0, -2.5, 0, 0, 0)
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 0, 0, 0)

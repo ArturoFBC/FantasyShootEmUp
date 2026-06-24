@@ -1,0 +1,7 @@
+[gd_resource type="MultiMesh" format=3 uid="uid://u57dyp610q3n"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wpv0y"]
+
+[resource]
+transform_format = 1
+mesh = SubResource("ArrayMesh_wpv0y")

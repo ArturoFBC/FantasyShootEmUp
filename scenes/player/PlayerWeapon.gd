@@ -3,7 +3,7 @@ extends Weapon
 @export var shot_point_containers: Array[Node]
 
 var spawn_points_by_level: Array[Array] = []
-var level: int = 0
+@export var level: int = 0
 
 
 func _process(_delta: float) -> void:
@@ -38,4 +38,4 @@ func _shot() -> void:
 			spawnPoint.alternative_offset = 0
 			var projectile := projectile_scene.instantiate()
 			get_tree().current_scene.add_child(projectile)
-			projectile.init(spawnPoint, damage)
+			projectile.init(spawnPoint, damage, spawnPoint.left_side)

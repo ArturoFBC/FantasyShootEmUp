@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dmo3synhl8cjf"]
+
+[ext_resource type="Script" uid="uid://dd8chuc7s5syl" path="res://scenes/entities/DestroyInXSeconds.gd" id="1_di283"]
+
+[sub_resource type="Gradient" id="Gradient_xly4e"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ps30"]
+gradient = SubResource("Gradient_xly4e")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xb1mw"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.48781776, 0.48781747, 7.70092e-07, 1)
+albedo_texture = SubResource("GradientTexture2D_1ps30")
+grow_amount = -1.05
+stencil_flags = 2
+
+[sub_resource type="Curve" id="Curve_ndjun"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.524773, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ehwjv"]
+curve = SubResource("Curve_ndjun")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lxv3c"]
+emission_shape_offset = Vector3(0, 0, -0.1)
+direction = Vector3(0, 0, -1)
+spread = 25.0
+initial_velocity_min = 4.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_ehwjv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2vrm"]
+transparency = 1
+blend_mode = 3
+
+[sub_resource type="QuadMesh" id="QuadMesh_d5fwc"]
+material = SubResource("StandardMaterial3D_l2vrm")
+size = Vector2(0.05, 0.25)
+
+[sub_resource type="Gradient" id="Gradient_cj3j6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a6bcc"]
+gradient = SubResource("Gradient_cj3j6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrb28"]
+transparency = 1
+blend_mode = 3
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_a6bcc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_54xp5"]
+emission_shape_offset = Vector3(0, 0, -0.1)
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, 0, -1)
+spread = 25.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+
+[node name="SparkParticles" type="GPUParticles3D" unique_id=1827185985]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xb1mw")
+amount = 7
+lifetime = 0.15000000000000002
+explosiveness = 1.0
+fixed_fps = 60
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_lxv3c")
+draw_pass_1 = SubResource("QuadMesh_d5fwc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1648061976]
+material_override = SubResource("StandardMaterial3D_vrb28")
+amount = 10
+lifetime = 0.15000000000000002
+explosiveness = 1.0
+fixed_fps = 60
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_54xp5")
+draw_pass_1 = SubResource("QuadMesh_d5fwc")
+
+[node name="DestroyTimer" type="Node" parent="." unique_id=1482727573]
+script = ExtResource("1_di283")
+seconds = 0.155

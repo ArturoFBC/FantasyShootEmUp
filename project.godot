@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FantasyShootEmUp"
-run/main_scene="uid://cl81wk77cyv3n"
+run/main_scene="uid://dbr46lbyeodql"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,12 @@ SignalBus="*uid://co8l8twjyudc7"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/SignalBus/plugin.cfg")
+
+[importer_defaults]
+
+animation_library={
+&"blender/meshes/export_geometry_nodes_instances": true
+}
 
 [input]
 
