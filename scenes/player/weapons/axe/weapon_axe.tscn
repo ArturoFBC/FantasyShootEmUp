@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cni0fwv7swth"]
 
 [ext_resource type="Script" uid="uid://illaiablnukp" path="res://scenes/player/PlayerWeapon.gd" id="1_sdb3n"]
-[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/player/weapons/sword/projectiles/sword_projectile_0.tscn" id="2_gqt42"]
+[ext_resource type="PackedScene" uid="uid://cxr78ec577c24" path="res://scenes/player/weapons/axe/projectiles/axe_projectile_0.tscn" id="2_sdb3n"]
 [ext_resource type="PackedScene" uid="uid://tqxw2exsr40j" path="res://scenes/player/weapons/axe/fire_points/axe_fire_points_0.tscn" id="3_sslnp"]
 [ext_resource type="PackedScene" uid="uid://c2ajhrvjqgj8j" path="res://scenes/player/weapons/axe/fire_points/axe_fire_points_1.tscn" id="4_qosl3"]
 [ext_resource type="PackedScene" uid="uid://dnq7ibj0fx4cd" path="res://scenes/player/weapons/axe/fire_points/axe_fire_points_2.tscn" id="5_j42tx"]
@@ -10,8 +10,8 @@
 script = ExtResource("1_sdb3n")
 shot_point_containers = [NodePath("axe_fire_points_0"), NodePath("axe_fire_points_1"), NodePath("axe_fire_points_2")]
 level = 1
-fire_rate = 0.1
-projectile_scene = ExtResource("2_gqt42")
+fire_rate = 0.3
+projectile_scene = ExtResource("2_sdb3n")
 
 [node name="axe_fire_points_0" parent="." unique_id=635245554 instance=ExtResource("3_sslnp")]
 

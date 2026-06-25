@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://b3qv1ydsp6uk0" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_0.tscn" id="3_uhcru"]
 [ext_resource type="PackedScene" uid="uid://dteqtkphk4edq" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_1.tscn" id="4_hcaax"]
 [ext_resource type="PackedScene" uid="uid://bxq1utcby6320" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_2.tscn" id="5_776n5"]
+[ext_resource type="PackedScene" uid="uid://cltyn22eonkao" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_3.tscn" id="6_uhcru"]
+[ext_resource type="PackedScene" uid="uid://dk4mohn672lrw" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_4.tscn" id="7_hcaax"]
 
 [node name="WeaponSword" type="Node3D" unique_id=986901657 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("1_p45gi")
-shot_point_containers = [NodePath("sword_fire_points_0"), NodePath("sword_fire_points_1"), NodePath("sword_fire_points_2")]
-fire_rate = 0.1
+shot_point_containers = [NodePath("sword_fire_points_0"), NodePath("sword_fire_points_1"), NodePath("sword_fire_points_2"), NodePath("sword_fire_points_3"), NodePath("sword_fire_points_4")]
+fire_rate = 0.15
 projectile_scene = ExtResource("2_mrvdo")
 
 [node name="sword_fire_points_0" parent="." unique_id=931271759 instance=ExtResource("3_uhcru")]
@@ -17,3 +19,7 @@ projectile_scene = ExtResource("2_mrvdo")
 [node name="sword_fire_points_1" parent="." unique_id=1058301815 instance=ExtResource("4_hcaax")]
 
 [node name="sword_fire_points_2" parent="." unique_id=1878908184 instance=ExtResource("5_776n5")]
+
+[node name="sword_fire_points_3" parent="." unique_id=743448856 instance=ExtResource("6_uhcru")]
+
+[node name="sword_fire_points_4" parent="." unique_id=204512916 instance=ExtResource("7_hcaax")]

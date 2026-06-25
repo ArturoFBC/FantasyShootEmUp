@@ -27,6 +27,9 @@ func init(from: Marker3D, new_damage: float, left_side: bool) -> void:
 	global_rotation = from.global_rotation
 	set_side.emit(left_side)
 	damage = new_damage
+	
+	if body_entered.is_connected(_on_body_entered) == false:
+		body_entered.connect(_on_body_entered)
 
 
 ## Called every physics iteration, delta is the elapsed time since the previous call, this is FPS independent

@@ -6,6 +6,7 @@ extends Node
 @export var target: Node3D
 
 func _ready() -> void:
+	axis = axis.normalized()
 	if target == null:
 		target = get_parent()
 		

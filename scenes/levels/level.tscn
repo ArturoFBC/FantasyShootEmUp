@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/test_enemy.tscn" id="2_bovvr"]
+[ext_resource type="PackedScene" uid="uid://c6384bjd3xjsy" path="res://scenes/entities/power_ups/power_up_main.tscn" id="3_ouxo3"]
 [ext_resource type="Script" uid="uid://fu02pbelxq7y" path="res://scenes/enemy/spawner/EnemySpawner.gd" id="4_d4w6o"]
 [ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/Moving.gd" id="4_urvlt"]
 [ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="4_xb4v1"]
@@ -15,7 +16,6 @@ size = Vector3(2, 5, 20)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=454667799]
 transform = Transform3D(0.17364824, 0.7760391, 0.60630816, 0, -0.61566144, 0.7880108, 0.9848078, -0.13683668, -0.106908515, 0, 18.160557, 7)
-light_energy = 0.5
 shadow_enabled = true
 shadow_opacity = 0.7
 
@@ -23,6 +23,18 @@ shadow_opacity = 0.7
 
 [node name="TestEnemy" parent="." unique_id=23828234 instance=ExtResource("2_bovvr")]
 transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0.024, 0.5, -1.2244558)
+
+[node name="PowerUpMain3" parent="." unique_id=1203719484 instance=ExtResource("3_ouxo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8655832, 1.3848131, -5.5311756)
+
+[node name="PowerUpMain2" parent="." unique_id=613960934 instance=ExtResource("3_ouxo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1415179, 0.9232087, -2.8565636)
+
+[node name="PowerUpMain" parent="." unique_id=1360659661 instance=ExtResource("3_ouxo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4836633, 0.46160436, 1.6490784)
+
+[node name="PowerUpMain4" parent="." unique_id=462081231 instance=ExtResource("3_ouxo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.049135, 0.46160436, -9.313357)
 
 [node name="Level1" parent="." unique_id=1322831311 instance=ExtResource("4_xb4v1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
@@ -60,7 +72,7 @@ collision_mask = 15
 shape = SubResource("BoxShape3D_mbbpy")
 
 [node name="Camera3D" type="Camera3D" parent="MovingStage" unique_id=876606047]
-transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 7, 1.6305766)
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 7, 1.8767648)
 projection = 1
 size = 10.0
 

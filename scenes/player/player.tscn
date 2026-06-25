@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dghp70csaxg6b" path="res://scenes/player/PlayerMovement.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/PlayerHitPoints.gd" id="2_75vfm"]
 [ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="2_qek5x"]
-[ext_resource type="PackedScene" uid="uid://cni0fwv7swth" path="res://scenes/player/weapons/axe/weapon_axe.tscn" id="3_p47bc"]
-[ext_resource type="PackedScene" uid="uid://cxr78ec577c24" path="res://scenes/player/weapons/axe/projectiles/axe_projectile_0.tscn" id="4_75vfm"]
+[ext_resource type="PackedScene" uid="uid://he25hbc34twf" path="res://scenes/player/weapons/sword/weapon_sword.tscn" id="4_75vfm"]
 [ext_resource type="Script" uid="uid://detew5hkmufpl" path="res://scenes/entities/FlickerOnDamage.gd" id="7_0owmy"]
+[ext_resource type="Script" uid="uid://dkyx4swivsowx" path="res://scenes/player/PowerUpCatcher.gd" id="7_qek5x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0owmy"]
 
@@ -20,16 +20,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_0owmy")
 script = ExtResource("2_75vfm")
 
-[node name="weapon_axe" parent="." unique_id=2141182344 instance=ExtResource("3_p47bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-fire_rate = 0.2
-projectile_scene = ExtResource("4_75vfm")
-
 [node name="FlickerOnDamage" type="Node" parent="." unique_id=1159092788 node_paths=PackedStringArray("my_mesh")]
 script = ExtResource("7_0owmy")
 my_mesh = NodePath("../Knight")
 flash_time = 0.2
 flash_interval = 0.02
 
+[node name="WeaponSword" parent="." unique_id=986901657 instance=ExtResource("4_75vfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
 [node name="Knight" parent="." unique_id=890844839 instance=ExtResource("2_qek5x")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 0, 0, 0)
+
+[node name="PowerUpCatcher" type="Node" parent="." unique_id=483355448]
+script = ExtResource("7_qek5x")
+metadata/_custom_type_script = "uid://dkyx4swivsowx"
+
+[connection signal="health_picked_up" from="PowerUpCatcher" to="CollisionShape3D" method="_on_power_up_catcher_health_picked_up"]
