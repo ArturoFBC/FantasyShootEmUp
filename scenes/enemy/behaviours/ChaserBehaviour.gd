@@ -26,11 +26,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if state == ChaserState.search:
-		root_node.position += basis.z * advance_speed * delta
+		root_node.position += root_node.basis.z * advance_speed * delta
 	else: if state == ChaserState.chase:
-		var target_vector = target.global_position
+		var target_position = target.global_position
 		
-		var target_transform = root_node.global_transform.looking_at(target_vector, Vector3.UP)
+		var target_transform = root_node.global_transform.looking_at(target_position, Vector3.UP, true)
 			
 		var allowed_rotation = rotating_speed * delta
 			
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 			
 		root_node.rotation.y = clamped_y
 			
-		root_node.position += -root_node.basis.z * chase_speed * delta
+		root_node.position += root_node.basis.z * chase_speed * delta
 
 
 func _on_body_entered(body:Node3D) -> void:

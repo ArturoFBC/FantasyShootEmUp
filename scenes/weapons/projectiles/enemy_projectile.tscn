@@ -4,23 +4,39 @@
 [ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="2_hub03"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="3_hub03"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_2c553"]
+[sub_resource type="Gradient" id="Gradient_hub03"]
+offsets = PackedFloat32Array(0.20786516, 0.91292137, 0.94382024, 0.9775281, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.4117454, 0.2960428, 1, 0.33333334, 0.03137255, 0, 1, 0.31764707, 0, 0, 1, 0, 0, 0, 0)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vcyo"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2c553"]
+gradient = SubResource("Gradient_hub03")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vcyo"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_2c553")
+
+[sub_resource type="QuadMesh" id="QuadMesh_r61qm"]
+material = SubResource("StandardMaterial3D_1vcyo")
+size = Vector2(1.5, 1.5)
+orientation = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7xyfr"]
 
 [node name="EnemyProjectile" type="Area3D" unique_id=1635210640]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_layer = 8
 script = ExtResource("1_epyg2")
-speed = 10.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=443083507]
-transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_2c553")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("QuadMesh_r61qm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2106365022]
 transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_1vcyo")
+shape = SubResource("SphereShape3D_7xyfr")
 
 [node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1807766442]
 stream = ExtResource("2_hub03")

@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b2cq8"]
-[ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/test_enemy.tscn" id="2_bovvr"]
-[ext_resource type="PackedScene" uid="uid://c6384bjd3xjsy" path="res://scenes/entities/power_ups/power_up_main.tscn" id="3_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/bat_enemy.tscn" id="2_bovvr"]
 [ext_resource type="Script" uid="uid://fu02pbelxq7y" path="res://scenes/enemy/spawner/EnemySpawner.gd" id="4_d4w6o"]
 [ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/Moving.gd" id="4_urvlt"]
 [ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="4_xb4v1"]
@@ -21,23 +20,45 @@ shadow_opacity = 0.7
 
 [node name="GameHud" parent="." unique_id=152822922 instance=ExtResource("1_b2cq8")]
 
-[node name="TestEnemy" parent="." unique_id=23828234 instance=ExtResource("2_bovvr")]
-transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0.024, 0.5, -1.2244558)
-
-[node name="PowerUpMain3" parent="." unique_id=1203719484 instance=ExtResource("3_ouxo3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8655832, 1.3848131, -5.5311756)
-
-[node name="PowerUpMain2" parent="." unique_id=613960934 instance=ExtResource("3_ouxo3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1415179, 0.9232087, -2.8565636)
-
-[node name="PowerUpMain" parent="." unique_id=1360659661 instance=ExtResource("3_ouxo3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4836633, 0.46160436, 1.6490784)
-
-[node name="PowerUpMain4" parent="." unique_id=462081231 instance=ExtResource("3_ouxo3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.049135, 0.46160436, -9.313357)
-
 [node name="Level1" parent="." unique_id=1322831311 instance=ExtResource("4_xb4v1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
+
+[node name="EnemySpawner2" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=250149360 node_paths=PackedStringArray("spawn_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9864192, 0, -7.714536)
+aabb = AABB(-1, 0, -1, 2, 2, 2)
+enable_node_path = NodePath("../EnemySpawner")
+script = ExtResource("4_d4w6o")
+spawn_points = [NodePath("Marker3D"), NodePath("Marker3D4"), NodePath("Marker3D5"), NodePath("Marker3D6"), NodePath("Marker3D3"), NodePath("Marker3D2")]
+
+[node name="Marker3D4" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=347901744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3458836, 0, -1.0262533)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
+
+[node name="Marker3D5" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=1216597232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5547619, 0, -1.0262536)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
+
+[node name="Marker3D6" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=773402267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4409955, 0, -1.0262536)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
+
+[node name="Marker3D3" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=969431717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4409943, 0, -1.1920929e-07)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
+
+[node name="Marker3D2" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=1337040342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55476093, 0, 0)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
+
+[node name="Marker3D" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=2049722348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34588456, 0, 0)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
 
 [node name="EnemySpawner" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=1095850027 node_paths=PackedStringArray("spawn_points")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.089, 0, -28.937)
@@ -80,4 +101,5 @@ size = 10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076, 0, 4.1093)
 stage_limit = Vector2(10, 10)
 
+[connection signal="screen_entered" from="Level1/EnemySpawner2" to="Level1/EnemySpawner2" method="_on_screen_entered"]
 [connection signal="screen_entered" from="Level1/EnemySpawner" to="Level1/EnemySpawner" method="_on_screen_entered"]

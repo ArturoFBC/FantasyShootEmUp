@@ -23,6 +23,10 @@ SignalBus="*uid://co8l8twjyudc7"
 
 enabled=PackedStringArray("res://addons/SignalBus/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [importer_defaults]
 
 animation_library={
