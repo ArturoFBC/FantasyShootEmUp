@@ -7,7 +7,7 @@ enum TargetType
 	Enemy
 }
 
-signal destroyed(position: Vector3, rotation: Vector3)
+signal destroyed()
 signal set_side(left: bool)
 
 @export var speed: float = 10  ## How fast the shot moves
@@ -18,7 +18,6 @@ signal set_side(left: bool)
 var direction: Vector3 = Vector3.LEFT  ## Direction of the shot
 
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D  ## Collision shape
-@onready var shot_hit: AudioStreamPlayer3D = $ShotHit  ## Shot hit sound
 
 
 ## Initialize the shot when from a spawn point and an energy type
@@ -62,8 +61,7 @@ func destroy() -> void:
 
 	# stop the shot for moving, hide the sprite and play the hit sound
 	direction = Vector3.ZERO
-	shot_hit.play()
 	
-	destroyed.emit(global_position, global_rotation)
+	destroyed.emit()
 	
 	queue_free()

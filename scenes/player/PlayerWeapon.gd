@@ -51,9 +51,7 @@ func _shot_logic() -> void:
 	if Input.is_action_pressed("fire") and not shot_on_cd:
 		_shot()
 		# shot cooldown
-		shot_on_cd = true
-		await get_tree().create_timer(fire_rate).timeout
-		shot_on_cd = false
+		_wait_cooldown()
 
 
 func _shot() -> void:
@@ -69,4 +67,4 @@ func _shot() -> void:
 			
 
 func _level_up() -> void:
-	level = minf(level + 1, spawn_points_by_level.size() - 1)
+	level = min(level + 1, spawn_points_by_level.size() - 1)

@@ -2,7 +2,7 @@ class_name HitPoints
 extends CollisionShape3D
 
 signal damage_received(damage: float, current_hp: float, max_hp: float)
-
+signal death()
 
 @export var max_hp: float = 100
 
@@ -21,6 +21,7 @@ func _take_damage(damage: float) -> void:
 
 
 func _die() -> void:
+	death.emit()
 	get_parent().queue_free()
 	
 	

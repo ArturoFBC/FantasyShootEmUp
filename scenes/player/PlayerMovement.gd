@@ -1,3 +1,4 @@
+class_name PlayerMovement
 extends CharacterBody3D
 
 @export var speed: float = 8  ## How fast the player moves

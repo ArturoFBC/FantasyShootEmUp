@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_rhcw3"]
 [ext_resource type="Texture2D" uid="uid://gjspq2equngv" path="res://graphics/props/Textures/colormap.png" id="2_bpqbc"]
-[ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="3_nr13n"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="4_d3cs5"]
 [ext_resource type="ArrayMesh" uid="uid://dtpofglndqmqd" path="res://graphics/props/sword.res" id="5_xixae"]
 [ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="6_ltfx5"]
@@ -102,9 +101,6 @@ mesh = SubResource("ArrayMesh_xe3oy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=160685721]
 transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_08xci")
-
-[node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1051832437]
-stream = ExtResource("3_nr13n")
 
 [node name="DestroyOutOfBounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=1671871194]
 layers = 4

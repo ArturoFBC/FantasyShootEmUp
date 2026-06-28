@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _on_screen_entered() -> void:
 	for spawn_point: EnemySpawnPoint in spawn_points:
-		var enemy := spawn_point.enemy_scene.instantiate()
+		var enemy := spawn_point.enemy_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 		get_tree().current_scene.add_child(enemy)
 		enemy.global_position = spawn_point.global_position
 		enemy.global_rotation = spawn_point.global_rotation

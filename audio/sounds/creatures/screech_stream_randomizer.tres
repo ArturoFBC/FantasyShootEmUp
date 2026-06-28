@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dkkvtkdysvs51"]
+
+[ext_resource type="AudioStream" uid="uid://b5jhd2w1q7t21" path="res://audio/sounds/creatures/crickets/INSECT_Cricket_RR1_mono.wav" id="1_jm1et"]
+[ext_resource type="AudioStream" uid="uid://jkgs63ceiani" path="res://audio/sounds/creatures/crickets/INSECT_Cricket_RR2_mono.wav" id="2_0a35r"]
+[ext_resource type="AudioStream" uid="uid://b3kpanwy2fv3l" path="res://audio/sounds/creatures/crickets/INSECT_Cricket_RR3_mono.wav" id="3_thv4q"]
+[ext_resource type="AudioStream" uid="uid://sn7ntqxarg2b" path="res://audio/sounds/creatures/crickets/INSECT_Cricket_RR4_mono.wav" id="4_ybopc"]
+[ext_resource type="AudioStream" uid="uid://c1itpoa584dxs" path="res://audio/sounds/creatures/crickets/INSECT_Cricket_RR5_mono.wav" id="5_dy8eu"]
+[ext_resource type="AudioStream" uid="uid://bbflq8i7uraid" path="res://audio/sounds/creatures/crickets/INSECT_Cricket_RR6_mono.wav" id="6_ms2k2"]
+
+[resource]
+streams_count = 6
+stream_0/stream = ExtResource("1_jm1et")
+stream_1/stream = ExtResource("2_0a35r")
+stream_2/stream = ExtResource("3_thv4q")
+stream_3/stream = ExtResource("4_ybopc")
+stream_4/stream = ExtResource("5_dy8eu")
+stream_5/stream = ExtResource("6_ms2k2")

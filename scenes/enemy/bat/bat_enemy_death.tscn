@@ -1,49 +1,13 @@
-[gd_scene format=4 uid="uid://c8rq0hmpbv4cv"]
+[gd_scene format=4 uid="uid://3pn5whgjwdr2"]
 
-[ext_resource type="Script" uid="uid://rghq7yrwfkpv" path="res://scenes/enemy/EnemyHitPoints.gd" id="1_h8img"]
-[ext_resource type="Texture2D" uid="uid://j4hdoei81pj8" path="res://graphics/actors/models/animals/colormap.png" id="1_k57ws"]
-[ext_resource type="Script" uid="uid://8w0mh7dy5mee" path="res://scenes/enemy/EnemyWeapon.gd" id="2_d5ohb"]
-[ext_resource type="Script" uid="uid://bfqdbty8ue0jk" path="res://scenes/enemy/ContactDamage.gd" id="2_ffmvs"]
-[ext_resource type="PackedScene" uid="uid://cl81wk77cyv3n" path="res://scenes/weapons/projectiles/enemy_projectile.tscn" id="3_qx3t2"]
-[ext_resource type="Script" uid="uid://badq4yw848koo" path="res://scenes/enemy/behaviours/ChaserBehaviour.gd" id="5_aa3t3"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vb33t"]
-animation = &"attack"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_56sh5"]
-animation = &"fly"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_icg4p"]
-animation = &"kaput"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sbvsx"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kvg3b"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m5f6e"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_15ajh"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xbkwl"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_divv5"]
-states/attack/node = SubResource("AnimationNodeAnimation_vb33t")
-states/attack/position = Vector2(624.42523, 80)
-states/fly/node = SubResource("AnimationNodeAnimation_56sh5")
-states/fly/position = Vector2(380.42523, 80)
-states/kaput/node = SubResource("AnimationNodeAnimation_icg4p")
-states/kaput/position = Vector2(504.42523, 216.10588)
-transitions = ["Start", "fly", SubResource("AnimationNodeStateMachineTransition_sbvsx"), "fly", "attack", SubResource("AnimationNodeStateMachineTransition_kvg3b"), "attack", "fly", SubResource("AnimationNodeStateMachineTransition_m5f6e"), "fly", "kaput", SubResource("AnimationNodeStateMachineTransition_15ajh"), "attack", "kaput", SubResource("AnimationNodeStateMachineTransition_xbkwl")]
-graph_offset = Vector2(-235.57478, 40.105877)
+[ext_resource type="Texture2D" uid="uid://j4hdoei81pj8" path="res://graphics/actors/models/animals/colormap.png" id="1_okkxt"]
+[ext_resource type="Script" uid="uid://dd8chuc7s5syl" path="res://scenes/entities/DestroyInXSeconds.gd" id="2_jtqla"]
+[ext_resource type="AudioStream" uid="uid://dkkvtkdysvs51" path="res://audio/sounds/creatures/screech_stream_randomizer.tres" id="3_jtqla"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbv25"]
 resource_name = "colormap.png"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_k57ws")
+albedo_texture = ExtResource("1_okkxt")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8psuv"]
@@ -393,7 +357,7 @@ tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0.25880766, 0
 
 [sub_resource type="Animation" id="Animation_gjs1t"]
 resource_name = "kaput"
-length = 0.29167
+length = 0.3
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -451,36 +415,26 @@ _data = {
 &"kaput": SubResource("Animation_gjs1t")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_d5ohb"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ffmvs"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_aa3t3"]
-
-[node name="TestEnemy" type="CharacterBody3D" unique_id=23828234]
+[node name="BatEnemy" type="Node3D" unique_id=2133020713]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-collision_layer = 2
-collision_mask = 5
 
-[node name="bat" type="AnimationTree" parent="." unique_id=1346316384]
-root_node = NodePath(".")
-tree_root = SubResource("AnimationNodeStateMachine_divv5")
-anim_player = NodePath("AnimationPlayer")
+[node name="bat" type="Node3D" parent="." unique_id=968139955]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="bat" unique_id=1870482832]
+[node name="Skeleton3D" type="Skeleton3D" parent="bat" unique_id=2094776806]
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, 0.2, -0.75)
-bones/0/rotation = Quaternion(-0.9469301, 0, 0, 0.32143947)
-bones/0/scale = Vector3(0.100000024, 0.100000024, 0.100000024)
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "ears"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.1)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 1.4, 0.1)
-bones/1/rotation = Quaternion(0.46174866, 0, 0, 0.88701093)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "ears_1"
 bones/2/parent = 1
@@ -522,7 +476,7 @@ bones/7/parent = 0
 bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.65, 0.2)
 bones/7/enabled = true
 bones/7/position = Vector3(0.55, 0.65, 0.2)
-bones/7/rotation = Quaternion(0, 0, -0.57357645, 0.81915206)
+bones/7/rotation = Quaternion(0, 0, 0, 1)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "wing-left"
 bones/8/parent = 7
@@ -536,7 +490,7 @@ bones/9/parent = 0
 bones/9/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.65, 0.2)
 bones/9/enabled = true
 bones/9/position = Vector3(-0.55, 0.65, 0.2)
-bones/9/rotation = Quaternion(0, 0, 0.53729963, 0.8433914)
+bones/9/rotation = Quaternion(0, 0, 0, 1)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "wing-right"
 bones/10/parent = 9
@@ -567,107 +521,76 @@ bones/13/position = Vector3(0, 0, 0)
 bones/13/rotation = Quaternion(0, 0, 0, 1)
 bones/13/scale = Vector3(1, 1, 1)
 
-[node name="ears_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=2034320883]
-transform = Transform3D(0.100000024, 0, 0, 0, 0.004361935, 0.09990484, 0, -0.09990484, 0.004361935, 0, 0.07892093, -0.70372957)
+[node name="ears_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1195040741]
 bone_name = "ears_1"
 bone_idx = 2
 
-[node name="ears_1" type="MeshInstance3D" parent="bat/Skeleton3D/ears_1" unique_id=1826970458]
+[node name="ears_1" type="MeshInstance3D" parent="bat/Skeleton3D/ears_1" unique_id=819422504]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_dqexj")
 
-[node name="tail_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1179454785]
-transform = Transform3D(0.100000024, 0, 0, 0, -0.079335354, 0.060876157, 0, -0.060876157, -0.079335354, 0, 0.18782477, -0.7341329)
+[node name="tail_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1176212223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.20000002)
 bone_name = "tail_1"
 bone_idx = 4
 
-[node name="tail_1" type="MeshInstance3D" parent="bat/Skeleton3D/tail_1" unique_id=2064519463]
+[node name="tail_1" type="MeshInstance3D" parent="bat/Skeleton3D/tail_1" unique_id=401521596]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_duq60")
 
-[node name="leg-front-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1144992117]
-transform = Transform3D(0.100000024, 0, 0, 0, -0.079335354, 0.060876157, 0, -0.060876157, -0.079335354, 0, 0.19999999, -0.75)
+[node name="leg-front-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1746639862]
 bone_name = "leg-front-left"
 bone_idx = 6
 
-[node name="leg-front-left" type="MeshInstance3D" parent="bat/Skeleton3D/leg-front-left" unique_id=1196476195]
+[node name="leg-front-left" type="MeshInstance3D" parent="bat/Skeleton3D/leg-front-left" unique_id=1168839443]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1f2ig")
 
-[node name="wing-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1118424376]
-transform = Transform3D(0.034202017, 0.09396929, 0, 0.07455085, -0.027134286, 0.060876157, 0.05720488, -0.02082087, -0.079335354, -0.014630526, 0.1474316, -0.79033715)
+[node name="wing-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=2032055104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
 bone_name = "wing-left"
 bone_idx = 8
 
-[node name="wing-left" type="MeshInstance3D" parent="bat/Skeleton3D/wing-left" unique_id=407100084]
+[node name="wing-left" type="MeshInstance3D" parent="bat/Skeleton3D/wing-left" unique_id=275435971]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vfhhf")
 
-[node name="wing-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=753082881]
-transform = Transform3D(0.04226183, -0.09063081, 0, -0.07190225, -0.033528566, 0.060876157, -0.055172537, -0.025727373, -0.079335354, 0.014475465, 0.15225002, -0.7866398)
+[node name="wing-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=264080776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
 bone_name = "wing-right"
 bone_idx = 10
 
-[node name="wing-right" type="MeshInstance3D" parent="bat/Skeleton3D/wing-right" unique_id=1420226336]
+[node name="wing-right" type="MeshInstance3D" parent="bat/Skeleton3D/wing-right" unique_id=1574842367]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_hbccj")
 
-[node name="leg-front-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1732905646]
-transform = Transform3D(0.100000024, 0, 0, 0, -0.079335354, 0.060876157, 0, -0.060876157, -0.079335354, 0, 0.19999999, -0.75)
+[node name="leg-front-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=2034664773]
 bone_name = "leg-front-right"
 bone_idx = 12
 
-[node name="leg-front-right" type="MeshInstance3D" parent="bat/Skeleton3D/leg-front-right" unique_id=766093935]
+[node name="leg-front-right" type="MeshInstance3D" parent="bat/Skeleton3D/leg-front-right" unique_id=954284553]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vko04")
 
-[node name="body" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=43111979]
-transform = Transform3D(0.100000024, 0, 0, 0, -0.079335354, 0.060876157, 0, -0.060876157, -0.079335354, 0, 0.2, -0.75)
+[node name="body" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1356015020]
 bone_name = "body"
 bone_idx = 13
 
-[node name="body" type="MeshInstance3D" parent="bat/Skeleton3D/body" unique_id=1056634896]
+[node name="body" type="MeshInstance3D" parent="bat/Skeleton3D/body" unique_id=337188274]
 gi_mode = 0
 mesh = SubResource("ArrayMesh_02st4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="bat" unique_id=662634745]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bat" unique_id=139504375]
 root_motion_local = true
 libraries/ = SubResource("AnimationLibrary_o80gd")
+autoplay = &"kaput"
 
-[node name="EnemyHitPoints" type="CollisionShape3D" parent="." unique_id=364549253]
-unique_name_in_owner = true
-shape = SubResource("SphereShape3D_d5ohb")
-script = ExtResource("1_h8img")
-max_hp = 3.0
+[node name="DestroyInXSeconds" type="Node" parent="." unique_id=784034476]
+script = ExtResource("2_jtqla")
+seconds = 0.5
 
-[node name="ContactDamage" type="Area3D" parent="." unique_id=1934980670]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
-script = ExtResource("2_ffmvs")
-damage = 10.0
-
-[node name="ContactCollision" type="CollisionShape3D" parent="ContactDamage" unique_id=154881717]
-unique_name_in_owner = true
-shape = SubResource("SphereShape3D_ffmvs")
-
-[node name="Weapon" type="Node3D" parent="." unique_id=1612296102]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-script = ExtResource("2_d5ohb")
-fire_rate = 1.0
-projectile_scene = ExtResource("3_qx3t2")
-
-[node name="ShotPoint" type="Marker3D" parent="Weapon" unique_id=1341203967]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, -0.5)
-
-[node name="ChaserBehaviour" type="Area3D" parent="." unique_id=1152485417]
-script = ExtResource("5_aa3t3")
-detect_radious = 12.0
-rotating_speed = 2.0
-advance_speed = 1.0
-chase_speed = 2.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaserBehaviour" unique_id=1145438687]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
-shape = SubResource("SphereShape3D_aa3t3")
-
-[connection signal="body_entered" from="ContactDamage" to="ContactDamage" method="_on_body_entered"]
-[connection signal="body_entered" from="ChaserBehaviour" to="ChaserBehaviour" method="_on_body_entered"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=940603096]
+stream = ExtResource("3_jtqla")
+volume_db = -7.0
+pitch_scale = 0.6
+autoplay = true

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmo3synhl8cjf"]
 
 [ext_resource type="Script" uid="uid://dd8chuc7s5syl" path="res://scenes/entities/DestroyInXSeconds.gd" id="1_di283"]
+[ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="2_odmda"]
 
 [sub_resource type="Gradient" id="Gradient_xly4e"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -95,3 +96,8 @@ draw_pass_1 = SubResource("QuadMesh_d5fwc")
 [node name="DestroyTimer" type="Node" parent="." unique_id=1482727573]
 script = ExtResource("1_di283")
 seconds = 0.155
+
+[node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=534933064]
+stream = ExtResource("2_odmda")
+volume_db = -10.37
+autoplay = true

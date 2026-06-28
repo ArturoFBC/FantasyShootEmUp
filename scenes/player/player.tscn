@@ -28,6 +28,7 @@ flash_interval = 0.02
 
 [node name="WeaponSword" parent="." unique_id=986901657 instance=ExtResource("4_75vfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+fire_rate = 0.3
 
 [node name="Knight" parent="." unique_id=890844839 instance=ExtResource("2_qek5x")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 0, 0, 0)
