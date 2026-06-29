@@ -1,6 +1,7 @@
 class_name EnemyWeapon
 extends Weapon
 
+
 @onready var shot_point: Marker3D = $ShotPoint  ## Shot spawn point
 
 

@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://dghp70csaxg6b" path="res://scenes/player/PlayerMovement.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/PlayerHitPoints.gd" id="2_75vfm"]
 [ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="2_qek5x"]
-[ext_resource type="PackedScene" uid="uid://cvnvesxbt5oal" path="res://scenes/player/weapons/shield/weapon_shield.tscn" id="5_0owmy"]
+[ext_resource type="PackedScene" uid="uid://ceb6geskr2ndl" path="res://scenes/player/weapons/shuriken/weapon_shuriken.tscn" id="5_0owmy"]
 [ext_resource type="PackedScene" uid="uid://cni0fwv7swth" path="res://scenes/player/weapons/axe/weapon_axe.tscn" id="5_75vfm"]
-[ext_resource type="PackedScene" uid="uid://cos6ol8i4u7e6" path="res://scenes/player/weapons/shield/projectiles/shield_projectile.tscn" id="6_qek5x"]
 [ext_resource type="Script" uid="uid://detew5hkmufpl" path="res://scenes/entities/FlickerOnDamage.gd" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://dkyx4swivsowx" path="res://scenes/player/PowerUpCatcher.gd" id="7_qek5x"]
 
@@ -31,9 +30,9 @@ flash_interval = 0.02
 [node name="Knight" parent="." unique_id=890844839 instance=ExtResource("2_qek5x")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 0, 0, 0)
 
-[node name="weapon_shield" parent="." unique_id=138471633 instance=ExtResource("5_0owmy")]
+[node name="weapon_shuriken" parent="." unique_id=1404329927 instance=ExtResource("5_0owmy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-projectile_scene = ExtResource("6_qek5x")
+detect_radious = 4.0
 
 [node name="weapon_axe" parent="." unique_id=2141182344 instance=ExtResource("5_75vfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52856505, 0)
