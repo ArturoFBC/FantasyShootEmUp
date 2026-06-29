@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/Moving.gd" id="4_urvlt"]
 [ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="4_xb4v1"]
 [ext_resource type="Script" uid="uid://bxdmeqwp4dpob" path="res://scenes/enemy/spawner/EnemySpawnPoint.gd" id="5_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://bjygdakgsrr48" path="res://scenes/enemy/bat/bat_enemy_powerup.tscn" id="5_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://cl81wk77cyv3n" path="res://scenes/weapons/projectiles/enemy_projectile.tscn" id="10_7pb6i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbbpy"]
 size = Vector3(2, 5, 20)
@@ -23,12 +25,28 @@ shadow_opacity = 0.7
 [node name="Level1" parent="." unique_id=1322831311 instance=ExtResource("4_xb4v1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
 
-[node name="EnemySpawner5" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=475009303 node_paths=PackedStringArray("spawn_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0627575, 0, -12.808132)
+[node name="EnemySpawner6" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=567814985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
+visible = false
 aabb = AABB(-1, 0, -1, 2, 2, 2)
 enable_node_path = NodePath("")
 script = ExtResource("4_d4w6o")
-spawn_points = [NodePath("Marker3D"), NodePath("Marker3D4"), NodePath("Marker3D5"), NodePath("Marker3D6"), NodePath("Marker3D3"), NodePath("Marker3D2")]
+
+[node name="Marker3D" type="Marker3D" parent="Level1/EnemySpawner6" unique_id=693628665]
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("5_ouxo3")
+
+[node name="EnemySpawner5" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=475009303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0627575, 0, -12.808132)
+visible = false
+aabb = AABB(-1, 0, -1, 2, 2, 2)
+enable_node_path = NodePath("")
+script = ExtResource("4_d4w6o")
+
+[node name="Marker3D7" type="Marker3D" parent="Level1/EnemySpawner5" unique_id=1920414105]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 11.85132)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
 
 [node name="Marker3D4" type="Marker3D" parent="Level1/EnemySpawner5" unique_id=1873694026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8334906, 0, -0.5229182)
@@ -60,12 +78,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83349156, 0, 0.503335)
 script = ExtResource("5_mbbpy")
 enemy_scene = ExtResource("2_bovvr")
 
-[node name="EnemySpawner3" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=1015943666 node_paths=PackedStringArray("spawn_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7950048, 0, -12.641037)
+[node name="EnemySpawner3" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=1015943666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6727972, 0, -12.641037)
+visible = false
 aabb = AABB(-1, 0, -1, 2, 2, 2)
 enable_node_path = NodePath("")
 script = ExtResource("4_d4w6o")
-spawn_points = [NodePath("Marker3D"), NodePath("Marker3D4"), NodePath("Marker3D5"), NodePath("Marker3D6"), NodePath("Marker3D3"), NodePath("Marker3D2")]
 
 [node name="Marker3D4" type="Marker3D" parent="Level1/EnemySpawner3" unique_id=548515364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8334906, 0, -0.5229182)
@@ -97,12 +115,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83349156, 0, 0.503335)
 script = ExtResource("5_mbbpy")
 enemy_scene = ExtResource("2_bovvr")
 
-[node name="EnemySpawner2" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=250149360 node_paths=PackedStringArray("spawn_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6184516, 0, -10.264156)
+[node name="Marker3D7" type="Marker3D" parent="Level1/EnemySpawner3" unique_id=331926965]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 11.7823925)
+script = ExtResource("5_mbbpy")
+enemy_scene = ExtResource("2_bovvr")
+
+[node name="EnemySpawner2" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=250149360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.264156)
+visible = false
 aabb = AABB(-1, 0, -1, 2, 2, 2)
 enable_node_path = NodePath("")
 script = ExtResource("4_d4w6o")
-spawn_points = [NodePath("Marker3D"), NodePath("Marker3D4"), NodePath("Marker3D5"), NodePath("Marker3D6"), NodePath("Marker3D3"), NodePath("Marker3D2")]
 
 [node name="Marker3D4" type="Marker3D" parent="Level1/EnemySpawner2" unique_id=347901744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8177607, 0, -0.49145985)
@@ -134,12 +157,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81776166, 0, 0.5347934)
 script = ExtResource("5_mbbpy")
 enemy_scene = ExtResource("2_bovvr")
 
-[node name="EnemySpawner4" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=244493632 node_paths=PackedStringArray("spawn_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.580287, 0, -15.273115)
+[node name="EnemySpawner4" type="VisibleOnScreenEnabler3D" parent="Level1" unique_id=244493632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.273115)
+visible = false
 aabb = AABB(-1, 0, -1, 2, 2, 2)
 enable_node_path = NodePath("")
 script = ExtResource("4_d4w6o")
-spawn_points = [NodePath("Marker3D"), NodePath("Marker3D4"), NodePath("Marker3D5"), NodePath("Marker3D6"), NodePath("Marker3D3"), NodePath("Marker3D2")]
 
 [node name="Marker3D4" type="Marker3D" parent="Level1/EnemySpawner4" unique_id=434986707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81775975, 0, -0.41281414)
@@ -193,14 +216,32 @@ collision_mask = 15
 shape = SubResource("BoxShape3D_mbbpy")
 
 [node name="Camera3D" type="Camera3D" parent="MovingStage" unique_id=876606047]
-transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 7, 1.8767648)
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 7, 1.877)
 projection = 1
+fov = 56.7
 size = 10.0
 
 [node name="Player" parent="MovingStage" unique_id=1936776764 instance=ExtResource("1_377w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076, 0, 4.1093)
 stage_limit = Vector2(10, 10)
 
+[node name="EnemyProjectile" parent="MovingStage" unique_id=1635210640 instance=ExtResource("10_7pb6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52961135, -0.4113078)
+speed = 0.0
+
+[node name="EnemyProjectile2" parent="MovingStage" unique_id=521927003 instance=ExtResource("10_7pb6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52961135, -0.9120288)
+speed = 0.0
+
+[node name="EnemyProjectile3" parent="MovingStage" unique_id=558829657 instance=ExtResource("10_7pb6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52961135, 0)
+speed = 0.0
+
+[node name="EnemyProjectile4" parent="MovingStage" unique_id=835976886 instance=ExtResource("10_7pb6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017881393, 0.52961135, -1.4842837)
+speed = 0.0
+
+[connection signal="screen_entered" from="Level1/EnemySpawner6" to="Level1/EnemySpawner6" method="_on_screen_entered"]
 [connection signal="screen_entered" from="Level1/EnemySpawner5" to="Level1/EnemySpawner5" method="_on_screen_entered"]
 [connection signal="screen_entered" from="Level1/EnemySpawner3" to="Level1/EnemySpawner3" method="_on_screen_entered"]
 [connection signal="screen_entered" from="Level1/EnemySpawner2" to="Level1/EnemySpawner2" method="_on_screen_entered"]

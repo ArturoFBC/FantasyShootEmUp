@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cvnvesxbt5oal"]
+
+[ext_resource type="Script" uid="uid://c8dgfk03yhy2f" path="res://scenes/player/weapons/shield/weapon_shield.gd" id="1_5jbpx"]
+[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/player/weapons/sword/projectiles/sword_projectile_0.tscn" id="2_5jbpx"]
+[ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="3_eo548"]
+
+[node name="weapon_shield" type="Node3D" unique_id=138471633 node_paths=PackedStringArray("shot_point_containers")]
+script = ExtResource("1_5jbpx")
+shot_point_containers = [NodePath("Node3D")]
+type = 1
+fire_rate = 2.0
+projectile_scene = ExtResource("2_5jbpx")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=209306406]
+
+[node name="Marker3D" type="Marker3D" parent="Node3D" unique_id=259834528]
+transform = Transform3D(-0.70448565, 0, 0.7097182, 0, 1, 0, -0.7097182, 0, -0.70448565, 0, 0, 0)
+script = ExtResource("3_eo548")
+projectile_level = 0

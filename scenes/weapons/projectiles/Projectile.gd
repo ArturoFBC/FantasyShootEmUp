@@ -52,10 +52,10 @@ func _on_body_entered(body:Node3D) -> void:
 			if (child is EnemyHitPoints):
 				child._take_damage(damage)
 				
-	destroy()
+	_destroy()
 
 
-func destroy() -> void:
+func _destroy() -> void:
 	# disable the collision shape, in the next physics iteration, so no more collisions
 	collision_shape.set_deferred("disabled", true)
 

@@ -27,14 +27,12 @@ func _on_condition_met() -> void:
 
 
 func start_state(state: int) -> void:
-	print("Starting state " + states[state].name)
 	states[state].behaviour._start()
 	states[state].condition._start()
 	states[state].condition.condition_met.connect(_on_condition_met)
 
 
 func end_state(state: int) -> void:
-	print("Ending state " + states[state].name)
 	states[state].behaviour._end()
 	states[state].condition._end()
 	states[state].condition.condition_met.disconnect(_on_condition_met)

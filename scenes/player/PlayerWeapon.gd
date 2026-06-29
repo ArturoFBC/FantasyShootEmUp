@@ -1,3 +1,4 @@
+class_name PlayerWeapon
 extends Weapon
 
 enum WeaponType
@@ -48,10 +49,14 @@ func _create_projectile_spawn_points_array() -> void:
 
 func _shot_logic() -> void:
 	# if the player shot is not on cooldown and the fire button is pressed, shot
-	if Input.is_action_pressed("fire") and not shot_on_cd:
+	if _shot_condition() and not shot_on_cd:
 		_shot()
 		# shot cooldown
 		_wait_cooldown()
+
+
+func _shot_condition() -> bool:
+	return Input.is_action_pressed("fire")
 
 
 func _shot() -> void:

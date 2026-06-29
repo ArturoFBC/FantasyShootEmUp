@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://cos6ol8i4u7e6"]
+
+[ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_kirl4"]
+[ext_resource type="Texture2D" uid="uid://gjspq2equngv" path="res://graphics/props/Textures/colormap.png" id="2_j2qlw"]
+[ext_resource type="ArrayMesh" uid="uid://2q3c5vsjvhey" path="res://graphics/props/shield1.res" id="3_j2qlw"]
+[ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="3_wf4q0"]
+[ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="4_wf4q0"]
+[ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="5_70gef"]
+[ext_resource type="PackedScene" uid="uid://dmo3synhl8cjf" path="res://scenes/entities/vfx/spark_particles.tscn" id="6_5xk3e"]
+[ext_resource type="Script" uid="uid://b3hg03uyc5nug" path="res://scenes/player/weapons/shield/projectile_blocking.gd" id="8_wf4q0"]
+[ext_resource type="Script" uid="uid://pvxwjo0k28q0" path="res://scenes/entities/max_range.gd" id="9_ok4ak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imwim"]
+albedo_texture = ExtResource("2_j2qlw")
+metallic = 0.69
+metallic_specular = 0.68
+clearcoat_roughness = 0.37
+anisotropy = 1.0
+backlight = Color(1, 1, 1, 1)
+backlight_texture = ExtResource("2_j2qlw")
+stencil_flags = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ok4ak"]
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_ok4ak"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.4471185, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6dbfv"]
+curve = SubResource("Curve_ok4ak")
+
+[sub_resource type="Gradient" id="Gradient_70gef"]
+colors = PackedColorArray(0.8862745, 0.8862745, 0, 0.45882353, 0, 1, 1, 0.4509804)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q7cwr"]
+gradient = SubResource("Gradient_70gef")
+
+[sub_resource type="Curve" id="Curve_5xk3e"]
+_data = [Vector2(0, 0.50747067), 0.0, 11.74266, 0, 0, Vector2(0.122950815, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.47278553), -1.8766173, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vw5mi"]
+curve = SubResource("Curve_5xk3e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_etxbv"]
+direction = Vector3(0, 0, -1)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_vw5mi")
+color_ramp = SubResource("GradientTexture1D_q7cwr")
+alpha_curve = SubResource("CurveTexture_6dbfv")
+
+[sub_resource type="Gradient" id="Gradient_tpsn2"]
+offsets = PackedFloat32Array(0, 0.84302324, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xlev"]
+gradient = SubResource("Gradient_tpsn2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq0v1"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_1xlev")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sdxyq"]
+material = SubResource("StandardMaterial3D_wq0v1")
+orientation = 1
+
+[node name="shield_projectile" type="Area3D" unique_id=395358550]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_kirl4")
+damage = 5.0
+target_type = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=335800343]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_imwim")
+mesh = ExtResource("3_j2qlw")
+
+[node name="Spin" type="Node" parent="MeshInstance3D" unique_id=591358560]
+script = ExtResource("4_wf4q0")
+axis = Vector3(0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1988953205]
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_ok4ak")
+
+[node name="DestroyOutOfBounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=1745579548]
+layers = 4
+script = ExtResource("3_wf4q0")
+
+[node name="SpawnOnDestroy" type="Node" parent="." unique_id=1440565751]
+script = ExtResource("5_70gef")
+scene_to_spawn = ExtResource("6_5xk3e")
+
+[node name="ProjectileBlocking" type="Node" parent="." unique_id=976160192]
+script = ExtResource("8_wf4q0")
+
+[node name="DestroyAfterDistanceTraveled" type="Node" parent="." unique_id=107529088]
+script = ExtResource("9_ok4ak")
+max_range = 3.0
+metadata/_custom_type_script = "uid://pvxwjo0k28q0"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1050460491]
+amount = 5
+lifetime = 0.15000000000000002
+preprocess = 0.5
+process_material = SubResource("ParticleProcessMaterial_etxbv")
+draw_pass_1 = SubResource("QuadMesh_sdxyq")
+
+[connection signal="area_entered" from="." to="ProjectileBlocking" method="_on_shield_projectile_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="destroyed" from="." to="SpawnOnDestroy" method="_on_destroyed"]
+[connection signal="screen_exited" from="DestroyOutOfBounds" to="DestroyOutOfBounds" method="_on_screen_exited"]

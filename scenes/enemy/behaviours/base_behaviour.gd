@@ -15,7 +15,6 @@ func _initialize(root: Node3D) -> void:
 
 
 func _start() -> void :
-	print("Start " + name)
 	process_mode = Node.PROCESS_MODE_INHERIT
 	_start_internal()
 	

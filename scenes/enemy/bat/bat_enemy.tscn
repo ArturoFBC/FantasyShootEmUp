@@ -495,7 +495,7 @@ bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, 0.00025011977, 0)
+bones/0/position = Vector3(0, -0.07806056, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "ears"
@@ -503,7 +503,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.1)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 1.4, 0.1)
-bones/1/rotation = Quaternion(-0.00043654133, 0, 0, 0.99999994)
+bones/1/rotation = Quaternion(-0.014846202, 0, 0, 0.9998898)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "ears_1"
 bones/2/parent = 1
@@ -517,7 +517,7 @@ bones/3/parent = 0
 bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.6)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.75, -0.6)
-bones/3/rotation = Quaternion(-0.0008185149, 0, 0, 0.9999997)
+bones/3/rotation = Quaternion(-0.029419646, 0, 0, 0.99956715)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "tail_1"
 bones/4/parent = 3
@@ -545,7 +545,7 @@ bones/7/parent = 0
 bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.65, 0.2)
 bones/7/enabled = true
 bones/7/position = Vector3(0.55, 0.65, 0.2)
-bones/7/rotation = Quaternion(0, 0, -0.0008185149, 0.9999997)
+bones/7/rotation = Quaternion(0, 0, 0.078354925, 0.99692553)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "wing-left"
 bones/8/parent = 7
@@ -559,7 +559,7 @@ bones/9/parent = 0
 bones/9/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.65, 0.2)
 bones/9/enabled = true
 bones/9/position = Vector3(-0.55, 0.65, 0.2)
-bones/9/rotation = Quaternion(0, 0, 0.00054563035, 0.9999999)
+bones/9/rotation = Quaternion(0, 0, -0.040802635, 0.9991672)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "wing-right"
 bones/10/parent = 9
@@ -591,7 +591,7 @@ bones/13/rotation = Quaternion(0, 0, 0, 1)
 bones/13/scale = Vector3(1, 1, 1)
 
 [node name="ears_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=2034320883]
-transform = Transform3D(1, 0, 0, 0, 0.99999964, 0.0008730825, 0, -0.0008730825, 0.99999964, 0, 0.00016331673, 0.0012223497)
+transform = Transform3D(1, 0, 0, 0, 0.99955916, 0.029689131, 0, -0.029689131, 0.99955916, 0, -0.08041227, 0.04160887)
 bone_name = "ears_1"
 bone_idx = 2
 
@@ -600,7 +600,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_dqexj")
 
 [node name="tail_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1179454785]
-transform = Transform3D(1, 0, 0, 0, 0.9999987, 0.0016370291, 0, -0.0016370291, 0.9999987, 0, 0.0009058714, -0.19877279)
+transform = Transform3D(1, 0, 0, 0, 0.99826896, 0.05881382, 0, -0.05881382, 0.99826896, 0, -0.053236723, -0.15658209)
 bone_name = "tail_1"
 bone_idx = 4
 
@@ -609,7 +609,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_duq60")
 
 [node name="leg-front-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1144992117]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0002501309, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07806057, 0)
 bone_name = "leg-front-left"
 bone_idx = 6
 
@@ -618,7 +618,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1f2ig")
 
 [node name="wing-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1118424376]
-transform = Transform3D(0.9999987, 0.0016370291, 0, -0.0016370291, 0.9999987, 0, 0, 0, 1, 0.29893628, 0.00066018105, 0)
+transform = Transform3D(0.987721, -0.15622805, 0, 0.15622805, 0.987721, 0, 0, 0, 1, 0.404618, -0.109136224, 0)
 bone_name = "wing-left"
 bone_idx = 8
 
@@ -627,7 +627,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vfhhf")
 
 [node name="wing-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=753082881]
-transform = Transform3D(0.9999994, -0.0010912606, 0, 0.0010912606, 0.9999994, 0, 0, 0, 1, -0.29929084, 0.0005232692, 0)
+transform = Transform3D(0.9966703, 0.08153731, 0, -0.08153731, 0.9966703, 0, 0, 0, 1, -0.35383168, -0.096280575, 0)
 bone_name = "wing-right"
 bone_idx = 10
 
@@ -636,7 +636,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_hbccj")
 
 [node name="leg-front-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1732905646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0002501309, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07806057, 0)
 bone_name = "leg-front-right"
 bone_idx = 12
 
@@ -645,7 +645,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vko04")
 
 [node name="body" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=43111979]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00025011977, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07806056, 0)
 bone_name = "body"
 bone_idx = 13
 
