@@ -1,8 +1,8 @@
 class_name PlayerMovement
 extends CharacterBody3D
 
-@export var speed: float = 8  ## How fast the player moves
-@export var stage_limit: Vector2 = Vector2(10, 20)
+@export var speed: float = 4  ## How fast the player moves
+@export var stage_limit: Vector2 = Vector2(5, 10)
 @export var bounds: Vector3 = Vector3(1,0,1)
 
 

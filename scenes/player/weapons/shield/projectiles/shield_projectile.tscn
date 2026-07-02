@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_kirl4"]
 [ext_resource type="Texture2D" uid="uid://gjspq2equngv" path="res://graphics/props/Textures/colormap.png" id="2_j2qlw"]
-[ext_resource type="ArrayMesh" uid="uid://2q3c5vsjvhey" path="res://graphics/props/shield1.res" id="3_j2qlw"]
+[ext_resource type="ArrayMesh" uid="uid://r0al27rvsrq5" path="res://graphics/props/shield1.res" id="3_j2qlw"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="3_wf4q0"]
 [ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="4_wf4q0"]
 [ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="5_70gef"]
@@ -19,6 +19,25 @@ anisotropy = 1.0
 backlight = Color(1, 1, 1, 1)
 backlight_texture = ExtResource("2_j2qlw")
 stencil_flags = 2
+
+[sub_resource type="Gradient" id="Gradient_ok4ak"]
+offsets = PackedFloat32Array(0.58474576, 1)
+colors = PackedColorArray(0, 0.6, 1, 0.61960787, 0, 0.42745098, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_70gef"]
+gradient = SubResource("Gradient_ok4ak")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xk3e"]
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_70gef")
+
+[sub_resource type="QuadMesh" id="QuadMesh_etxbv"]
+material = SubResource("StandardMaterial3D_5xk3e")
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ok4ak"]
 radius = 1.5
@@ -77,6 +96,7 @@ orientation = 1
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("1_kirl4")
+speed = 5.0
 damage = 5.0
 target_type = 1
 
@@ -88,6 +108,10 @@ mesh = ExtResource("3_j2qlw")
 [node name="Spin" type="Node" parent="MeshInstance3D" unique_id=591358560]
 script = ExtResource("4_wf4q0")
 axis = Vector3(0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1061739274]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.548683e-09, -0.0811844)
+mesh = SubResource("QuadMesh_etxbv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1988953205]
 transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 0, 0)

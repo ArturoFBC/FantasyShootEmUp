@@ -1,19 +1,26 @@
 [gd_scene format=3 uid="uid://cvnvesxbt5oal"]
 
 [ext_resource type="Script" uid="uid://c8dgfk03yhy2f" path="res://scenes/player/weapons/shield/weapon_shield.gd" id="1_5jbpx"]
-[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/player/weapons/sword/projectiles/sword_projectile_0.tscn" id="2_5jbpx"]
+[ext_resource type="PackedScene" uid="uid://cos6ol8i4u7e6" path="res://scenes/player/weapons/shield/projectiles/shield_projectile.tscn" id="2_0mv4y"]
 [ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="3_eo548"]
+[ext_resource type="AudioStream" uid="uid://r4k2ecuxfgip" path="res://audio/sounds/whoosh/WHOOSH_Wide_Slow_stereo.wav" id="4_0mv4y"]
 
 [node name="weapon_shield" type="Node3D" unique_id=138471633 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("1_5jbpx")
 shot_point_containers = [NodePath("Node3D")]
 type = 1
 fire_rate = 2.0
-projectile_scene = ExtResource("2_5jbpx")
+projectile_scene = ExtResource("2_0mv4y")
+damage = 5.0
 
 [node name="Node3D" type="Node3D" parent="." unique_id=209306406]
 
 [node name="Marker3D" type="Marker3D" parent="Node3D" unique_id=259834528]
-transform = Transform3D(-0.70448565, 0, 0.7097182, 0, 1, 0, -0.7097182, 0, -0.70448565, 0, 0, 0)
+transform = Transform3D(-0.70448565, 0, 0.7097182, 0, 1, 0, -0.7097182, 0, -0.70448565, 0, 0.5, 0)
 script = ExtResource("3_eo548")
 projectile_level = 0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=503514982]
+stream = ExtResource("4_0mv4y")
+
+[connection signal="weapon_shot" from="." to="AudioStreamPlayer3D" method="set_playing"]

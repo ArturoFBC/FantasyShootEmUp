@@ -1,0 +1,57 @@
+[gd_resource type="Theme" format=3 uid="uid://dyf27d8jqvjos"]
+
+[ext_resource type="FontFile" uid="uid://bj27mcbtucn3q" path="res://fonts/HerculesPixelFontRegular-ovAX0.otf" id="1_4ubh0"]
+[ext_resource type="StyleBox" uid="uid://baefyq7afak1q" path="res://scenes/UI/screens/title/styles/title_button_box_normal.tres" id="2_2jw2s"]
+[ext_resource type="Texture2D" uid="uid://bivuyh5u78v73" path="res://graphics/UI/buttonSquare_grey_pressed.png" id="3_4ubh0"]
+[ext_resource type="FontFile" uid="uid://e1vwv6kpxva5" path="res://fonts/CsMajesticRegularDemo-xRyJ0.otf" id="4_2jw2s"]
+[ext_resource type="Texture2D" uid="uid://djsojyn1d6dtl" path="res://graphics/actors/models/animals/Textures/colormap.png" id="5_x6jbk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jw2s"]
+texture = ExtResource("3_4ubh0")
+texture_margin_left = 10.0
+texture_margin_top = 12.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.7254902, 0.6862745, 0.13333334, 1)
+
+[sub_resource type="Gradient" id="Gradient_xg2lx"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3indm"]
+gradient = SubResource("Gradient_xg2lx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1papw"]
+texture = SubResource("GradientTexture1D_3indm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msfdh"]
+texture = ExtResource("5_x6jbk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfv32"]
+
+[resource]
+default_font = ExtResource("1_4ubh0")
+default_font_size = 40
+Button/colors/font_color = Color(0.57925385, 1.973361e-06, 3.85046e-07, 1)
+Button/colors/font_focus_color = Color(0.5882353, 0.19607843, 0.19607843, 1)
+Button/colors/font_hover_color = Color(0.5882353, 0.19607843, 0.19607843, 1)
+Button/colors/font_hover_pressed_color = Color(0.5882353, 0, 0, 1)
+Button/colors/font_outline_color = Color(0.612302, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.5882353, 0.19607843, 0.19607843, 1)
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_4ubh0")
+Button/styles/hover = ExtResource("2_2jw2s")
+Button/styles/normal = ExtResource("2_2jw2s")
+Button/styles/pressed = SubResource("StyleBoxTexture_2jw2s")
+RichTextLabel/colors/default_color = Color(0.83137256, 0.42352942, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0.3581382, 0.18215746, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(1, 1, 0, 1)
+RichTextLabel/constants/outline_size = 20
+RichTextLabel/constants/shadow_offset_x = 5
+RichTextLabel/constants/shadow_offset_y = 10
+RichTextLabel/constants/shadow_outline_size = 10
+RichTextLabel/constants/text_highlight_h_padding = 10
+RichTextLabel/constants/text_highlight_v_padding = 10
+RichTextLabel/font_sizes/normal_font_size = 150
+RichTextLabel/fonts/normal_font = ExtResource("4_2jw2s")
+RichTextLabel/styles/background = SubResource("StyleBoxTexture_1papw")
+RichTextLabel/styles/fill = SubResource("StyleBoxTexture_msfdh")
+RichTextLabel/styles/normal = SubResource("StyleBoxTexture_dfv32")

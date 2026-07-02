@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dg7u4rp8gaedt"]
+
+[ext_resource type="AudioStream" uid="uid://ylaiiumrfiv0" path="res://audio/sounds/impacts/IMPACT_Concrete_Slab_on_Concrete_Slab_Deep_mono.wav" id="1_61cb0"]
+[ext_resource type="AudioStream" uid="uid://dpmk8wj2j0iji" path="res://audio/sounds/impacts/IMPACT_Concrete_Slab_on_Concrete_Slab_mono.wav" id="2_qltd8"]
+[ext_resource type="AudioStream" uid="uid://clpwjgpby275k" path="res://audio/sounds/impacts/IMPACT_Concrete_Slab_on_Concrete_Slab_Short_Dark_mono.wav" id="3_chhud"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_61cb0")
+stream_1/stream = ExtResource("2_qltd8")
+stream_2/stream = ExtResource("3_chhud")

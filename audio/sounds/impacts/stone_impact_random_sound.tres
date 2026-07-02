@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://05ppc76vskkk"]
+
+[ext_resource type="AudioStream" uid="uid://drrudm3to7g4p" path="res://audio/sounds/impacts/IMPACT_Metal_Soft_Plate_01_mono.wav" id="1_s7umf"]
+[ext_resource type="AudioStream" uid="uid://cl1jwiyk8fuaf" path="res://audio/sounds/impacts/IMPACT_Metal_Soft_Plate_02_mono.wav" id="2_v0w38"]
+
+[resource]
+streams_count = 2
+stream_0/stream = ExtResource("1_s7umf")
+stream_1/stream = ExtResource("2_v0w38")

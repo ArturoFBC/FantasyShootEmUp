@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://bstkhq0pshjfv" path="res://scenes/player/weapons/shuriken/weapon_shuriken.gd" id="1_43ujk"]
 [ext_resource type="PackedScene" uid="uid://b7uaunu2j0n6u" path="res://scenes/player/weapons/shuriken/projectiles/shuriken_projectile.tscn" id="2_43ujk"]
 [ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="3_e8svf"]
+[ext_resource type="AudioStream" uid="uid://dqbc2f5liesen" path="res://audio/sounds/whoosh/WHOOSH_Fast_Bright_mono.wav" id="4_m57rg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m57rg"]
 radius = 1.0
 
 [node name="weapon_shuriken" type="Node3D" unique_id=1404329927 node_paths=PackedStringArray("collision", "shot_point_containers")]
 script = ExtResource("1_43ujk")
+detect_radious = 4.0
 collision = NodePath("Area3D/CollisionShape3D")
 shot_point_containers = [NodePath("Node3D")]
 type = 1
@@ -31,5 +33,10 @@ input_ray_pickable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2875405]
 shape = SubResource("SphereShape3D_m57rg")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1438138598]
+stream = ExtResource("4_m57rg")
+volume_db = -5.0
+
+[connection signal="weapon_shot" from="." to="AudioStreamPlayer3D" method="set_playing"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

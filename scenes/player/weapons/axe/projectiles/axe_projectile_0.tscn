@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://gjspq2equngv" path="res://graphics/props/Textures/colormap.png" id="2_wfg0r"]
 [ext_resource type="ArrayMesh" uid="uid://bkpjgmipswrqv" path="res://graphics/props/axe.res" id="3_q7cwr"]
 [ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="4_cuwsv"]
-[ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="5_vw5mi"]
+[ext_resource type="AudioStream" uid="uid://05ppc76vskkk" path="res://audio/sounds/impacts/stone_impact_random_sound.tres" id="5_5mdam"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="6_l6km4"]
 [ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="8_ib4rg"]
 [ext_resource type="PackedScene" uid="uid://dmo3synhl8cjf" path="res://scenes/entities/vfx/spark_particles.tscn" id="9_wq0v1"]
@@ -18,6 +18,26 @@ anisotropy = 1.0
 backlight = Color(1, 1, 1, 1)
 backlight_texture = ExtResource("2_wfg0r")
 stencil_flags = 2
+
+[sub_resource type="Gradient" id="Gradient_5mdam"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.69411767, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6dbfv"]
+gradient = SubResource("Gradient_5mdam")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfg0r"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_6dbfv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_q7cwr"]
+flip_faces = true
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_obkmn"]
 
@@ -86,6 +106,11 @@ transform = Transform3D(3.5, 0, 0, 0, -1.5298986e-07, -3.5, 0, 3.5, -1.5298986e-
 material_override = SubResource("StandardMaterial3D_hiy74")
 mesh = ExtResource("3_q7cwr")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MeshInstance3D" unique_id=2080864643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121407226, 0.07394036)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
 [node name="Spin" type="Node" parent="Node3D" unique_id=1182133491 node_paths=PackedStringArray("target")]
 script = ExtResource("4_cuwsv")
 speed = 20.0
@@ -95,7 +120,7 @@ target = NodePath("..")
 shape = SubResource("SphereShape3D_obkmn")
 
 [node name="ShotHit" type="AudioStreamPlayer3D" parent="." unique_id=1302224253]
-stream = ExtResource("5_vw5mi")
+stream = ExtResource("5_5mdam")
 
 [node name="DestroyOutOfBounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=352852903]
 layers = 4

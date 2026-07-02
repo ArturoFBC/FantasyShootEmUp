@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl81wk77cyv3n"]
 
 [ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_epyg2"]
-[ext_resource type="AudioStream" uid="uid://tnmnmn53jllp" path="res://scenes/weapons/projectiles/8BIT_RETRO_Fire_Blaster_Triple_mono.wav" id="2_hub03"]
+[ext_resource type="AudioStream" uid="uid://dihh1htxng6u3" path="res://audio/sounds/impacts/IMPACT_Stone_On_Wood_Hollow_mono.wav" id="2_hub03"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="3_hub03"]
 
 [sub_resource type="Gradient" id="Gradient_hub03"]

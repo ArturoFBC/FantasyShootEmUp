@@ -16,50 +16,25 @@ func _ready() -> void:
 
 
 func _shot_condition() -> bool:
-	return Input.get_vector("aim_left","aim_right","aim_up","aim_down") != Vector2.ZERO
+	return Input.get_vector("aim_left","aim_right","aim_up","aim_down") != Vector2.ZERO && targets.size() > 0
 	
 	
 func _shot() -> void:
 	_clean_targets()
 	
-	var closest_targets = _get_closest_targets()
-	print(targets.size())
-	for target in closest_targets:
+	targets.sort_custom(_closest)
+
+	var target_amount = min(targets.size(), level / 2 + 1)
+
+	for target_index in range(target_amount):
 		var projectile := projectile_scene.instantiate()
 		get_tree().current_scene.add_child(projectile)
-		spawn_points_by_level[0][0].look_at(target.global_position, Vector3.UP, true)
+		spawn_points_by_level[0][0].look_at(targets[target_index].global_position, Vector3.UP, true)
 		projectile.init(spawn_points_by_level[0][0], damage, false)
 
 
-func _get_closest_targets() -> Array[Node3D]:
-	var closest_targets: Array[Node3D]
-	if targets.size() == 0:
-		##Exit early if no targets
-		return closest_targets
-	
-	var target_amount: int = floor(level / 2 + 1)
-	
-	## Get array of distances with same order as target array. Values are squared for faster calculation without affecting order
-	var distances_squared: Array[float]
-	for target in targets:
-		var distance = (target.global_position - root_node.global_position).length_squared()
-		distances_squared.append(distance)
-	
-	for current_target in target_amount:
-		if targets.size() <= current_target:
-			break
-		
-		var current_distance: float = distances_squared[0]
-		var current_closest: Node3D = targets[0]
-		for target_index in targets.size():
-			if current_distance >= distances_squared[target_index]:
-				if closest_targets.has(targets[target_index]) != null:
-					current_closest = targets[target_index]
-					current_distance = distances_squared[target_index]
-		
-		closest_targets.append(current_closest)
-		
-	return closest_targets
+func _closest(a, b) -> bool:
+	return (a.global_position - root_node.global_position).length_squared() < (b.global_position - root_node.global_position).length_squared()
 
 
 func _clean_targets() -> void:
