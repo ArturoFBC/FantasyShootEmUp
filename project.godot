@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 SignalBus="*uid://co8l8twjyudc7"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/SignalBus/plugin.cfg")
