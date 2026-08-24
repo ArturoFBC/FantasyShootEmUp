@@ -17,4 +17,3 @@ func _on_player_HP_updated(new_hp: float, previous_hp: float):
 	
 func _on_player_maxHP_updated(new_hp: float, previous_hp: float):
 	max_hp = new_hp
-	

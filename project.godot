@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*uid://co8l8twjyudc7"
+GlobalData="*uid://br6y1x0mlgqjd"
 
 [display]
 

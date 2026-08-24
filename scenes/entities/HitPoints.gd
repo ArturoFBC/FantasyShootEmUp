@@ -16,14 +16,15 @@ func _take_damage(damage: float) -> void:
 		_die()
 	else:
 		current_hp -= damage
-		
-	_damage_effects(damage, previous_hp)
+	
+	damage_received.emit(damage, current_hp, max_hp)
+	_damage_taken(damage, previous_hp)
+
+
+func _damage_taken(_damage: float, _previous_hp: float) -> void:
+	return
 
 
 func _die() -> void:
 	death.emit()
 	get_parent().queue_free()
-	
-	
-func _damage_effects(damage: float, previous_hp: float) -> void:
-	pass

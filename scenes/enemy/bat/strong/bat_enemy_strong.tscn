@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://cnwmoow1tpv1k" path="res://scenes/enemy/behaviours/forward_move_behaviour.gd" id="9_76axh"]
 [ext_resource type="Script" uid="uid://c0mb5880iuuk" path="res://scenes/enemy/behaviours/shoot_behaviour.gd" id="13_oqf38"]
 [ext_resource type="Script" uid="uid://j82ld3tmhpjf" path="res://scenes/enemy/behaviours/conditions/time_condition.gd" id="14_oqf38"]
+[ext_resource type="Script" uid="uid://4jkyowk0n112" path="res://score/score_on_death.gd" id="14_y43qf"]
+[ext_resource type="Resource" uid="uid://bdka6rnyqlnj1" path="res://score/ScoreResource.tres" id="15_75jht"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vb33t"]
 animation = &"attack"
@@ -499,7 +501,7 @@ bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, -0.09259703, 0)
+bones/0/position = Vector3(0, 0.033732455, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "ears"
@@ -507,7 +509,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.1)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 1.4, 0.1)
-bones/1/rotation = Quaternion(-0.0018103013, 0, 0, 0.99999845)
+bones/1/rotation = Quaternion(-0.058840234, 0, 0, 0.9982674)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "ears_1"
 bones/2/parent = 1
@@ -521,7 +523,7 @@ bones/3/parent = 0
 bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.6)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.75, -0.6)
-bones/3/rotation = Quaternion(-0.005110037, 0, 0, 0.999987)
+bones/3/rotation = Quaternion(-0.110165134, 0, 0, 0.9939133)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "tail_1"
 bones/4/parent = 3
@@ -549,7 +551,7 @@ bones/7/parent = 0
 bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.65, 0.2)
 bones/7/enabled = true
 bones/7/position = Vector3(0.55, 0.65, 0.2)
-bones/7/rotation = Quaternion(0, 0, 0.118787475, 0.9929198)
+bones/7/rotation = Quaternion(0, 0, -0.110165134, 0.9939133)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "wing-left"
 bones/8/parent = 7
@@ -563,7 +565,7 @@ bones/9/parent = 0
 bones/9/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.65, 0.2)
 bones/9/enabled = true
 bones/9/position = Vector3(-0.55, 0.65, 0.2)
-bones/9/rotation = Quaternion(0, 0, -0.061916474, 0.9980813)
+bones/9/rotation = Quaternion(0, 0, 0.073520154, 0.99729383)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "wing-right"
 bones/10/parent = 9
@@ -595,7 +597,7 @@ bones/13/rotation = Quaternion(0, 0, 0, 1)
 bones/13/scale = Vector3(1, 1, 1)
 
 [node name="ears_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=970311780]
-transform = Transform3D(1, 0, 0, 0, 0.99999344, 0.0036205966, 0, -0.0036205966, 0.99999344, 0, -0.09294987, 0.0050694942)
+transform = Transform3D(1, 0, 0, 0, 0.99307567, 0.117476575, 0, -0.117476575, 0.99307567, 0, 0.031678915, 0.16515964)
 bone_name = "ears_1"
 bone_idx = 2
 
@@ -604,7 +606,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_dqexj")
 
 [node name="tail_1" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=378383608]
-transform = Transform3D(1, 0, 0, 0, 0.9999478, 0.01021994, 0, -0.01021994, 0.9999478, 0, -0.08846986, -0.19235596)
+transform = Transform3D(1, 0, 0, 0, 0.97572726, 0.21898918, 0, -0.21898918, 0.97572726, 0, 0.13953274, -0.045467257)
 bone_name = "tail_1"
 bone_idx = 4
 
@@ -613,7 +615,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_duq60")
 
 [node name="leg-front-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1518661315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09259704, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033732444, 0)
 bone_name = "leg-front-left"
 bone_idx = 6
 
@@ -622,7 +624,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1f2ig")
 
 [node name="wing-left" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=761066918]
-transform = Transform3D(0.9717791, -0.23589282, 0, 0.23589282, 0.9717791, 0, 0, 0, 1, 0.46038556, -0.13322663, 0)
+transform = Transform3D(0.97572726, 0.21898918, 0, -0.21898918, 0.97572726, 0, 0, 0, 1, 0.16372526, 0.10425705, 0)
 bone_name = "wing-left"
 bone_idx = 8
 
@@ -631,7 +633,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vfhhf")
 
 [node name="wing-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=50179851]
-transform = Transform3D(0.9923327, 0.12359536, 0, -0.12359536, 0.9923327, 0, 0, 0, 1, -0.38225383, -0.11851215, 0)
+transform = Transform3D(0.98918957, -0.14664236, 0, 0.14664236, 0.98918957, 0, 0, 0, 1, -0.2073851, 0.07741988, 0)
 bone_name = "wing-right"
 bone_idx = 10
 
@@ -640,7 +642,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_hbccj")
 
 [node name="leg-front-right" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1542570432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09259704, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033732444, 0)
 bone_name = "leg-front-right"
 bone_idx = 12
 
@@ -649,7 +651,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vko04")
 
 [node name="body" type="BoneAttachment3D" parent="bat/Skeleton3D" unique_id=1166406942]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09259703, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033732455, 0)
 bone_name = "body"
 bone_idx = 13
 
@@ -730,6 +732,11 @@ weapon = NodePath("../../../Weapon")
 process_mode = 4
 script = ExtResource("14_oqf38")
 metadata/_custom_type_script = "uid://ck8j7yqcrjs13"
+
+[node name="ScoreOnDeath" type="Node" parent="." unique_id=964167405]
+script = ExtResource("14_y43qf")
+score_granted = 200.0
+score_resource = ExtResource("15_75jht")
 
 [connection signal="death" from="EnemyHitPoints" to="SpawnOnDestroy" method="_on_destroyed"]
 [connection signal="body_entered" from="ContactDamage" to="ContactDamage" method="_on_body_entered"]

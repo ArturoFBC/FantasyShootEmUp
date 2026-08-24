@@ -1,8 +1,8 @@
 class_name ContactDamage
 extends Area3D
 
-@export var damage: float = 1  ## How much damage the shot does
-@export var destroy_on_contact: bool = true  ## How much damage the shot does
+@export var damage: float = 1
+@export var destroy_on_contact: bool = true
 
 @onready var my_hit_points: EnemyHitPoints = %EnemyHitPoints
 @onready var my_collision_shape: CollisionShape3D = %ContactCollision

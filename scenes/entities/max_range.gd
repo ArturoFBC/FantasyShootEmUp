@@ -15,7 +15,7 @@ func _ready() -> void:
 	current_distance_traveled = max_range
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if initialized == false:
 		previous_position = root_node.global_position
 		initialized = true

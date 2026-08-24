@@ -4,11 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b2cq8"]
 [ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/Moving.gd" id="4_urvlt"]
 [ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="4_xb4v1"]
+[ext_resource type="Script" uid="uid://bjb0xdbj6fllm" path="res://score/in_game_score.gd" id="5_urvlt"]
+[ext_resource type="Resource" uid="uid://bdka6rnyqlnj1" path="res://score/ScoreResource.tres" id="6_d4w6o"]
+[ext_resource type="Script" uid="uid://bhs6xsinxot0t" path="res://scenes/levels/manager/level_manager.gd" id="7_mbbpy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbbpy"]
 size = Vector3(2, 5, 20)
 
-[node name="Node3D" type="Node3D" unique_id=1917726981]
+[node name="Level" type="Node3D" unique_id=1917726981]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=454667799]
 transform = Transform3D(0.17364824, 0.7760391, 0.60630816, 0, -0.61566144, 0.7880108, 0.9848078, -0.13683668, -0.106908515, 0, 18.160557, 7)
@@ -50,3 +53,11 @@ size = 10.0
 [node name="Player" parent="MovingStage" unique_id=1936776764 instance=ExtResource("1_377w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076, 0, 4.1093)
 stage_limit = Vector2(10, 10)
+
+[node name="InGameScore" type="Node" parent="." unique_id=948519219]
+script = ExtResource("5_urvlt")
+score_resource = ExtResource("6_d4w6o")
+
+[node name="LevelManager" type="Node" parent="." unique_id=1190075507]
+script = ExtResource("7_mbbpy")
+metadata/_custom_type_script = "uid://bhs6xsinxot0t"

@@ -21,7 +21,7 @@ func _exit_tree() -> void:
 	my_hit_points.damage_received.disconnect(on_damage_received)
 
 
-func on_damage_received(damage: float, previous_hp: float, max_hp: float) -> void:
+func on_damage_received(_damage: float, _previous_hp: float, _max_hp: float) -> void:
 	var current_time = 0.0
 	while current_time < flash_time:
 		current_time += flash_interval

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ScoreManager" format=3 uid="uid://bdka6rnyqlnj1"]
+
+[ext_resource type="Script" uid="uid://cyx1n151crp18" path="res://score/score_resource.gd" id="1_r3v31"]
+
+[resource]
+script = ExtResource("1_r3v31")
+metadata/_custom_type_script = "uid://cyx1n151crp18"
