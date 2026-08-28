@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjygdakgsrr48" path="res://scenes/enemy/bat/small/bat_enemy_powerup.tscn" id="4_d7von"]
 [ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/bat/small/bat_enemy_small.tscn" id="5_cddtv"]
 [ext_resource type="PackedScene" uid="uid://duj25k1rt77ew" path="res://scenes/enemy/bat/strong/bat_enemy_strong.tscn" id="6_lahf7"]
+[ext_resource type="Script" uid="uid://q3pkr4wbm5y0" path="res://scenes/levels/end_of_level.gd" id="7_o0y7w"]
 
 [node name="ground" type="GridMap" unique_id=1322831311]
 mesh_library = ExtResource("1_8hml7")
@@ -32,7 +33,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="EnemySpawner2" type="VisibleOnScreenEnabler3D" parent="." unique_id=520333289]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.264156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.933223)
 aabb = AABB(-1, 0, -1, 2, 2, 2)
 enable_node_path = NodePath("")
 script = ExtResource("2_wfxq6")
@@ -68,7 +69,7 @@ script = ExtResource("3_o0y7w")
 enemy_scene = ExtResource("5_cddtv")
 
 [node name="EnemySpawner5" type="VisibleOnScreenEnabler3D" parent="." unique_id=2143596161]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.063, 0, -13.308385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.063, 0, -13.411541)
 aabb = AABB(-1, 0, -1, 2, 2, 2)
 enable_node_path = NodePath("")
 script = ExtResource("2_wfxq6")
@@ -404,6 +405,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9700854, 0, -0.12233353)
 script = ExtResource("3_o0y7w")
 enemy_scene = ExtResource("5_cddtv")
 
+[node name="EndOfLevel" type="VisibleOnScreenEnabler3D" parent="." unique_id=540658545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.644993)
+aabb = AABB(-1, 0, -1, 2, 2, 2)
+enable_node_path = NodePath("")
+script = ExtResource("7_o0y7w")
+
 [connection signal="screen_entered" from="EnemySpawner2" to="EnemySpawner2" method="_on_screen_entered"]
 [connection signal="screen_entered" from="EnemySpawner5" to="EnemySpawner5" method="_on_screen_entered"]
 [connection signal="screen_entered" from="EnemySpawner3" to="EnemySpawner3" method="_on_screen_entered"]
@@ -417,3 +424,4 @@ enemy_scene = ExtResource("5_cddtv")
 [connection signal="screen_entered" from="EnemySpawner14" to="EnemySpawner14" method="_on_screen_entered"]
 [connection signal="screen_entered" from="EnemySpawner12" to="EnemySpawner12" method="_on_screen_entered"]
 [connection signal="screen_entered" from="EnemySpawner13" to="EnemySpawner13" method="_on_screen_entered"]
+[connection signal="screen_entered" from="EndOfLevel" to="EndOfLevel" method="_on_screen_entered"]

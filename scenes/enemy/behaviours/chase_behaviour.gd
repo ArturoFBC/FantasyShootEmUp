@@ -3,16 +3,20 @@ extends BaseBehaviour
 
 @export var rotating_speed : float = 1.0
 @export var chase_speed: float = 2.0
+@export var target_detector: PlayerProximityCondition
 
 var target: Node3D
 
 
 func _start_internal() -> void :
 	if target == null:
-		target = get_node("/root/Node3D/MovingStage/Player")
+		target = target_detector.get_player()
 	
 	
 func _process(delta: float) -> void:
+		if target == null:
+			return 
+			
 		var target_position = target.global_position
 		var target_transform = root_node.global_transform.looking_at(target_position, Vector3.UP, true)
 		

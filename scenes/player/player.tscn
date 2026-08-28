@@ -7,14 +7,15 @@
 [ext_resource type="Script" uid="uid://detew5hkmufpl" path="res://scenes/entities/FlickerOnDamage.gd" id="7_0owmy"]
 [ext_resource type="PackedScene" uid="uid://cvnvesxbt5oal" path="res://scenes/player/weapons/shield/weapon_shield.tscn" id="7_5gtgg"]
 [ext_resource type="Script" uid="uid://dkyx4swivsowx" path="res://scenes/player/PowerUpCatcher.gd" id="7_qek5x"]
+[ext_resource type="Script" uid="uid://dtpp60dc34bb6" path="res://scenes/levels/notify_level_manager_on_death.gd" id="8_qek5x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0owmy"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=181546413]
+[node name="player" type="CharacterBody3D" unique_id=181546413]
 collision_mask = 26
 script = ExtResource("1_dovo2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=545999837]
+[node name="PlayerHitPoints" type="CollisionShape3D" parent="." unique_id=545999837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_0owmy")
 script = ExtResource("2_75vfm")
@@ -36,4 +37,8 @@ metadata/_custom_type_script = "uid://dkyx4swivsowx"
 
 [node name="weapon_shield" parent="." unique_id=138471633 instance=ExtResource("7_5gtgg")]
 
-[connection signal="health_picked_up" from="PowerUpCatcher" to="CollisionShape3D" method="_on_power_up_catcher_health_picked_up"]
+[node name="OnDeathNotifyLevelManager" type="Node" parent="." unique_id=1239444313]
+script = ExtResource("8_qek5x")
+
+[connection signal="death" from="PlayerHitPoints" to="OnDeathNotifyLevelManager" method="_on_player_hit_points_death"]
+[connection signal="health_picked_up" from="PowerUpCatcher" to="PlayerHitPoints" method="_on_power_up_catcher_health_picked_up"]

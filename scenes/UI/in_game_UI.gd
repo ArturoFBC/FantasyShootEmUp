@@ -27,3 +27,13 @@ func _on_level_state_changed(prev_state: LevelManager.LevelState, new_state: Lev
 		LevelManager.LevelState.InGame:
 			if prev_state == LevelManager.LevelState.Intro:
 				intro_screen.hide()
+		LevelManager.LevelState.Outro:
+			var victory_state = GlobalData.game_manager.get_victory_state()
+			match victory_state:
+				LevelManager.VictoryState.Victory:
+					victory_screen.show()
+				LevelManager.VictoryState.Defeat:
+					defeat_screen.show()
+				_:
+					push_error("Game hud has received the Outro state signal, but victory state is not Victory nor Defeat")
+					

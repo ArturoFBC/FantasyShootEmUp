@@ -154,3 +154,7 @@ func player_is_dead() -> void:
 
 func get_current_state() -> LevelState:
 	return current_state
+	
+
+func get_victory_state() -> VictoryState:
+	return victory
