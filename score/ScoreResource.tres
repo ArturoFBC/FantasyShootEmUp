@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ScoreManager" format=3 uid="uid://bdka6rnyqlnj1"]
+[gd_resource type="Resource" script_class="ScoreResource" format=3 uid="uid://bdka6rnyqlnj1"]
 
 [ext_resource type="Script" uid="uid://cyx1n151crp18" path="res://score/score_resource.gd" id="1_r3v31"]
 

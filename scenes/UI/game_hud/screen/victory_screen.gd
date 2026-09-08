@@ -6,11 +6,7 @@ extends Control
 @export var level_name_label: Label
 
 
-func _ready() -> void:
-	return
-	
-func _display() -> void:
-	return
-
-func _on_continue_button_pressed() -> void:
-	pass
+func _display(time: float, score: float) -> void:
+	time_label.text = "%4.2f" % time
+	score_label.text = "%d" % score
+	show()

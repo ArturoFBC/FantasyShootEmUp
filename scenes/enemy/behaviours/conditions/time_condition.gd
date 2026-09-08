@@ -5,4 +5,4 @@ extends BaseCondition
 
 func _start_internal() -> void:
 	await get_tree().create_timer(time).timeout
-	condition_met.emit()
+	_condition_met.emit()

@@ -3,7 +3,7 @@ extends Node
 
 var root_node: Node3D
 
-signal condition_met()
+signal _condition_met()
 
 
 func _initialize(root: Node3D) -> void:

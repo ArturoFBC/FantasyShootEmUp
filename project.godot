@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FantasyShootEmUp"
-run/main_scene="uid://dbr46lbyeodql"
+run/main_scene="uid://cshi5y6v83wlb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

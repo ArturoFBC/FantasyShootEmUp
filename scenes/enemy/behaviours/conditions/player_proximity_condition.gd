@@ -18,7 +18,7 @@ func _on_body_entered(body:Node3D) -> void:
 	for child in body.get_children():
 		if (child is PlayerHitPoints):
 			player = body
-			condition_met.emit()
+			_condition_met.emit()
 
 
 func get_player() -> Node3D:

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bps1elo6eyt1u"]
 
 [ext_resource type="MeshLibrary" uid="uid://b885lj7etd82e" path="res://graphics/levels/nature_tileset/nature_tileset.tres" id="1_8hml7"]
-[ext_resource type="Script" uid="uid://fu02pbelxq7y" path="res://scenes/enemy/spawner/EnemySpawner.gd" id="2_wfxq6"]
-[ext_resource type="Script" uid="uid://bxdmeqwp4dpob" path="res://scenes/enemy/spawner/EnemySpawnPoint.gd" id="3_o0y7w"]
+[ext_resource type="Script" uid="uid://fu02pbelxq7y" path="res://scenes/enemy/spawner/enemy_spawner.gd" id="2_wfxq6"]
+[ext_resource type="Script" uid="uid://bxdmeqwp4dpob" path="res://scenes/enemy/spawner/enemy_spawn_point.gd" id="3_o0y7w"]
 [ext_resource type="PackedScene" uid="uid://bjygdakgsrr48" path="res://scenes/enemy/bat/small/bat_enemy_powerup.tscn" id="4_d7von"]
 [ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/bat/small/bat_enemy_small.tscn" id="5_cddtv"]
 [ext_resource type="PackedScene" uid="uid://duj25k1rt77ew" path="res://scenes/enemy/bat/strong/bat_enemy_strong.tscn" id="6_lahf7"]

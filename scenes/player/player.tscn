@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w48vrq870125"]
 
 [ext_resource type="Script" uid="uid://dghp70csaxg6b" path="res://scenes/player/PlayerMovement.gd" id="1_dovo2"]
-[ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/PlayerHitPoints.gd" id="2_75vfm"]
+[ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/player_hit_points.gd" id="2_75vfm"]
 [ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="2_qek5x"]
 [ext_resource type="PackedScene" uid="uid://he25hbc34twf" path="res://scenes/player/weapons/sword/weapon_sword.tscn" id="6_0owmy"]
 [ext_resource type="Script" uid="uid://detew5hkmufpl" path="res://scenes/entities/FlickerOnDamage.gd" id="7_0owmy"]

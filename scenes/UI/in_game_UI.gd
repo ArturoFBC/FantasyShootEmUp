@@ -3,9 +3,12 @@ extends Node
 
 
 @export var intro_screen : Control 
-@export var victory_screen : Control
+@export var victory_screen : VictoryScreen
 @export var defeat_screen : Control 
-@export var pause_menu : Control 
+@export var pause_menu : Control
+
+@export var level_timer : LevelTimer
+@export var score_resource : ScoreResource
 
 
 func _ready() -> void:
@@ -31,7 +34,7 @@ func _on_level_state_changed(prev_state: LevelManager.LevelState, new_state: Lev
 			var victory_state = GlobalData.game_manager.get_victory_state()
 			match victory_state:
 				LevelManager.VictoryState.Victory:
-					victory_screen.show()
+					victory_screen._display(level_timer._get_time(), score_resource.get_score())
 				LevelManager.VictoryState.Defeat:
 					defeat_screen.show()
 				_:

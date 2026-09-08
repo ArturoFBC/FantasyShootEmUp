@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelDataResource" format=3 uid="uid://cf4hfdfc2bakq"]
+
+[ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="1_rfk1r"]
+[ext_resource type="Script" uid="uid://c8r46qx85sia6" path="res://scenes/levels/level_data_resources/level_data_resource.gd" id="1_rqy5x"]
+
+[resource]
+script = ExtResource("1_rqy5x")
+level_name = "Windglide Hills"
+level_scene = ExtResource("1_rfk1r")
+metadata/_custom_type_script = "uid://c8r46qx85sia6"

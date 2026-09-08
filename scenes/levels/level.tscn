@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bjb0xdbj6fllm" path="res://score/in_game_score.gd" id="5_urvlt"]
 [ext_resource type="Resource" uid="uid://bdka6rnyqlnj1" path="res://score/ScoreResource.tres" id="6_d4w6o"]
 [ext_resource type="Script" uid="uid://bhs6xsinxot0t" path="res://scenes/levels/manager/level_manager.gd" id="7_mbbpy"]
+[ext_resource type="Script" uid="uid://dbdeiv51lhen5" path="res://scenes/levels/level_timer.gd" id="9_icy5c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbbpy"]
 size = Vector3(2, 5, 20)
@@ -19,7 +20,9 @@ transform = Transform3D(0.17364824, 0.7760391, 0.60630816, 0, -0.61566144, 0.788
 shadow_enabled = true
 shadow_opacity = 0.7
 
-[node name="GameHud" parent="." unique_id=152822922 instance=ExtResource("1_b2cq8")]
+[node name="GameHud" parent="." unique_id=152822922 node_paths=PackedStringArray("level_timer") instance=ExtResource("1_b2cq8")]
+level_timer = NodePath("../LevelTimer")
+score_resource = ExtResource("6_d4w6o")
 
 [node name="Level1" parent="." unique_id=1322831311 instance=ExtResource("4_xb4v1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
@@ -67,3 +70,11 @@ score_resource = ExtResource("6_d4w6o")
 [node name="LevelManager" type="Node" parent="." unique_id=1190075507]
 script = ExtResource("7_mbbpy")
 metadata/_custom_type_script = "uid://bhs6xsinxot0t"
+
+[node name="LevelTimer" type="Node" parent="." unique_id=2083217392]
+script = ExtResource("9_icy5c")
+
+[node name="ActivateNodeOnGameState" type="Node" parent="LevelTimer" unique_id=976564950 node_paths=PackedStringArray("target")]
+process_mode = 3
+script = ExtResource("5_ouxo3")
+target = NodePath("..")

@@ -19,7 +19,7 @@ func _exit_tree() -> void:
 		GlobalData.game_manager.level_state_changed.disconnect(_on_level_state_changed)
 
 
-func _on_level_state_changed(prev_state: LevelManager.LevelState, new_state: LevelManager.LevelState) -> void:
+func _on_level_state_changed(_prev_state: LevelManager.LevelState, new_state: LevelManager.LevelState) -> void:
 	if new_state == expected_state:
 		if activation_or_deactivation:
 			target.process_mode = Node.PROCESS_MODE_INHERIT

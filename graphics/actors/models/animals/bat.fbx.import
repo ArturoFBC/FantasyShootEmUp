@@ -2109,7 +2109,7 @@ _subresources={
 "ears_1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
-"generate/shadow_meshes": 1,
+"generate/shadow_meshes": 2,
 "lods/normal_merge_angle": 90.0,
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "",
