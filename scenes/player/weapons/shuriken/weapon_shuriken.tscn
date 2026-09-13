@@ -10,11 +10,10 @@ radius = 1.0
 
 [node name="weapon_shuriken" type="Node3D" unique_id=1404329927 node_paths=PackedStringArray("collision", "shot_point_containers")]
 script = ExtResource("1_43ujk")
-detect_radious = 4.0
+detect_radious = 3.5
 collision = NodePath("Area3D/CollisionShape3D")
 shot_point_containers = [NodePath("Node3D")]
 type = 1
-fire_rate = 0.15
 projectile_scene = ExtResource("2_43ujk")
 damage = 0.5
 

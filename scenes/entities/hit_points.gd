@@ -22,7 +22,7 @@ func _take_damage(damage: float) -> void:
 
 
 func _damage_taken(_damage: float, _previous_hp: float) -> void:
-	return
+	pass
 
 
 func _die() -> void:

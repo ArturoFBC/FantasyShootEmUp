@@ -241,10 +241,10 @@ mesh = ExtResource("8_a58vf")
 [node name="knight" parent="." unique_id=1271805523 instance=ExtResource("9_trno2")]
 transform = Transform3D(0.9740313, 0, 0.22641332, 0, 1, 0, -0.22641332, 0, 0.9740313, 3.1049774, -0.40572762, -5.711265)
 
-[node name="root" parent="knight/character-female-e" parent_id_path=PackedInt32Array(1271805523, 1239449103) index="0" unique_id=1547306978]
+[node name="root" parent="knight/character-female-e" parent_id_path=PackedInt32Array(1271805523, 1924183092) index="0" unique_id=97624857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 
-[node name="Skeleton3D" parent="knight/character-female-e/root" index="0" unique_id=357808025]
+[node name="Skeleton3D" parent="knight/character-female-e/root" index="0" unique_id=1780304216]
 bones/0/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/2/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/5/rotation = Quaternion(0, 0, -0.3826835, 0.9238796)
@@ -253,19 +253,19 @@ bones/7/rotation = Quaternion(0, 0, 0.3826835, 0.9238796)
 [node name="barbarian" parent="." unique_id=942261959 instance=ExtResource("10_tgkt3")]
 transform = Transform3D(-0.22124216, 0, 0.9752189, 0, 1, 0, -0.9752189, 0, -0.22124216, 2.5852463, -0.41054654, -5.057647)
 
-[node name="root" parent="barbarian/character-male-b" parent_id_path=PackedInt32Array(942261959, 925800691) index="0" unique_id=1082097522]
+[node name="root" parent="barbarian/character-male-b" parent_id_path=PackedInt32Array(942261959, 295571499) index="0" unique_id=1595770055]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 
-[node name="Skeleton3D" parent="barbarian/character-male-b/root" index="0" unique_id=2011219174]
+[node name="Skeleton3D" parent="barbarian/character-male-b/root" index="0" unique_id=841553404]
 bones/0/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/2/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/5/rotation = Quaternion(0, 0, -0.3826835, 0.9238796)
 bones/7/rotation = Quaternion(0, 0, 0.3826835, 0.9238796)
 
-[node name="body-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="0" unique_id=2113192217]
+[node name="body-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="0" unique_id=1321741032]
 mesh = SubResource("ArrayMesh_4kwpi")
 
-[node name="head-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="1" unique_id=1424338842]
+[node name="head-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="1" unique_id=286880709]
 mesh = SubResource("ArrayMesh_w4ukm")
 
 [connection signal="pressed" from="Canvas/MarginContainer/VBoxContainer/MarginContainer2/Button" to="Canvas/MarginContainer/VBoxContainer/MarginContainer2/Button" method="_on_pressed"]

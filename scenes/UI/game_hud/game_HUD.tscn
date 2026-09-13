@@ -90,8 +90,8 @@ size_flags_vertical = 3
 [node name="TextureProgressBar" type="TextureProgressBar" parent="HealthManaBackground/VBoxContainer/HPBar" unique_id=1324037405]
 texture_filter = 1
 texture_repeat = 1
-clip_contents = true
 custom_minimum_size = Vector2(40, 18)
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,8 +116,8 @@ size_flags_vertical = 3
 [node name="TextureProgressBar" type="TextureProgressBar" parent="HealthManaBackground/VBoxContainer/MPBar" unique_id=1439236033]
 texture_filter = 1
 texture_repeat = 1
-clip_contents = true
 custom_minimum_size = Vector2(40, 18)
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
