@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvnvesxbt5oal"]
 
-[ext_resource type="Script" uid="uid://c8dgfk03yhy2f" path="res://scenes/player/weapons/shield/weapon_shield.gd" id="1_5jbpx"]
+[ext_resource type="Script" uid="uid://c8dgfk03yhy2f" path="res://scenes/player/player_weapon_aimed.gd" id="1_5jbpx"]
 [ext_resource type="PackedScene" uid="uid://cos6ol8i4u7e6" path="res://scenes/player/weapons/shield/projectiles/shield_projectile.tscn" id="2_0mv4y"]
 [ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="3_eo548"]
 [ext_resource type="AudioStream" uid="uid://r4k2ecuxfgip" path="res://audio/sounds/whoosh/WHOOSH_Wide_Slow_stereo.wav" id="4_0mv4y"]

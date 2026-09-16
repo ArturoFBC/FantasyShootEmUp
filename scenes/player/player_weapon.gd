@@ -60,8 +60,11 @@ func _shot_condition() -> bool:
 
 
 func _shot() -> void:
-	var points: Array = spawn_points_by_level[level]
-	for spawnPoint: PlayerProjectileSpawnPoint in points:
+	_shot_internal()
+
+
+func _shot_internal() -> void:
+	for spawnPoint: PlayerProjectileSpawnPoint in spawn_points_by_level[level]:
 		if spawnPoint.alternative > spawnPoint.alternative_offset:
 			spawnPoint.alternative_offset =+ 1
 		else:

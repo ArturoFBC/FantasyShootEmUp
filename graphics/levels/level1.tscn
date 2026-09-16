@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bxdmeqwp4dpob" path="res://scenes/enemy/spawner/enemy_spawn_point.gd" id="3_o0y7w"]
 [ext_resource type="PackedScene" uid="uid://bjygdakgsrr48" path="res://scenes/enemy/bat/small/bat_enemy_powerup.tscn" id="4_d7von"]
 [ext_resource type="PackedScene" uid="uid://c8rq0hmpbv4cv" path="res://scenes/enemy/bat/small/bat_enemy_small.tscn" id="5_cddtv"]
+[ext_resource type="PackedScene" uid="uid://cvbymodbr18qq" path="res://scenes/enemy/bat/small/bat_enemy_powerup_secondary.tscn" id="5_d7von"]
 [ext_resource type="PackedScene" uid="uid://duj25k1rt77ew" path="res://scenes/enemy/bat/strong/bat_enemy_strong.tscn" id="6_lahf7"]
 [ext_resource type="Script" uid="uid://q3pkr4wbm5y0" path="res://scenes/levels/end_of_level.gd" id="7_o0y7w"]
 
@@ -149,7 +150,7 @@ script = ExtResource("2_wfxq6")
 [node name="Marker3D" type="Marker3D" parent="EnemySpawner6" unique_id=155725699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56557095, 0, -0.5278702)
 script = ExtResource("3_o0y7w")
-enemy_scene = ExtResource("4_d7von")
+enemy_scene = ExtResource("5_d7von")
 
 [node name="EnemySpawner7" type="VisibleOnScreenEnabler3D" parent="." unique_id=1692853944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.666138)

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cyaqg4hcfmdag"]
+
+[ext_resource type="Script" uid="uid://b3ef3g7s7yevg" path="res://scenes/entities/power_ups/power_up.gd" id="1_pm5mo"]
+[ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="2_7erim"]
+[ext_resource type="ArrayMesh" uid="uid://c8dvbbacfxh71" path="res://graphics/props/shuriken.res" id="3_7erim"]
+[ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="3_ifdjo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r5aot"]
+
+[sub_resource type="Gradient" id="Gradient_xsvdn"]
+offsets = PackedFloat32Array(0.8848315, 0.89325845, 0.98876405, 1)
+colors = PackedColorArray(0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7vwvb"]
+gradient = SubResource("Gradient_xsvdn")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7na77"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_7vwvb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_yrsgr"]
+material = SubResource("StandardMaterial3D_7na77")
+size = Vector2(0.65, 0.65)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7erim"]
+shading_mode = 0
+albedo_color = Color(0.859582, 0.6726029, 0, 1)
+disable_receive_shadows = true
+
+[node name="PowerUpSecondary" type="Area3D" unique_id=1360659661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.018138885)
+collision_layer = 16
+script = ExtResource("1_pm5mo")
+type = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=163909734]
+transform = Transform3D(0.9999958, -0.0012364835, 0.0026112502, 0.001236365, 0.9999993, 4.699657e-05, -0.002611306, -4.376983e-05, 0.99999666, 0, 0, 0)
+shape = SubResource("SphereShape3D_r5aot")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1011143850]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = SubResource("QuadMesh_yrsgr")
+
+[node name="DestroyOutOfBounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=639817030]
+script = ExtResource("2_7erim")
+metadata/_custom_type_script = "uid://psiw23yjj3bt"
+
+[node name="shuriken" type="MeshInstance3D" parent="." unique_id=27253308]
+transform = Transform3D(0.5, 0, 0, 0, 0.3826472, -0.32184032, 0, 0.32184032, 0.3826472, -0.02773583, 0.1678934, 0.039132144)
+cast_shadow = 0
+mesh = ExtResource("3_7erim")
+surface_material_override/0 = SubResource("StandardMaterial3D_7erim")
+
+[node name="Spin" type="Node" parent="shuriken" unique_id=1590521250 node_paths=PackedStringArray("target")]
+script = ExtResource("3_ifdjo")
+speed = 3.0
+target = NodePath("..")

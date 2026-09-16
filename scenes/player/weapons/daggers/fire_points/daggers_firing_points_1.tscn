@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhrimn7ibyyu8"]
+
+[ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="1_8c6rr"]
+
+[node name="daggers_firing_points_1" type="Node3D" unique_id=1040272552]
+
+[node name="ShootPoint0" type="Marker3D" parent="." unique_id=1705716249]
+transform = Transform3D(0.99619454, 0, -0.08715572, 0, 1, 0, 0.08715572, 0, 0.99619454, -0.2, 0, 0)
+script = ExtResource("1_8c6rr")
+projectile_level = 2
+
+[node name="ShootPoint1" type="Marker3D" parent="." unique_id=433183537]
+script = ExtResource("1_8c6rr")
+projectile_level = 2
+
+[node name="ShootPoint2" type="Marker3D" parent="." unique_id=1449366584]
+transform = Transform3D(0.9961946, 0, 0.08715573, 0, 1, 0, -0.08715573, 0, 0.9961946, 0.2, 0, 0)
+script = ExtResource("1_8c6rr")
+projectile_level = 2
+
+[node name="ShootPoint4" type="Marker3D" parent="." unique_id=352614909]
+transform = Transform3D(0.98480725, 0, -0.17364809, 0, 1, 0, 0.17364809, 0, 0.98480725, -0.4, 0, -0.05)
+script = ExtResource("1_8c6rr")
+
+[node name="ShootPoint3" type="Marker3D" parent="." unique_id=768060672]
+transform = Transform3D(0.9848074, 0, 0.17364812, 0, 1, 0, -0.17364812, 0, 0.9848074, 0.4, 0, -0.05)
+script = ExtResource("1_8c6rr")

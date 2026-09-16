@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cvbymodbr18qq"]
+
+[ext_resource type="PackedScene" uid="uid://bjygdakgsrr48" path="res://scenes/enemy/bat/small/bat_enemy_powerup.tscn" id="1_kk1tl"]
+[ext_resource type="PackedScene" uid="uid://cyaqg4hcfmdag" path="res://scenes/entities/power_ups/power_up_secondary.tscn" id="2_d46b4"]
+
+[node name="BatEnemy" unique_id=23828234 instance=ExtResource("1_kk1tl")]
+
+[node name="Skeleton3D" parent="bat" parent_id_path=PackedInt32Array(1788618934) index="0" unique_id=1870482832]
+bones/0/position = Vector3(0, 0.0058348775, 0)
+bones/1/rotation = Quaternion(-0.08996307, 0, 0, 0.99594516)
+bones/3/rotation = Quaternion(-0.16893397, 0, 0, 0.9856274)
+bones/7/rotation = Quaternion(0, 0, -0.15544146, 0.9878452)
+bones/9/rotation = Quaternion(0, 0, 0.12151182, 0.99259007)
+
+[node name="ears_1" parent="bat/Skeleton3D" index="0" unique_id=2034320883]
+transform = Transform3D(1, 0, 0, 0, 0.9838133, 0.17919655, 0, -0.17919655, 0.9838133, 0, 0.010576725, 0.25249383)
+
+[node name="tail_1" parent="bat/Skeleton3D" index="1" unique_id=1179454785]
+transform = Transform3D(1, 0, 0, 0, 0.94292265, 0.33301187, 0, -0.33301187, 0.94292265, 0, 0.18184763, 0.026927948)
+
+[node name="leg-front-left" parent="bat/Skeleton3D" index="2" unique_id=1144992117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0058348775, 0)
+
+[node name="wing-left" parent="bat/Skeleton3D" index="3" unique_id=1118424376]
+transform = Transform3D(0.9516759, 0.30710417, 0, -0.30710417, 0.9516759, 0, 0, 0, 1, 0.112463355, 0.1140216, 0)
+
+[node name="wing-right" parent="bat/Skeleton3D" index="4" unique_id=753082881]
+transform = Transform3D(0.9704698, -0.24122281, 0, 0.24122281, 0.9704698, 0, 0, 0, 1, -0.15058774, 0.085335255, 0)
+
+[node name="leg-front-right" parent="bat/Skeleton3D" index="5" unique_id=1732905646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0058348775, 0)
+
+[node name="body" parent="bat/Skeleton3D" index="6" unique_id=43111979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0058348775, 0)
+
+[node name="Node" parent="." index="6" unique_id=1095583799]
+scene_to_spawn = ExtResource("2_d46b4")

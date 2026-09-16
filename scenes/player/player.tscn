@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://cevj58ll7fjbg" path="res://scenes/player/player_hit_points.gd" id="2_75vfm"]
 [ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="2_qek5x"]
 [ext_resource type="PackedScene" uid="uid://he25hbc34twf" path="res://scenes/player/weapons/sword/weapon_sword.tscn" id="6_0owmy"]
-[ext_resource type="PackedScene" uid="uid://ceb6geskr2ndl" path="res://scenes/player/weapons/shuriken/weapon_shuriken.tscn" id="6_qek5x"]
 [ext_resource type="Script" uid="uid://detew5hkmufpl" path="res://scenes/entities/FlickerOnDamage.gd" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://dkyx4swivsowx" path="res://scenes/player/PowerUpCatcher.gd" id="7_qek5x"]
+[ext_resource type="PackedScene" uid="uid://ctlfrm033sf1e" path="res://scenes/player/weapons/daggers/weapon_daggers.tscn" id="8_5gtgg"]
 [ext_resource type="Script" uid="uid://dtpp60dc34bb6" path="res://scenes/levels/notify_level_manager_on_death.gd" id="8_qek5x"]
+[ext_resource type="PackedScene" uid="uid://ytx5cqoxj8up" path="res://scenes/player/weapons/daggers/projectiles/dagger_projectile_0.tscn" id="9_h17s1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0owmy"]
 
@@ -31,14 +32,15 @@ transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1
 
 [node name="WeaponSword" parent="." unique_id=986901657 instance=ExtResource("6_0owmy")]
 
-[node name="weapon_shuriken" parent="." unique_id=1404329927 instance=ExtResource("6_qek5x")]
-
 [node name="PowerUpCatcher" type="Node" parent="." unique_id=483355448]
 script = ExtResource("7_qek5x")
 metadata/_custom_type_script = "uid://dkyx4swivsowx"
 
 [node name="OnDeathNotifyLevelManager" type="Node" parent="." unique_id=1239444313]
 script = ExtResource("8_qek5x")
+
+[node name="WeaponDaggers" parent="." unique_id=1288071319 instance=ExtResource("8_5gtgg")]
+projectile_scene = ExtResource("9_h17s1")
 
 [connection signal="death" from="PlayerHitPoints" to="OnDeathNotifyLevelManager" method="_on_player_hit_points_death"]
 [connection signal="health_picked_up" from="PowerUpCatcher" to="PlayerHitPoints" method="_on_power_up_catcher_health_picked_up"]
