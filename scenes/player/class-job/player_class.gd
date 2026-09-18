@@ -1,3 +1,4 @@
+class_name PlayerClass
 extends Resource
 
 @export var graphic: PackedScene

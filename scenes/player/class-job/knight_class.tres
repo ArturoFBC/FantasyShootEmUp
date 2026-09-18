@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://ch4lk1s6mri0o"]
+
+[ext_resource type="Script" uid="uid://xrhmqwlg8ygk" path="res://scenes/player/class-job/player_class.gd" id="1_8dfyy"]
+[ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="1_e4o01"]
+[ext_resource type="PackedScene" uid="uid://he25hbc34twf" path="res://scenes/player/weapons/sword/weapon_sword.tscn" id="2_rs3yr"]
+[ext_resource type="PackedScene" uid="uid://cvnvesxbt5oal" path="res://scenes/player/weapons/shield/weapon_shield.tscn" id="3_ufg7r"]
+[ext_resource type="PackedScene" uid="uid://ctlfrm033sf1e" path="res://scenes/player/weapons/daggers/weapon_daggers.tscn" id="4_hgftv"]
+
+[resource]
+script = ExtResource("1_8dfyy")
+graphic = ExtResource("1_e4o01")
+main_weapons = Array[PackedScene]([ExtResource("2_rs3yr")])
+off_weapons = Array[PackedScene]([ExtResource("3_ufg7r"), ExtResource("4_hgftv")])
+metadata/_custom_type_script = "uid://xrhmqwlg8ygk"
