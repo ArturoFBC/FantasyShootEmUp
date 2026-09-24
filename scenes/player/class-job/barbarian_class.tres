@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://dle68spjym0kk"]
+
+[ext_resource type="Script" uid="uid://xrhmqwlg8ygk" path="res://scenes/player/class-job/player_class.gd" id="1_0busv"]
+[ext_resource type="PackedScene" uid="uid://dqvnp2ba4sb6f" path="res://graphics/actors/models/barbarian.tscn" id="1_dkq5c"]
+[ext_resource type="PackedScene" uid="uid://cni0fwv7swth" path="res://scenes/player/weapons/axe/weapon_axe.tscn" id="2_5wdbd"]
+[ext_resource type="PackedScene" uid="uid://ctlfrm033sf1e" path="res://scenes/player/weapons/daggers/weapon_daggers.tscn" id="3_rhyfm"]
+
+[resource]
+script = ExtResource("1_0busv")
+graphic = ExtResource("1_dkq5c")
+main_weapons = Array[PackedScene]([ExtResource("2_5wdbd")])
+off_weapons = Array[PackedScene]([ExtResource("3_rhyfm")])
+metadata/_custom_type_script = "uid://b6ink8vndmrsy"

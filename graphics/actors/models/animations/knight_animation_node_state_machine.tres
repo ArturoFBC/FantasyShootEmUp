@@ -1,14 +1,112 @@
 [gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bh12nv66pscgq"]
 
+[ext_resource type="Curve" uid="uid://1wo5fpm1cuul" path="res://graphics/common_resources/smooth_step.tres" id="1_0box1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kac0a"]
+animation = &"root|root|attack-melee-right|Animation Base Layer"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6xjow"]
+animation = &"root|root|crouch|Animation Base Layer"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_srhe7"]
+animation = &"root|root|holding-right|Animation Base Layer"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0box1"]
+animation = &"root|root|idle|Animation Base Layer"
+advance_on_start = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8j15c"]
+animation = &"root|root|sit|Animation Base Layer"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2u4wt"]
 animation = &"root|root|walk|Animation Base Layer"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0box1"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kac0a"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_srhe7"]
+xfade_time = 0.1
+xfade_curve = ExtResource("1_0box1")
+advance_mode = 2
+advance_expression = "velocity"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6xjow"]
+xfade_time = 0.1
+xfade_curve = ExtResource("1_0box1")
+switch_mode = 1
+advance_mode = 2
+advance_expression = "!velocity"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8j15c"]
+xfade_time = 0.1
+xfade_curve = ExtResource("1_0box1")
+advance_mode = 2
+advance_expression = "attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44d37"]
+xfade_time = 0.1
+xfade_curve = ExtResource("1_0box1")
+switch_mode = 2
+advance_mode = 2
+advance_expression = "!attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iligb"]
+xfade_time = 0.2
+xfade_curve = ExtResource("1_0box1")
+advance_mode = 2
+advance_expression = "hold_right_hand"
+
+[sub_resource type="Curve" id="Curve_wo2nr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0osst"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_wo2nr")
+advance_mode = 2
+advance_expression = "!hold_right_hand"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_10uo2"]
+xfade_time = 0.2
+xfade_curve = ExtResource("1_0box1")
+switch_mode = 1
+advance_mode = 2
+advance_expression = "sit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0e5lj"]
+xfade_time = 0.2
+xfade_curve = ExtResource("1_0box1")
+switch_mode = 2
+advance_mode = 2
+advance_expression = "!sit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5k6r0"]
+xfade_time = 0.2
+xfade_curve = ExtResource("1_0box1")
+advance_mode = 2
+advance_expression = "bow_down"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qntaw"]
+xfade_time = 0.2
+xfade_curve = ExtResource("1_0box1")
+switch_mode = 1
+advance_mode = 2
+advance_expression = "!bow_down"
+
 [resource]
-states/Start/position = Vector2(228, 112)
-"states/root|root|walk|Animation Base Layer/node" = SubResource("AnimationNodeAnimation_2u4wt")
-"states/root|root|walk|Animation Base Layer/position" = Vector2(566.0139, 58)
-transitions = ["Start", "root|root|walk|Animation Base Layer", SubResource("AnimationNodeStateMachineTransition_0box1")]
+states/End/position = Vector2(1096, 125)
+states/Start/position = Vector2(182, 125)
+states/attack-melee-right/node = SubResource("AnimationNodeAnimation_kac0a")
+states/attack-melee-right/position = Vector2(453.01392, 240)
+states/crouch/node = SubResource("AnimationNodeAnimation_6xjow")
+states/crouch/position = Vector2(698.0139, 217)
+states/holding-right/node = SubResource("AnimationNodeAnimation_srhe7")
+states/holding-right/position = Vector2(719.0139, 30)
+states/idle/node = SubResource("AnimationNodeAnimation_0box1")
+states/idle/position = Vector2(453.01392, 125)
+states/sit/node = SubResource("AnimationNodeAnimation_8j15c")
+states/sit/position = Vector2(825.0139, 125)
+states/walk/node = SubResource("AnimationNodeAnimation_2u4wt")
+states/walk/position = Vector2(453.01392, 30)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kac0a"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_srhe7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_6xjow"), "idle", "attack-melee-right", SubResource("AnimationNodeStateMachineTransition_8j15c"), "attack-melee-right", "idle", SubResource("AnimationNodeStateMachineTransition_44d37"), "idle", "holding-right", SubResource("AnimationNodeStateMachineTransition_iligb"), "holding-right", "idle", SubResource("AnimationNodeStateMachineTransition_0osst"), "idle", "sit", SubResource("AnimationNodeStateMachineTransition_10uo2"), "sit", "idle", SubResource("AnimationNodeStateMachineTransition_0e5lj"), "idle", "crouch", SubResource("AnimationNodeStateMachineTransition_5k6r0"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_qntaw")]
 graph_offset = Vector2(-232.98605, 0)

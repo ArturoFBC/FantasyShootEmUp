@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdj3kya5vlqb"
-path="res://.godot/imported/barbarian.fbx-f0691d25a11c226d3b55f4dcfb716003.scn"
+uid="uid://c301o5ymqa0j2"
+path="res://.godot/imported/Untitled.fbx-accbfc19dedd63744f6fd1b973d4f50b.scn"
 
 [deps]
 
-source_file="res://graphics/actors/models/from minicharaters/barbarian.fbx"
-dest_files=["res://.godot/imported/barbarian.fbx-f0691d25a11c226d3b55f4dcfb716003.scn"]
+source_file="res://graphics/actors/models/from minicharaters/Untitled.fbx"
+dest_files=["res://.godot/imported/Untitled.fbx-accbfc19dedd63744f6fd1b973d4f50b.scn"]
 
 [params]
 

@@ -1,8 +1,167 @@
 [gd_scene format=3 uid="uid://cqnynquhpgb7w"]
 
 [ext_resource type="MeshLibrary" uid="uid://das5fpyxaqdt2" path="res://graphics/levels/dungeon/dungeon_tileset.tres" id="1_6qhff"]
+[ext_resource type="PackedScene" uid="uid://chv2u3hb55ksa" path="res://graphics/levels/dungeon/models/gate.fbx" id="2_1gcv8"]
+[ext_resource type="PackedScene" uid="uid://dilh8fqjrwkfy" path="res://graphics/levels/dungeon/models/banner.fbx" id="3_bmol8"]
+[ext_resource type="PackedScene" uid="uid://dgu8465qsdc3c" path="res://graphics/levels/dungeon/models/column.fbx" id="4_skkxd"]
+[ext_resource type="PackedScene" uid="uid://byj72oyauje1h" path="res://graphics/levels/dungeon/models/wood-structure.fbx" id="5_pv64f"]
+[ext_resource type="PackedScene" uid="uid://bwiofw5xu75fi" path="res://graphics/levels/dungeon/models/barrel.fbx" id="6_b4a5m"]
+[ext_resource type="PackedScene" uid="uid://bmi5o4upx4htd" path="res://graphics/levels/dungeon/models/table.fbx" id="7_lubwm"]
+[ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="7_np358"]
+[ext_resource type="PackedScene" uid="uid://c47vdiyakuako" path="res://graphics/props/weapon-sword.fbx" id="8_skkxd"]
+[ext_resource type="PackedScene" uid="uid://b0ijh2xiu1y1a" path="res://graphics/levels/dungeon/models/chair.fbx" id="8_wmt0g"]
+[ext_resource type="PackedScene" uid="uid://dqvnp2ba4sb6f" path="res://graphics/actors/models/barbarian.tscn" id="9_pv64f"]
+[ext_resource type="PackedScene" uid="uid://c68a415dlhvwx" path="res://graphics/props/tool-axe.fbx" id="10_pv64f"]
+[ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="13_lubwm"]
+[ext_resource type="Script" uid="uid://clob8jpvux7mt" path="res://scenes/UI/screens/player_select/player_select_screen.gd" id="13_wmt0g"]
+[ext_resource type="Resource" uid="uid://coqc0rx3dkvc6" path="res://scenes/player/class-job/class_list.tres" id="14_7xgo4"]
+[ext_resource type="PackedScene" uid="uid://dbr46lbyeodql" path="res://scenes/levels/level.tscn" id="15_ewxmy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8g6yy"]
+radius = 0.4
 
 [node name="PlayerSelect" type="Node3D" unique_id=891971183]
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1257710050]
+transform = Transform3D(0.864224, 0.23996745, -0.44219062, -0.0074470844, 0.8849245, 0.465675, 0.5030522, -0.39915445, 0.76656, 1.1566162, 2.2901917, -0.01626873)
+fov = 50.0
+
 [node name="GridMap" type="GridMap" parent="." unique_id=553847748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh_library = ExtResource("1_6qhff")
+cell_scale = 2.0
+data = {
+"cells": PackedInt32Array(0, 65535, 6, 1, 65535, 5, 65535, 65534, 5, 0, 65534, 655365, 65535, 65535, 655366, 1, 65534, 655366, 0, 65533, 655366, 2, 65535, 655365, 65535, 0, 655365, 0, 0, 655366, 1, 0, 655366, 65535, 65533, 655366, 2, 65534, 655366, 2, 65533, 5, 1, 65533, 1048581, 2, 0, 1048581, 65534, 65534, 1048582, 65534, 65535, 1048582, 65534, 0, 1048582, 3, 65535, 1048582, 3, 65534, 1048582, 3, 65533, 1048582, 2, 65532, 1048582, 1, 65532, 5, 3, 0, 5, 0, 65532, 6, 65535, 65532, 1441797, 65534, 65533, 1441797, 1, 1, 1441797, 0, 1, 1441797, 65534, 1, 1441797, 65535, 1, 1441798, 2, 1, 1441798, 3, 1, 1441798, 3, 65532, 1441798, 65534, 65532, 1441798, 65535, 65531, 1441805, 0, 65531, 13, 1, 65531, 655372, 2, 65531, 1441805, 3, 65531, 1441805, 65534, 65531, 1441805, 4, 65532, 1441805, 4, 65533, 1441805, 4, 65534, 1441805, 4, 65535, 1048588, 4, 0, 1441805, 4, 1, 1441805)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Scenery" type="Node3D" parent="." unique_id=2095753163]
+
+[node name="gate2" parent="Scenery" unique_id=430847158 instance=ExtResource("2_1gcv8")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 9, 0, -1)
+
+[node name="banner" parent="Scenery" unique_id=902857742 instance=ExtResource("3_bmol8")]
+transform = Transform3D(-1.9999993, 0, 0.0016477741, 0, 2, 0, -0.0016477741, 0, -1.9999993, 5, -0.21740723, -9)
+
+[node name="column" parent="Scenery" unique_id=685643731 instance=ExtResource("4_skkxd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.63830566, 0, -5)
+
+[node name="gate" parent="Scenery" unique_id=794814414 instance=ExtResource("2_1gcv8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3, 0, -9)
+
+[node name="wood-structure" parent="Scenery" unique_id=2032729665 instance=ExtResource("5_pv64f")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.992798, -3.0517578e-05, -5.2386475)
+
+[node name="barrel2" parent="Scenery" unique_id=1376896620 instance=ExtResource("6_b4a5m")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.9906006, -0.14154053, -1.9515381)
+
+[node name="barrel" parent="Scenery" unique_id=1921247638 instance=ExtResource("6_b4a5m")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.6065063, 0, -5.166504)
+
+[node name="table" parent="Scenery" unique_id=2017187280 instance=ExtResource("7_lubwm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.95666504, 0.033721924, -7.367831)
+
+[node name="chair" parent="Scenery" unique_id=1162542851 instance=ExtResource("8_wmt0g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.9901123, -0.025817871, -4.416443)
+
+[node name="Knight" parent="." unique_id=890844839 instance=ExtResource("7_np358")]
+transform = Transform3D(0.9506525, 0, -1.7596192, 0, 2, 0, 1.7596192, 0, 0.9506525, 3.7598653, 0, -2.73312)
+
+[node name="Skeleton3D" parent="Knight/character-female-e/root" parent_id_path=PackedInt32Array(890844839, 2071560981) index="0" unique_id=220821928]
+bones/4/rotation = Quaternion(-0.040167008, 0, 0, 0.9991931)
+bones/5/rotation = Quaternion(0, 0, -0.26881838, 0.9631909)
+bones/7/rotation = Quaternion(0, 0, 0.26881847, 0.96319085)
+bones/9/rotation = Quaternion(0, 0.04016701, 0, 0.9991931)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Knight/character-female-e/root/Skeleton3D" index="0" unique_id=551563881]
+transform = Transform3D(0.8554733, -0.517847, 0, 0.51617604, 0.85271287, 0.08026917, -0.04156715, -0.068668135, 0.99677324, -0.09989677, 0.28831333, -0.026237123)
+bone_name = "arm-right"
+bone_idx = 7
+
+[node name="weapon-sword" parent="Knight/character-female-e/root/Skeleton3D/BoneAttachment3D" unique_id=232662410 instance=ExtResource("8_skkxd")]
+transform = Transform3D(0.6626198, 0, 0.7489556, -7.450581e-09, 0.9999999, -5.9604645e-08, -0.74895555, -1.4901161e-08, 0.66261995, -0.21279818, 0.08017963, 0.05146098)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Knight" unique_id=408910411]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight/AnimatableBody3D" unique_id=502252084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("SphereShape3D_8g6yy")
+
+[node name="Barbarian" parent="." unique_id=1775985963 instance=ExtResource("9_pv64f")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.2520752, 0, -3.6501465)
+
+[node name="Skeleton3D" parent="Barbarian/character-female-e/root" parent_id_path=PackedInt32Array(1775985963, 2071560981) index="0" unique_id=220821928]
+bones/4/rotation = Quaternion(-0.040167008, 0, 0, 0.9991931)
+bones/5/rotation = Quaternion(0, 0, -0.26881838, 0.9631909)
+bones/7/rotation = Quaternion(0, 0, 0.26881847, 0.96319085)
+bones/9/rotation = Quaternion(0, 0.04016701, 0, 0.9991931)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Barbarian/character-female-e/root/Skeleton3D" index="0" unique_id=1839543202]
+transform = Transform3D(0.8554733, -0.517847, 0, 0.51617604, 0.85271287, 0.08026917, -0.04156715, -0.068668135, 0.99677324, -0.09989677, 0.28831333, -0.026237123)
+bone_name = "arm-right"
+bone_idx = 7
+
+[node name="tool-axe" parent="Barbarian/character-female-e/root/Skeleton3D/BoneAttachment3D" unique_id=757976849 instance=ExtResource("10_pv64f")]
+transform = Transform3D(2.4620194, 0, 0.43412045, 0, 2.5, 0, -0.43412045, 0, 2.4620194, -0.228, -0.185, 0.08)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Barbarian" unique_id=1231094791]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barbarian/AnimatableBody3D" unique_id=1856250765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("SphereShape3D_8g6yy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=185918534]
+script = ExtResource("13_wmt0g")
+class_list = ExtResource("14_7xgo4")
+new_scene = ExtResource("15_ewxmy")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1222848761]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1183353400]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Knight" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1368682948]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("13_lubwm")
+text = "Knight"
+
+[node name="Barbarian" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1012729199]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("13_lubwm")
+text = "Barbarian"
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1234622136]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 10, 0)
+area_range = 10.0
+area_size = Vector2(10, 10)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=149107893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7493286, 2.0346222, -1.8397217)
+light_color = Color(1, 0.92941177, 0.79607844, 1)
+light_indirect_energy = 0.5
+omni_range = 10.0
+omni_attenuation = 1.5
+omni_shadow_mode = 0
+
+[connection signal="button_up" from="CanvasLayer/MarginContainer/VBoxContainer/Knight" to="CanvasLayer" method="_on_knight_button_up"]
+[connection signal="button_up" from="CanvasLayer/MarginContainer/VBoxContainer/Barbarian" to="CanvasLayer" method="_on_barbarian_button_up"]
+
+[editable path="Knight"]
+[editable path="Barbarian"]

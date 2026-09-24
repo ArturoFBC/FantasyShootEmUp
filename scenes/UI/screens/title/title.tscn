@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bvxi33xxxd3sr" path="res://scenes/UI/screens/title/styles/title_terrain.tscn" id="1_p14e8"]
 [ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="4_4kwpi"]
+[ext_resource type="PackedScene" uid="uid://cqnynquhpgb7w" path="res://scenes/player_select.tscn" id="4_tgkt3"]
 [ext_resource type="Script" uid="uid://cc4ijemj5tak8" path="res://scenes/UI/screens/title/change_scene.gd" id="5_yvu5c"]
-[ext_resource type="PackedScene" uid="uid://dbr46lbyeodql" path="res://scenes/levels/level.tscn" id="6_trno2"]
 [ext_resource type="Texture2D" uid="uid://eiu3iv40r40i" path="res://graphics/actors/models/from minicharaters/Textures/colormap.png" id="6_w4ukm"]
 [ext_resource type="PackedScene" uid="uid://c68a415dlhvwx" path="res://graphics/props/tool-axe.fbx" id="7_r7pwm"]
 [ext_resource type="Script" uid="uid://kuac2juairvm" path="res://scenes/UI/screens/title/quitting.gd" id="7_tgkt3"]
@@ -189,7 +189,7 @@ theme = ExtResource("4_4kwpi")
 theme_override_constants/h_separation = 10
 text = "Start game"
 script = ExtResource("5_yvu5c")
-new_scene = ExtResource("6_trno2")
+new_scene = ExtResource("4_tgkt3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Canvas/MarginContainer/VBoxContainer" unique_id=260231676]
 layout_mode = 2
@@ -241,10 +241,10 @@ mesh = ExtResource("8_a58vf")
 [node name="knight" parent="." unique_id=1271805523 instance=ExtResource("9_trno2")]
 transform = Transform3D(0.9740313, 0, 0.22641332, 0, 1, 0, -0.22641332, 0, 0.9740313, 3.1049774, -0.40572762, -5.711265)
 
-[node name="root" parent="knight/character-female-e" parent_id_path=PackedInt32Array(1271805523, 1924183092) index="0" unique_id=97624857]
+[node name="root" parent="knight/character-female-e" parent_id_path=PackedInt32Array(1271805523, 1081156816) index="0" unique_id=858149575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 
-[node name="Skeleton3D" parent="knight/character-female-e/root" index="0" unique_id=1780304216]
+[node name="Skeleton3D" parent="knight/character-female-e/root" index="0" unique_id=1944500266]
 bones/0/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/2/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/5/rotation = Quaternion(0, 0, -0.3826835, 0.9238796)
@@ -253,19 +253,19 @@ bones/7/rotation = Quaternion(0, 0, 0.3826835, 0.9238796)
 [node name="barbarian" parent="." unique_id=942261959 instance=ExtResource("10_tgkt3")]
 transform = Transform3D(-0.22124216, 0, 0.9752189, 0, 1, 0, -0.9752189, 0, -0.22124216, 2.5852463, -0.41054654, -5.057647)
 
-[node name="root" parent="barbarian/character-male-b" parent_id_path=PackedInt32Array(942261959, 295571499) index="0" unique_id=1595770055]
+[node name="root" parent="barbarian/character-male-b" parent_id_path=PackedInt32Array(942261959, 1011707126) index="0" unique_id=1799218298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 
-[node name="Skeleton3D" parent="barbarian/character-male-b/root" index="0" unique_id=841553404]
+[node name="Skeleton3D" parent="barbarian/character-male-b/root" index="0" unique_id=1707790393]
 bones/0/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/2/rotation = Quaternion(-0.6087614, 0, 0, 0.7933533)
 bones/5/rotation = Quaternion(0, 0, -0.3826835, 0.9238796)
 bones/7/rotation = Quaternion(0, 0, 0.3826835, 0.9238796)
 
-[node name="body-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="0" unique_id=1321741032]
+[node name="body-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="0" unique_id=1382350963]
 mesh = SubResource("ArrayMesh_4kwpi")
 
-[node name="head-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="1" unique_id=286880709]
+[node name="head-mesh" parent="barbarian/character-male-b/root/Skeleton3D" index="1" unique_id=564879267]
 mesh = SubResource("ArrayMesh_w4ukm")
 
 [connection signal="pressed" from="Canvas/MarginContainer/VBoxContainer/MarginContainer2/Button" to="Canvas/MarginContainer/VBoxContainer/MarginContainer2/Button" method="_on_pressed"]
