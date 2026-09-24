@@ -13,7 +13,7 @@ func _ready() -> void:
 			if sibling is HitPoints:
 				my_hit_points = sibling
 				break
-				
+	
 	my_hit_points.damage_received.connect(on_damage_received)
 
 

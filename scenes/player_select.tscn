@@ -68,13 +68,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.9901123, -0.025817871, -4.4
 transform = Transform3D(0.9506525, 0, -1.7596192, 0, 2, 0, 1.7596192, 0, 0.9506525, 3.7598653, 0, -2.73312)
 
 [node name="Skeleton3D" parent="Knight/character-female-e/root" parent_id_path=PackedInt32Array(890844839, 2071560981) index="0" unique_id=220821928]
-bones/4/rotation = Quaternion(-0.040167008, 0, 0, 0.9991931)
-bones/5/rotation = Quaternion(0, 0, -0.26881838, 0.9631909)
-bones/7/rotation = Quaternion(0, 0, 0.26881847, 0.96319085)
-bones/9/rotation = Quaternion(0, 0.04016701, 0, 0.9991931)
+bones/4/rotation = Quaternion(0.04272474, 0, 0, 0.999087)
+bones/5/rotation = Quaternion(0, 0, -0.2598143, 0.96565866)
+bones/7/rotation = Quaternion(0, 0, 0.25981447, 0.9656586)
+bones/9/rotation = Quaternion(0, -0.042724747, 0, 0.999087)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Knight/character-female-e/root/Skeleton3D" index="0" unique_id=551563881]
-transform = Transform3D(0.8554733, -0.517847, 0, 0.51617604, 0.85271287, 0.08026917, -0.04156715, -0.068668135, 0.99677324, -0.09989677, 0.28831333, -0.026237123)
+transform = Transform3D(0.8649929, -0.5017841, 0, 0.49995217, 0.861835, -0.08537144, 0.04283803, 0.07384569, 0.9963492, -0.09989677, 0.2863612, -0.007773066)
 bone_name = "arm-right"
 bone_idx = 7
 
@@ -91,13 +91,13 @@ shape = SubResource("SphereShape3D_8g6yy")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.2520752, 0, -3.6501465)
 
 [node name="Skeleton3D" parent="Barbarian/character-female-e/root" parent_id_path=PackedInt32Array(1775985963, 2071560981) index="0" unique_id=220821928]
-bones/4/rotation = Quaternion(-0.040167008, 0, 0, 0.9991931)
-bones/5/rotation = Quaternion(0, 0, -0.26881838, 0.9631909)
-bones/7/rotation = Quaternion(0, 0, 0.26881847, 0.96319085)
-bones/9/rotation = Quaternion(0, 0.04016701, 0, 0.9991931)
+bones/4/rotation = Quaternion(0.04272474, 0, 0, 0.999087)
+bones/5/rotation = Quaternion(0, 0, -0.2598143, 0.96565866)
+bones/7/rotation = Quaternion(0, 0, 0.25981447, 0.9656586)
+bones/9/rotation = Quaternion(0, -0.042724747, 0, 0.999087)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Barbarian/character-female-e/root/Skeleton3D" index="0" unique_id=1839543202]
-transform = Transform3D(0.8554733, -0.517847, 0, 0.51617604, 0.85271287, 0.08026917, -0.04156715, -0.068668135, 0.99677324, -0.09989677, 0.28831333, -0.026237123)
+transform = Transform3D(0.8649929, -0.5017841, 0, 0.49995217, 0.861835, -0.08537144, 0.04283803, 0.07384569, 0.9963492, -0.09989677, 0.2863612, -0.007773066)
 bone_name = "arm-right"
 bone_idx = 7
 

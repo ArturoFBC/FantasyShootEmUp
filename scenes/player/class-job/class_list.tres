@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://xrhmqwlg8ygk" path="res://scenes/player/class-job/player_class.gd" id="1_ggbxg"]
 [ext_resource type="Script" uid="uid://b6ink8vndmrsy" path="res://scenes/player/class-job/class_list.gd" id="2_8vkmx"]
 [ext_resource type="Resource" uid="uid://ch4lk1s6mri0o" path="res://scenes/player/class-job/knight_class.tres" id="2_y6rvn"]
+[ext_resource type="Resource" uid="uid://dle68spjym0kk" path="res://scenes/player/class-job/barbarian_class.tres" id="3_y6rvn"]
 
 [resource]
 script = ExtResource("2_8vkmx")
-list = Array[ExtResource("1_ggbxg")]([ExtResource("2_y6rvn"), null])
+list = Array[ExtResource("1_ggbxg")]([ExtResource("2_y6rvn"), ExtResource("3_y6rvn")])
 metadata/_custom_type_script = "uid://b6ink8vndmrsy"
