@@ -2719,12 +2719,14 @@ _data = {
 
 [node name="Knight" type="Node3D" unique_id=890844839]
 script = ExtResource("1_t73ce")
+velocity = true
 metadata/_custom_type_script = "uid://gqt62behd3cp"
 
 [node name="character-female-e" type="Node3D" parent="." unique_id=1708458709]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
 
 [node name="root" type="Node3D" parent="character-female-e" unique_id=2071560981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0024531633, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="character-female-e/root" unique_id=220821928]
 bones/0/name = "leg-left"
@@ -2760,14 +2762,14 @@ bones/4/parent = -1
 bones/4/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4438228e-15, 0.17625, -0.02875)
 bones/4/enabled = true
 bones/4/position = Vector3(-1.4438228e-15, 0.17625, -0.02875)
-bones/4/rotation = Quaternion(0.0058679977, 0, 0, 0.99998283)
+bones/4/rotation = Quaternion(0, 0.0017983407, 0, 0.99999845)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "arm-left"
 bones/5/parent = 4
 bones/5/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099896796, 0.11150002, 0.01149988)
 bones/5/enabled = true
 bones/5/position = Vector3(0.09989677, 0.11150002, 0.0115)
-bones/5/rotation = Quaternion(0, 0, -0.37761277, 0.9259636)
+bones/5/rotation = Quaternion(0.002027895, -0.0049991133, -0.37935287, 0.92523646)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "arm-left_end"
 bones/6/parent = 5
@@ -2781,7 +2783,7 @@ bones/7/parent = 4
 bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099896796, 0.11150002, 0.01149988)
 bones/7/enabled = true
 bones/7/position = Vector3(-0.09989677, 0.11150002, 0.0115)
-bones/7/rotation = Quaternion(0, 0, 0.37761268, 0.9259637)
+bones/7/rotation = Quaternion(-0.0020278946, -0.004999113, 0.37935287, 0.92523646)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "arm-right_end"
 bones/8/parent = 7
@@ -2795,7 +2797,7 @@ bones/9/parent = 4
 bones/9/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16699997, 0.026388763)
 bones/9/enabled = true
 bones/9/position = Vector3(1.8196893e-09, 0.16699997, 0.026388776)
-bones/9/rotation = Quaternion(0, -0.0058679977, 0, 0.99998283)
+bones/9/rotation = Quaternion(0, -0.0011988453, 0, 0.9999993)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "head_end"
 bones/10/parent = 9

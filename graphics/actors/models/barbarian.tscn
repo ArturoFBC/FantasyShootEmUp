@@ -50,12 +50,18 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [node name="Barbarian" unique_id=890844839 instance=ExtResource("1_vaxde")]
+velocity = true
 
-[node name="Skeleton3D" parent="character-female-e/root" parent_id_path=PackedInt32Array(2071560981) index="0" unique_id=220821928]
-bones/4/rotation = Quaternion(0.02443228, 0, 0, 0.9997015)
-bones/5/rotation = Quaternion(0, 0, -0.31399217, 0.9494256)
-bones/7/rotation = Quaternion(0, 0, 0.31399217, 0.9494256)
-bones/9/rotation = Quaternion(0, -0.024432277, 0, 0.9997015)
+[node name="root" parent="character-female-e" parent_id_path=PackedInt32Array(1708458709) index="0" unique_id=2071560981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019483048, 0)
+
+[node name="Skeleton3D" parent="character-female-e/root" index="0" unique_id=220821928]
+bones/0/rotation = Quaternion(0.050318707, 0, 0, 0.9987333)
+bones/2/rotation = Quaternion(-0.050318774, 0, 0, 0.9987333)
+bones/4/rotation = Quaternion(0, 0.04422169, 0, 0.99902177)
+bones/5/rotation = Quaternion(0.039470404, -0.12629694, -0.29694158, 0.94568336)
+bones/7/rotation = Quaternion(-0.03947041, -0.12629692, 0.2969416, 0.94568324)
+bones/9/rotation = Quaternion(0, -0.029486466, 0, 0.99956524)
 
 [node name="body-mesh" parent="character-female-e/root/Skeleton3D" index="0" unique_id=1936449167]
 mesh = SubResource("ArrayMesh_x82y4")
