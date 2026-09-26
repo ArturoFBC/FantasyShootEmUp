@@ -18,9 +18,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_0owmy")
 script = ExtResource("2_75vfm")
 
-[node name="FlickerOnDamage" type="Node" parent="." unique_id=1159092788 node_paths=PackedStringArray("my_mesh")]
+[node name="FlickerOnDamage" type="Node" parent="." unique_id=1159092788]
 script = ExtResource("7_0owmy")
-my_mesh = NodePath("")
 flash_time = 0.2
 flash_interval = 0.02
 

@@ -1,35 +1,32 @@
 [gd_scene format=3 uid="uid://dbr46lbyeodql"]
 
-[ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="1_377w7"]
-[ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b2cq8"]
-[ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/moving.gd" id="4_urvlt"]
-[ext_resource type="PackedScene" uid="uid://bps1elo6eyt1u" path="res://graphics/levels/level1.tscn" id="4_xb4v1"]
-[ext_resource type="Script" uid="uid://b7w66l3w30ngp" path="res://scenes/levels/activate_node_on_game_state.gd" id="5_ouxo3"]
-[ext_resource type="Script" uid="uid://bjb0xdbj6fllm" path="res://score/in_game_score.gd" id="5_urvlt"]
-[ext_resource type="Resource" uid="uid://bdka6rnyqlnj1" path="res://score/ScoreResource.tres" id="6_d4w6o"]
-[ext_resource type="Script" uid="uid://bhs6xsinxot0t" path="res://scenes/levels/manager/level_manager.gd" id="7_mbbpy"]
-[ext_resource type="Script" uid="uid://dbdeiv51lhen5" path="res://scenes/levels/level_timer.gd" id="9_icy5c"]
+[ext_resource type="PackedScene" uid="uid://b2nnnam4t8one" path="res://scenes/UI/game_hud/game_HUD.tscn" id="1_b5mta"]
+[ext_resource type="Resource" uid="uid://bdka6rnyqlnj1" path="res://score/ScoreResource.tres" id="2_7gkn3"]
+[ext_resource type="Script" uid="uid://m2dq2v0fp57q" path="res://scenes/levels/moving.gd" id="4_w4bw7"]
+[ext_resource type="PackedScene" uid="uid://w48vrq870125" path="res://scenes/player/player.tscn" id="5_3o10i"]
+[ext_resource type="Script" uid="uid://b7w66l3w30ngp" path="res://scenes/levels/activate_node_on_game_state.gd" id="6_y4ig5"]
+[ext_resource type="Script" uid="uid://bjb0xdbj6fllm" path="res://score/in_game_score.gd" id="7_50p72"]
+[ext_resource type="Script" uid="uid://bhs6xsinxot0t" path="res://scenes/levels/manager/level_manager.gd" id="8_o4olj"]
+[ext_resource type="Script" uid="uid://dbdeiv51lhen5" path="res://scenes/levels/level_timer.gd" id="9_hhgg8"]
+[ext_resource type="Script" uid="uid://6v52eehngjwm" path="res://scenes/levels/level_loader.gd" id="10_7gkn3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbbpy"]
 size = Vector3(2, 5, 20)
 
-[node name="Level" type="Node3D" unique_id=1917726981]
+[node name="InGame" type="Node3D" unique_id=1917726981]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=454667799]
 transform = Transform3D(0.17364824, 0.7760391, 0.60630816, 0, -0.61566144, 0.7880108, 0.9848078, -0.13683668, -0.106908515, 0, 18.160557, 7)
 shadow_enabled = true
 shadow_opacity = 0.7
 
-[node name="GameHud" parent="." unique_id=152822922 node_paths=PackedStringArray("level_timer") instance=ExtResource("1_b2cq8")]
+[node name="GameHud" parent="." unique_id=152822922 node_paths=PackedStringArray("level_timer") instance=ExtResource("1_b5mta")]
 level_timer = NodePath("../LevelTimer")
-score_resource = ExtResource("6_d4w6o")
-
-[node name="Level1" parent="." unique_id=1322831311 instance=ExtResource("4_xb4v1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
+score_resource = ExtResource("2_7gkn3")
 
 [node name="MovingStage" type="Node3D" parent="." unique_id=145115493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4158673)
-script = ExtResource("4_urvlt")
+script = ExtResource("4_w4bw7")
 direction = Vector3(0, 0, -0.5)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="MovingStage" unique_id=688663902]
@@ -54,27 +51,30 @@ projection = 1
 fov = 56.7
 size = 10.0
 
-[node name="Player" parent="MovingStage" unique_id=1936776764 instance=ExtResource("1_377w7")]
+[node name="Player" parent="MovingStage" unique_id=1936776764 instance=ExtResource("5_3o10i")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.076, 0, 4.1093)
 stage_limit = Vector2(10, 10)
 
 [node name="ActivateNodeOnGameState" type="Node" parent="MovingStage" unique_id=144506113 node_paths=PackedStringArray("target")]
 process_mode = 3
-script = ExtResource("5_ouxo3")
+script = ExtResource("6_y4ig5")
 target = NodePath("..")
 
 [node name="InGameScore" type="Node" parent="." unique_id=948519219]
-script = ExtResource("5_urvlt")
-score_resource = ExtResource("6_d4w6o")
+script = ExtResource("7_50p72")
+score_resource = ExtResource("2_7gkn3")
 
 [node name="LevelManager" type="Node" parent="." unique_id=1190075507]
-script = ExtResource("7_mbbpy")
+script = ExtResource("8_o4olj")
 metadata/_custom_type_script = "uid://bhs6xsinxot0t"
 
 [node name="LevelTimer" type="Node" parent="." unique_id=2083217392]
-script = ExtResource("9_icy5c")
+script = ExtResource("9_hhgg8")
 
 [node name="ActivateNodeOnGameState" type="Node" parent="LevelTimer" unique_id=976564950 node_paths=PackedStringArray("target")]
 process_mode = 3
-script = ExtResource("5_ouxo3")
+script = ExtResource("6_y4ig5")
 target = NodePath("..")
+
+[node name="LevelLoader" type="Node" parent="." unique_id=398347503]
+script = ExtResource("10_7gkn3")

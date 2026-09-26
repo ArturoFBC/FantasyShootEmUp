@@ -15,7 +15,9 @@
 [ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="13_lubwm"]
 [ext_resource type="Script" uid="uid://clob8jpvux7mt" path="res://scenes/UI/screens/player_select/player_select_screen.gd" id="13_wmt0g"]
 [ext_resource type="Resource" uid="uid://coqc0rx3dkvc6" path="res://scenes/player/class-job/class_list.tres" id="14_7xgo4"]
-[ext_resource type="PackedScene" uid="uid://dbr46lbyeodql" path="res://scenes/levels/level.tscn" id="15_ewxmy"]
+[ext_resource type="PackedScene" uid="uid://dbr46lbyeodql" path="res://scenes/levels/in_game.tscn" id="15_ewxmy"]
+[ext_resource type="Script" uid="uid://c8f0ql337rqmu" path="res://scenes/levels/level_data_resources/level_list_setup.gd" id="17_ewxmy"]
+[ext_resource type="Resource" uid="uid://bp7nayc86evq7" path="res://scenes/levels/level_data_resources/level_list.tres" id="18_w83dn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8g6yy"]
 radius = 0.4
@@ -72,13 +74,13 @@ velocity = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Knight/character-female-e/root" index="0" unique_id=220821928]
-bones/4/rotation = Quaternion(-0.037105817, 0, 0, 0.9993113)
-bones/5/rotation = Quaternion(0, 0, -0.28540415, 0.9584073)
-bones/7/rotation = Quaternion(0, 0, 0.285404, 0.95840734)
-bones/9/rotation = Quaternion(0, 0.037105817, 0, 0.9993113)
+bones/4/rotation = Quaternion(0.028203778, 0, 0, 0.9996022)
+bones/5/rotation = Quaternion(0, 0, -0.3032264, 0.9529186)
+bones/7/rotation = Quaternion(0, 0, 0.3032262, 0.95291865)
+bones/9/rotation = Quaternion(0, -0.028203778, 0, 0.9996022)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Knight/character-female-e/root/Skeleton3D" index="0" unique_id=551563881]
-transform = Transform3D(0.8370891, -0.5470665, 0, 0.54556006, 0.83478403, 0.07416052, -0.04057074, -0.062078968, 0.9972463, -0.09989677, 0.2882958, -0.025550567)
+transform = Transform3D(0.81610775, -0.57789975, 0, 0.57698035, 0.8148094, -0.05638512, 0.032584947, 0.04601633, 0.9984091, -0.09989677, 0.28692418, -0.010981355)
 bone_name = "arm-right"
 bone_idx = 7
 
@@ -101,13 +103,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="Skeleton3D" parent="Barbarian/character-female-e/root" index="0" unique_id=220821928]
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
-bones/4/rotation = Quaternion(0.010815168, 0, 0, 0.9999416)
-bones/5/rotation = Quaternion(0, 0, -0.36851627, 0.9296214)
-bones/7/rotation = Quaternion(0, 0, 0.36851615, 0.92962134)
-bones/9/rotation = Quaternion(0, -0.010815168, 0, 0.9999416)
+bones/4/rotation = Quaternion(0.028203778, 0, 0, 0.9996022)
+bones/5/rotation = Quaternion(0, 0, -0.3032264, 0.9529186)
+bones/7/rotation = Quaternion(0, 0, 0.3032262, 0.95291865)
+bones/9/rotation = Quaternion(0, -0.028203778, 0, 0.9996022)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Barbarian/character-female-e/root/Skeleton3D" index="0" unique_id=1839543202]
-transform = Transform3D(0.7283917, -0.68516093, 0, 0.68500066, 0.7282213, -0.02162907, 0.014819395, 0.015754435, 0.99976605, -0.09989677, 0.2874752, -0.014841049)
+transform = Transform3D(0.81610775, -0.57789975, 0, 0.57698035, 0.8148094, -0.05638512, 0.032584947, 0.04601633, 0.9984091, -0.09989677, 0.28692418, -0.010981355)
 bone_name = "arm-right"
 bone_idx = 7
 
@@ -169,6 +171,10 @@ light_indirect_energy = 0.5
 omni_range = 10.0
 omni_attenuation = 1.5
 omni_shadow_mode = 0
+
+[node name="LevelListSetup" type="Node" parent="." unique_id=177378259]
+script = ExtResource("17_ewxmy")
+level_list = ExtResource("18_w83dn")
 
 [connection signal="button_up" from="CanvasLayer/MarginContainer/VBoxContainer/Knight" to="CanvasLayer" method="_on_knight_button_up"]
 [connection signal="button_up" from="CanvasLayer/MarginContainer/VBoxContainer/Barbarian" to="CanvasLayer" method="_on_barbarian_button_up"]
