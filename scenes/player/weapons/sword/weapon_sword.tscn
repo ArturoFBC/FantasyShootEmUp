@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://he25hbc34twf"]
 
 [ext_resource type="Script" uid="uid://illaiablnukp" path="res://scenes/player/player_weapon.gd" id="1_p45gi"]
-[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/player/weapons/sword/projectiles/sword_projectile_0.tscn" id="2_mrvdo"]
+[ext_resource type="PackedScene" uid="uid://fw047a78vcc3" path="res://scenes/player/weapons/sword/projectiles/sword_projectile_0.tscn" id="2_hcaax"]
 [ext_resource type="PackedScene" uid="uid://b3qv1ydsp6uk0" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_0.tscn" id="3_uhcru"]
 [ext_resource type="PackedScene" uid="uid://dteqtkphk4edq" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_1.tscn" id="4_hcaax"]
 [ext_resource type="PackedScene" uid="uid://bxq1utcby6320" path="res://scenes/player/weapons/sword/fire_points/sword_fire_points_2.tscn" id="5_776n5"]
@@ -11,9 +11,10 @@
 
 [node name="WeaponSword" type="Node3D" unique_id=986901657 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("1_p45gi")
-shot_point_containers = [NodePath("sword_fire_points_0"), NodePath("sword_fire_points_1"), NodePath("sword_fire_points_2"), NodePath("sword_fire_points_3"), NodePath("sword_fire_points_4")]
-fire_rate = 0.25
-projectile_scene = ExtResource("2_mrvdo")
+shot_point_containers = [NodePath("sword_fire_points_0"), NodePath("sword_fire_points_1"), NodePath("sword_fire_points_2"), NodePath("sword_fire_points_3"), NodePath("sword_fire_points_4"), NodePath("sword_fire_points_4"), NodePath("sword_fire_points_4"), NodePath("sword_fire_points_4"), NodePath("sword_fire_points_4"), NodePath("sword_fire_points_4")]
+fire_rate = Array[float]([0.3, 0.3, 0.3, 0.3, 0.27, 0.27, 0.22, 0.22, 0.2, 0.2])
+projectiles = Array[PackedScene]([ExtResource("2_hcaax"), ExtResource("2_hcaax"), ExtResource("2_hcaax")])
+damages = Array[float]([2.0, 3.0, 4.0])
 
 [node name="sword_fire_points_0" parent="." unique_id=931271759 instance=ExtResource("3_uhcru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

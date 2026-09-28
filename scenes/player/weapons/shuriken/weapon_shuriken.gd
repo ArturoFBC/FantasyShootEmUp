@@ -24,13 +24,10 @@ func _shot() -> void:
 	
 	targets.sort_custom(_closest)
 
-	var target_amount = min(targets.size(), level / 2 + 1)
+	for spawn_point_index in range(spawn_points_by_level[level].size()):
+		spawn_points_by_level[level][spawn_point_index].look_at(targets[spawn_point_index].global_position, Vector3.UP, true)
 
-	for target_index in range(target_amount):
-		var projectile := projectile_scene.instantiate()
-		get_tree().current_scene.add_child(projectile)
-		spawn_points_by_level[0][0].look_at(targets[target_index].global_position, Vector3.UP, true)
-		projectile.init(spawn_points_by_level[0][0], damage, false)
+	_shot_internal()
 
 
 func _closest(a, b) -> bool:

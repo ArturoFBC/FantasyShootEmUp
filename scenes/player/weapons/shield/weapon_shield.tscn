@@ -7,18 +7,17 @@
 
 [node name="weapon_shield" type="Node3D" unique_id=138471633 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("1_5jbpx")
-shot_point_containers = [NodePath("Node3D")]
+shot_point_containers = [NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D"), NodePath("Node3D")]
 type = 1
-fire_rate = 2.0
-projectile_scene = ExtResource("2_0mv4y")
-damage = 5.0
+fire_rate = Array[float]([2.0, 1.8, 1.8, 1.6, 1.6, 1.6, 1.4, 1.2, 1.2, 1.0])
+projectiles = Array[PackedScene]([ExtResource("2_0mv4y"), ExtResource("2_0mv4y"), ExtResource("2_0mv4y")])
+damages = Array[float]([20.0, 35.0, 50.0])
 
 [node name="Node3D" type="Node3D" parent="." unique_id=209306406]
 
 [node name="Marker3D" type="Marker3D" parent="Node3D" unique_id=259834528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("3_eo548")
-projectile_level = 0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=503514982]
 stream = ExtResource("4_0mv4y")

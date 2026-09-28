@@ -1,5 +1,5 @@
 class_name PlayerWeapon
-extends Weapon
+extends Node
 
 enum WeaponType
 {
@@ -7,11 +7,21 @@ enum WeaponType
 	secondary
 }
 
-@export var shot_point_containers: Array[Node]
-@export var type: WeaponType = WeaponType.main
 
-var spawn_points_by_level: Array[Array] = []
+signal weapon_shot(attacking: bool) 
+
+
 @export var level: int = 0
+
+@export var shot_point_containers: Array[Node] # One per level
+@export var type: WeaponType = WeaponType.main
+var spawn_points_by_level: Array[Array] = []
+
+@export var fire_rate: Array[float] # One per level
+@export var projectiles: Array[PackedScene] # Set on the PlayerProjectileSpawnPoint inside spawn point containers
+@export var damages: Array[float]
+
+var shot_on_cd: bool = false
 
 
 func _process(_delta: float) -> void:
@@ -69,10 +79,18 @@ func _shot_internal() -> void:
 			spawnPoint.alternative_offset =+ 1
 		else:
 			spawnPoint.alternative_offset = 0
-			var projectile := projectile_scene.instantiate()
+			var projectile := projectiles[spawnPoint.projectile_level].instantiate()
 			get_tree().current_scene.add_child(projectile)
-			projectile.init(spawnPoint, damage, spawnPoint.left_side)
-			
+			projectile.init(spawnPoint, damages[spawnPoint.projectile_level], spawnPoint.left_side)
+
+
+func _wait_cooldown():
+	shot_on_cd = true
+	weapon_shot.emit(shot_on_cd)
+	await get_tree().create_timer(fire_rate[level]).timeout
+	shot_on_cd = false
+	weapon_shot.emit(shot_on_cd)
+
 
 func _level_up() -> void:
 	level = min(level + 1, spawn_points_by_level.size() - 1)
