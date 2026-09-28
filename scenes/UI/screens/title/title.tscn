@@ -188,13 +188,11 @@ transform = Transform3D(1.0000005, -1.1920929e-07, 1.1175871e-08, 5.9604645e-08,
 mesh = ExtResource("8_a58vf")
 
 [node name="Barbarian" parent="." unique_id=890844839 instance=ExtResource("9_trno2")]
-transform = Transform3D(-0.045569412, 0, 0.99896127, 0, 1, 0, -0.99896127, 0, -0.045569412, 2.575283, -0.44838542, -4.971882)
-velocity = false
+transform = Transform3D(-0.045569412, 0, 0.99896127, 0, 1, 0, -0.99896127, 0, -0.045569412, 2.575283, -0.5636956, -4.971882)
 sit = true
 
 [node name="Knight" parent="." unique_id=1745950863 instance=ExtResource("10_tgkt3")]
-transform = Transform3D(0.78283674, 0, 0.6222271, 0, 1, 0, -0.6222271, 0, 0.78283674, 2.907952, -0.5, -5.749238)
-velocity = false
+transform = Transform3D(0.78283674, 0, 0.6222271, 0, 1, 0, -0.6222271, 0, 0.78283674, 2.907952, -0.6153102, -5.749238)
 sit = true
 
 [connection signal="pressed" from="Canvas/MarginContainer/VBoxContainer/MarginContainer2/Button" to="Canvas/MarginContainer/VBoxContainer/MarginContainer2/Button" method="_on_pressed"]

@@ -3,23 +3,22 @@
 [ext_resource type="Curve" uid="uid://1wo5fpm1cuul" path="res://graphics/common_resources/smooth_step.tres" id="1_0box1"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kac0a"]
-animation = &"root|root|attack-melee-right|Animation Base Layer"
+animation = &"minicharacters_anim_library/attack-melee-right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6xjow"]
-animation = &"root|root|crouch|Animation Base Layer"
+animation = &"minicharacters_anim_library/crouch"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_srhe7"]
-animation = &"root|root|holding-right|Animation Base Layer"
+animation = &"minicharacters_anim_library/holding-right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0box1"]
-animation = &"root|root|idle|Animation Base Layer"
-advance_on_start = true
+animation = &"minicharacters_anim_library/idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8j15c"]
-animation = &"root|root|sit|Animation Base Layer"
+animation = &"minicharacters_anim_library/sit"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2u4wt"]
-animation = &"root|root|walk|Animation Base Layer"
+animation = &"minicharacters_anim_library/walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kac0a"]
 advance_mode = 2

@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bwiofw5xu75fi" path="res://graphics/levels/dungeon/models/barrel.fbx" id="6_b4a5m"]
 [ext_resource type="PackedScene" uid="uid://bmi5o4upx4htd" path="res://graphics/levels/dungeon/models/table.fbx" id="7_lubwm"]
 [ext_resource type="PackedScene" uid="uid://dpcaem1ffi4ql" path="res://graphics/actors/models/knight.tscn" id="7_np358"]
-[ext_resource type="PackedScene" uid="uid://c47vdiyakuako" path="res://graphics/props/weapon-sword.fbx" id="8_skkxd"]
 [ext_resource type="PackedScene" uid="uid://b0ijh2xiu1y1a" path="res://graphics/levels/dungeon/models/chair.fbx" id="8_wmt0g"]
 [ext_resource type="PackedScene" uid="uid://dqvnp2ba4sb6f" path="res://graphics/actors/models/barbarian.tscn" id="9_pv64f"]
-[ext_resource type="PackedScene" uid="uid://c68a415dlhvwx" path="res://graphics/props/tool-axe.fbx" id="10_pv64f"]
+[ext_resource type="ArrayMesh" uid="uid://dtpofglndqmqd" path="res://graphics/props/sword.res" id="10_w83dn"]
+[ext_resource type="ArrayMesh" uid="uid://bkpjgmipswrqv" path="res://graphics/props/axe.res" id="12_5ptfl"]
 [ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="13_lubwm"]
 [ext_resource type="Script" uid="uid://clob8jpvux7mt" path="res://scenes/UI/screens/player_select/player_select_screen.gd" id="13_wmt0g"]
 [ext_resource type="Resource" uid="uid://coqc0rx3dkvc6" path="res://scenes/player/class-job/class_list.tres" id="14_7xgo4"]
@@ -23,6 +23,16 @@
 radius = 0.4
 
 [node name="PlayerSelect" type="Node3D" unique_id=891971183]
+
+[node name="Barbarian_character-female-e_root_Skeleton3D#BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=1839543202]
+transform = Transform3D(0.81610775, -0.57789975, 0, 0.57698035, 0.8148094, -0.05638512, 0.032584947, 0.04601633, 0.9984091, -0.09989677, 0.28692418, -0.010981355)
+bone_name = "arm-right"
+bone_idx = 7
+
+[node name="Knight_character-female-e_root_Skeleton3D#BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=551563881]
+transform = Transform3D(0.81610775, -0.57789975, 0, 0.57698035, 0.8148094, -0.05638512, 0.032584947, 0.04601633, 0.9984091, -0.09989677, 0.28692418, -0.010981355)
+bone_name = "arm-right"
+bone_idx = 7
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257710050]
 transform = Transform3D(0.864224, 0.23996745, -0.44219062, -0.0074470844, 0.8849245, 0.465675, 0.5030522, -0.39915445, 0.76656, 1.1566162, 2.2901917, -0.01626873)
@@ -68,24 +78,24 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.9901123, -0.025817871, -4.4
 
 [node name="Knight" parent="." unique_id=890844839 instance=ExtResource("7_np358")]
 transform = Transform3D(0.9506525, 0, -1.7596192, 0, 2, 0, 1.7596192, 0, 0.9506525, 3.7598653, 0, -2.73312)
-velocity = false
 
-[node name="root" parent="Knight/character-female-e" parent_id_path=PackedInt32Array(890844839, 1708458709) index="0" unique_id=2071560981]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Skeleton3D" parent="Knight/character-female-a" parent_id_path=PackedInt32Array(890844839, 1903332599) index="0" unique_id=1507662833]
+bones/4/rotation = Quaternion(-0.040316418, 0, 0, 0.999187)
+bones/5/rotation = Quaternion(0, 0, -0.27260783, 0.96212524)
+bones/7/rotation = Quaternion(0, 0, 0.2726078, 0.96212524)
+bones/8/position = Vector3(-1.3877788e-17, 0.15645477, 2.2752626e-09)
+bones/8/rotation = Quaternion(0, 0, 0, 1)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0, 0.040316418, 0, 0.999187)
 
-[node name="Skeleton3D" parent="Knight/character-female-e/root" index="0" unique_id=220821928]
-bones/4/rotation = Quaternion(0.028203778, 0, 0, 0.9996022)
-bones/5/rotation = Quaternion(0, 0, -0.3032264, 0.9529186)
-bones/7/rotation = Quaternion(0, 0, 0.3032262, 0.95291865)
-bones/9/rotation = Quaternion(0, -0.028203778, 0, 0.9996022)
+[node name="Knight_character-female-e_root_Skeleton3D_BoneAttachment3D#weapon-sword" type="BoneAttachment3D" parent="Knight/character-female-a/Skeleton3D" index="2" unique_id=925895331]
+transform = Transform3D(0.85137, -0.5245657, 0, 0.5228604, 0.8486023, 0.08056727, -0.04226283, -0.06859256, 0.99674904, -0.18196759, 0.42108196, -0.037002273)
+bone_name = "arm-right_end"
+bone_idx = 8
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Knight/character-female-e/root/Skeleton3D" index="0" unique_id=551563881]
-transform = Transform3D(0.81610775, -0.57789975, 0, 0.57698035, 0.8148094, -0.05638512, 0.032584947, 0.04601633, 0.9984091, -0.09989677, 0.28692418, -0.010981355)
-bone_name = "arm-right"
-bone_idx = 7
-
-[node name="weapon-sword" parent="Knight/character-female-e/root/Skeleton3D/BoneAttachment3D" unique_id=232662410 instance=ExtResource("8_skkxd")]
-transform = Transform3D(0.6626198, 0, 0.7489556, -7.450581e-09, 0.9999999, -5.9604645e-08, -0.74895555, -1.4901161e-08, 0.66261995, -0.21279818, 0.08017963, 0.05146098)
+[node name="weapon-sword" type="MeshInstance3D" parent="Knight/character-female-a/Skeleton3D/Knight_character-female-e_root_Skeleton3D_BoneAttachment3D#weapon-sword" unique_id=1354736253]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -0.245, -0.085, 0.06)
+mesh = ExtResource("10_w83dn")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Knight" unique_id=408910411]
 
@@ -95,26 +105,21 @@ shape = SubResource("SphereShape3D_8g6yy")
 
 [node name="Barbarian" parent="." unique_id=1775985963 instance=ExtResource("9_pv64f")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.2520752, 0, -3.6501465)
-velocity = false
 
-[node name="root" parent="Barbarian/character-female-e" parent_id_path=PackedInt32Array(1775985963, 1708458709) index="0" unique_id=2071560981]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Skeleton3D" parent="Barbarian/character-female-a" parent_id_path=PackedInt32Array(1775985963, 1903332599) index="0" unique_id=1507662833]
+bones/4/rotation = Quaternion(-0.040316418, 0, 0, 0.999187)
+bones/5/rotation = Quaternion(0, 0, -0.27260783, 0.96212524)
+bones/7/rotation = Quaternion(0, 0, 0.2726078, 0.96212524)
+bones/9/rotation = Quaternion(0, 0.040316418, 0, 0.999187)
 
-[node name="Skeleton3D" parent="Barbarian/character-female-e/root" index="0" unique_id=220821928]
-bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/2/rotation = Quaternion(0, 0, 0, 1)
-bones/4/rotation = Quaternion(0.028203778, 0, 0, 0.9996022)
-bones/5/rotation = Quaternion(0, 0, -0.3032264, 0.9529186)
-bones/7/rotation = Quaternion(0, 0, 0.3032262, 0.95291865)
-bones/9/rotation = Quaternion(0, -0.028203778, 0, 0.9996022)
+[node name="Barbarian_character-female-e_root_Skeleton3D_BoneAttachment3D#tool-axe" type="BoneAttachment3D" parent="Barbarian/character-female-a/Skeleton3D" index="2" unique_id=1828917576]
+transform = Transform3D(0.8513701, -0.52456576, 9.322533e-10, 0.52286047, 0.8486024, 0.08056728, -0.042262834, -0.06859257, 0.99674916, -0.1819676, 0.42108196, -0.037002277)
+bone_name = "arm-right_end"
+bone_idx = 8
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Barbarian/character-female-e/root/Skeleton3D" index="0" unique_id=1839543202]
-transform = Transform3D(0.81610775, -0.57789975, 0, 0.57698035, 0.8148094, -0.05638512, 0.032584947, 0.04601633, 0.9984091, -0.09989677, 0.28692418, -0.010981355)
-bone_name = "arm-right"
-bone_idx = 7
-
-[node name="tool-axe" parent="Barbarian/character-female-e/root/Skeleton3D/BoneAttachment3D" unique_id=757976849 instance=ExtResource("10_pv64f")]
-transform = Transform3D(2.4620194, 0, 0.43412045, 0, 2.5, 0, -0.43412045, 0, 2.4620194, -0.228, -0.185, 0.08)
+[node name="tool-axe" type="MeshInstance3D" parent="Barbarian/character-female-a/Skeleton3D/Barbarian_character-female-e_root_Skeleton3D_BoneAttachment3D#tool-axe" unique_id=80152625]
+transform = Transform3D(3, 0, 0, 0, 3, 2.2649368e-07, 0, -2.2649368e-07, 3, -0.24, -0.46, 0.05)
+mesh = ExtResource("12_5ptfl")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Barbarian" unique_id=1231094791]
 
