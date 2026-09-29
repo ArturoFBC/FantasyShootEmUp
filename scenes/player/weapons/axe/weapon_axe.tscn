@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c2ajhrvjqgj8j" path="res://scenes/player/weapons/axe/fire_points/axe_fire_points_1.tscn" id="4_qosl3"]
 [ext_resource type="PackedScene" uid="uid://dnq7ibj0fx4cd" path="res://scenes/player/weapons/axe/fire_points/axe_fire_points_2.tscn" id="5_j42tx"]
 [ext_resource type="AudioStream" uid="uid://c30mpkxv4mp87" path="res://audio/sounds/whoosh/WHOOSH_Wide_Fast_stereo.wav" id="6_gqt42"]
+[ext_resource type="PackedScene" uid="uid://c47vdiyakuako" path="res://graphics/props/weapon-sword.fbx" id="7_j42tx"]
+[ext_resource type="PackedScene" uid="uid://cvvoriiw0kdlq" path="res://graphics/props/sword_2.fbx" id="8_1gesb"]
+[ext_resource type="PackedScene" uid="uid://buwhcgyddn0i3" path="res://graphics/props/sword_3.fbx" id="9_8bq7e"]
 
 [node name="weapon_axe" type="Node3D" unique_id=2141182344 node_paths=PackedStringArray("shot_point_containers")]
 script = ExtResource("1_sdb3n")
@@ -26,5 +29,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=547142444]
 stream = ExtResource("6_gqt42")
 volume_db = -5.0
+
+[node name="weapon-sword" parent="." unique_id=232662410 instance=ExtResource("7_j42tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="sword_2" parent="." unique_id=1353100506 instance=ExtResource("8_1gesb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69957083, 0, 0)
+
+[node name="sword_3" parent="." unique_id=631007561 instance=ExtResource("9_8bq7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41587976, 0, -0.0646615)
 
 [connection signal="weapon_shot" from="." to="AudioStreamPlayer3D" method="set_playing"]

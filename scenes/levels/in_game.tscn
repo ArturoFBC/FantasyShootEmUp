@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bhs6xsinxot0t" path="res://scenes/levels/manager/level_manager.gd" id="8_o4olj"]
 [ext_resource type="Script" uid="uid://dbdeiv51lhen5" path="res://scenes/levels/level_timer.gd" id="9_hhgg8"]
 [ext_resource type="Script" uid="uid://6v52eehngjwm" path="res://scenes/levels/level_loader.gd" id="10_7gkn3"]
+[ext_resource type="PackedScene" uid="uid://c6384bjd3xjsy" path="res://scenes/entities/power_ups/power_up_main.tscn" id="10_gq1mi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbbpy"]
 size = Vector3(2, 5, 20)
@@ -78,3 +79,27 @@ target = NodePath("..")
 
 [node name="LevelLoader" type="Node" parent="." unique_id=398347503]
 script = ExtResource("10_7gkn3")
+
+[node name="PowerUpMain" parent="." unique_id=1360659661 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.39806366, 0, -25.583494)
+
+[node name="PowerUpMain3" parent="." unique_id=222815439 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.64000005, 0, 0, 0, 0.64000005, 0, 0, 0, 0.64000005, -0.7165146, 0, -22.143223)
+
+[node name="PowerUpMain2" parent="." unique_id=963992089 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.39806366, 0, -9.1768055)
+
+[node name="PowerUpMain4" parent="." unique_id=865838872 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.7972755, 0, -16.476807)
+
+[node name="PowerUpMain5" parent="." unique_id=1874840434 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.782198, 0, -13.692593)
+
+[node name="PowerUpMain6" parent="." unique_id=962965015 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.2107391, 0, -12.445007)
+
+[node name="PowerUpMain7" parent="." unique_id=931290114 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.4377079, 0, -6.370802)
+
+[node name="PowerUpMain8" parent="." unique_id=1780795425 instance=ExtResource("10_gq1mi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.4377079, 0, -33.855263)
