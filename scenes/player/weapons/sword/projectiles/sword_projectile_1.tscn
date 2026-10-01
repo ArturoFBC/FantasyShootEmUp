@@ -4,8 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://djsojyn1d6dtl" path="res://graphics/actors/models/animals/Textures/colormap.png" id="2_tgpr2"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="3_2orki"]
 [ext_resource type="Texture2D" uid="uid://ju66vlf3nrq" path="res://graphics/props/colormap.png" id="3_qpcmk"]
+[ext_resource type="Texture2D" uid="uid://c1y4s4vlode70" path="res://graphics/vfx/ParticlePack/muzzle_04.png" id="4_knys0"]
 [ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="4_qpcmk"]
 [ext_resource type="PackedScene" uid="uid://dmo3synhl8cjf" path="res://scenes/entities/vfx/spark_particles.tscn" id="5_knys0"]
+[ext_resource type="Texture2D" uid="uid://cqjmmdnw1fpiw" path="res://graphics/vfx/ParticlePack/star_01.png" id="6_4j33f"]
+[ext_resource type="Script" uid="uid://buefufptse6m4" path="res://audio/sounds/projectile_impact.gd" id="9_xqtqs"]
+[ext_resource type="AudioStream" uid="uid://bx7us3wl3o0op" path="res://audio/sounds/stab/GORE_Stab_01_mono.wav" id="10_exdtn"]
+[ext_resource type="AudioStream" uid="uid://c13iy40jn7jgj" path="res://audio/sounds/stab/GORE_Stab_02_mono.wav" id="11_x5oo2"]
+[ext_resource type="AudioStream" uid="uid://labtp0d08q65" path="res://audio/sounds/stab/GORE_Stab_03_mono.wav" id="12_sdgg4"]
+[ext_resource type="AudioStream" uid="uid://05ppc76vskkk" path="res://audio/sounds/impacts/stone_impact_random_sound.tres" id="13_qk3uf"]
+[ext_resource type="PackedScene" uid="uid://0gja15xudbxp" path="res://one_shot_stream.tscn" id="14_ptpay"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knys0"]
 albedo_texture = ExtResource("2_tgpr2")
@@ -47,26 +55,45 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_36bdk")
 
-[sub_resource type="Gradient" id="Gradient_kaec6"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.34375, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.44705883, 0, 0)
+[sub_resource type="Curve" id="Curve_kqd6l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.6755855, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rhcw3"]
-gradient = SubResource("Gradient_kaec6")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
+[sub_resource type="CurveTexture" id="CurveTexture_qpcmk"]
+curve = SubResource("Curve_kqd6l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpqbc"]
+[sub_resource type="Curve" id="Curve_ggy6v"]
+_data = [Vector2(0, 0), 0.0, 2.4264953, 0, 0, Vector2(1, 1), 0.10075455, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_knys0"]
+curve = SubResource("Curve_ggy6v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qxssi"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 10.0
+flatness = 0.5
+initial_velocity_min = -1.0
+initial_velocity_max = -1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 1.9
+scale_max = 2.3999999
+scale_curve = SubResource("CurveTexture_knys0")
+color = Color(0.572053, 1.6778551, 4.416, 1)
+alpha_curve = SubResource("CurveTexture_qpcmk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4j33f"]
 transparency = 1
-blend_mode = 1
 shading_mode = 0
-albedo_texture = SubResource("GradientTexture2D_rhcw3")
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_knys0")
 
-[sub_resource type="QuadMesh" id="QuadMesh_nr13n"]
-flip_faces = true
-size = Vector2(0.45, 0.65)
+[sub_resource type="QuadMesh" id="QuadMesh_xqtqs"]
+material = SubResource("StandardMaterial3D_4j33f")
+size = Vector2(0.8, 1.2)
+center_offset = Vector3(0, 0.25, 0)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_08xci"]
 
@@ -74,53 +101,50 @@ size = Vector2(0.45, 0.65)
 _data = [Vector2(0, 0.44892752), 0.0, -0.046731308, 0, 0, Vector2(1, 0.008004308), -0.94638735, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_i341d"]
+[sub_resource type="CurveTexture" id="CurveTexture_kqd6l"]
 curve = SubResource("Curve_xe3oy")
 
-[sub_resource type="Gradient" id="Gradient_joxcq"]
-offsets = PackedFloat32Array(0.36688313, 0.7922078)
-colors = PackedColorArray(1, 0.15686275, 0, 1, 0.60391617, 0.99999994, 0.3273512, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_o2ry3"]
-gradient = SubResource("Gradient_joxcq")
-
 [sub_resource type="Curve" id="Curve_tgpr2"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.46153843), -0.751379, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.2341142, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_nwv8f"]
+[sub_resource type="CurveTexture" id="CurveTexture_ggy6v"]
 curve = SubResource("Curve_tgpr2")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i341d"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 73.500015
 direction = Vector3(0, -1, 0)
-spread = 0.0
-initial_velocity_min = 20.0
-initial_velocity_max = 20.0
+spread = 10.0
+initial_velocity_min = 12.0
+initial_velocity_max = 12.0
 gravity = Vector3(0, 0, 0)
-use_scale_3d = true
-scale_3d_min = Vector3(1, 1, 1)
-scale_3d_max = Vector3(2, 2, 2)
-scale_min = 1.5
 scale_max = 1.5
-scale_curve = SubResource("CurveTexture_nwv8f")
-color = Color(1, 1, 1, 0.8235294)
-color_ramp = SubResource("GradientTexture1D_o2ry3")
-alpha_curve = SubResource("CurveTexture_i341d")
+scale_curve = SubResource("CurveTexture_ggy6v")
+color = Color(0.89152676, 1.6758896, 3.2944162, 1)
+alpha_curve = SubResource("CurveTexture_kqd6l")
 hue_variation_min = -2.2351742e-08
 hue_variation_max = -2.2351742e-08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk3uf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxssi"]
 transparency = 1
-blend_mode = 1
+cull_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_4j33f")
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sdgg4"]
-material = SubResource("StandardMaterial3D_qk3uf")
-radius = 0.1
-height = 0.5
-radial_segments = 8
-rings = 1
+[sub_resource type="QuadMesh" id="QuadMesh_ypoxc"]
+material = SubResource("StandardMaterial3D_qxssi")
+size = Vector2(0.5, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5sfno"]
+playback_mode = 1
+streams_count = 3
+stream_0/stream = ExtResource("10_exdtn")
+stream_1/stream = ExtResource("11_x5oo2")
+stream_2/stream = ExtResource("12_sdgg4")
 
 [node name="Area3D" type="Area3D" unique_id=214642894]
 collision_layer = 4
@@ -134,10 +158,15 @@ transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, -1.5, 0, 1.5, -6.556708e-08
 material_override = SubResource("StandardMaterial3D_knys0")
 mesh = SubResource("ArrayMesh_4t6lf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1113269833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121407226, 0.07394036)
-material_override = SubResource("StandardMaterial3D_bpqbc")
-mesh = SubResource("QuadMesh_nr13n")
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=105724536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06572437, 0.18691051)
+amount = 5
+lifetime = 0.3
+preprocess = 0.5
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_qxssi")
+draw_pass_1 = SubResource("QuadMesh_xqtqs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=160685721]
 transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 0, 0)
@@ -148,20 +177,29 @@ layers = 4
 script = ExtResource("3_2orki")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=127625710]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.26251173)
-amount = 5
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.47440773)
+amount = 12
 lifetime = 0.12
+preprocess = 0.5
+fixed_fps = 60
 collision_base_size = 0.1
 visibility_aabb = AABB(0, 0, 0, 8, 8, 8)
 local_coords = true
 trail_lifetime = 0.01
 process_material = SubResource("ParticleProcessMaterial_i341d")
-draw_pass_1 = SubResource("CapsuleMesh_sdgg4")
+draw_pass_1 = SubResource("QuadMesh_ypoxc")
 
 [node name="SpawnOnDestroy" type="Node" parent="." unique_id=1986585671]
 script = ExtResource("4_qpcmk")
 scene_to_spawn = ExtResource("5_knys0")
 
+[node name="InstantiateSound" type="Node3D" parent="." unique_id=1406108856]
+script = ExtResource("9_xqtqs")
+soft_sound = SubResource("AudioStreamRandomizer_5sfno")
+hard_sound = ExtResource("13_qk3uf")
+stream_player_scene = ExtResource("14_ptpay")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="destroyed" from="." to="SpawnOnDestroy" method="_on_destroyed"]
+[connection signal="impact" from="." to="InstantiateSound" method="_on_area_3d_impact"]
 [connection signal="screen_exited" from="DestroyOutOfBounds" to="DestroyOutOfBounds" method="_on_screen_exited"]

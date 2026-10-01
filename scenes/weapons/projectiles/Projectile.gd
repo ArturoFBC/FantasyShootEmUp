@@ -7,8 +7,15 @@ enum TargetType
 	Enemy
 }
 
+enum CollisionSurfaceType
+{
+	soft,
+	hard
+}
+
 signal destroyed()
 signal set_side(left: bool)
+signal impact(surface_type: CollisionSurfaceType)
 
 @export var speed: float = 10  ## How fast the shot moves
 @export var damage: float = 1  ## How much damage the shot does
@@ -44,14 +51,18 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 ## Called when the shot enters in a body
 func _on_body_entered(body:Node3D) -> void:
+	var impact_type :CollisionSurfaceType = CollisionSurfaceType.hard
 	for child in body.get_children():
 		if (target_type == TargetType.Player):
 			if (child is PlayerHitPoints):
 				child._take_damage(damage)
+				impact_type = CollisionSurfaceType.soft
 		else:
 			if (child is EnemyHitPoints):
 				child._take_damage(damage)
-				
+				impact_type = CollisionSurfaceType.soft
+	
+	impact.emit(impact_type)
 	_destroy()
 
 

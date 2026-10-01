@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://0gja15xudbxp"]
+
+[node name="OneShotStream" type="AudioStreamPlayer3D" unique_id=1340091379]
+volume_db = -5.0
