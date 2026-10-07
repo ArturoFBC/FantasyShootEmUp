@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://dms08aw41r4ut"]
+
+[ext_resource type="Shader" uid="uid://cvqncxwpvmvvu" path="res://addons/bribbon/BRibbon.gdshader" id="1_hyou4"]
+[ext_resource type="Texture2D" uid="uid://ceobksa2pcsoc" path="res://addons/bribbon/godot_icon.svg" id="2_xg7mj"]
+[ext_resource type="Script" uid="uid://03gwljeqfkcv" path="res://addons/bribbon/BRibbon.gd" id="3_dsahb"]
+[ext_resource type="Texture2D" uid="uid://bmu3rsmb04e6t" path="res://addons/bribbon/BRibbonLogo.png" id="4_ypj6v"]
+
+[sub_resource type="GDScript" id="GDScript_ru3ny"]
+resource_name = "FollowCursor"
+script/source = "extends Node3D
+
+@export var depth: float = 10.0
+@export var ObjectFollower : Node3D
+var cam : Camera3D
+var prevPos : Vector3 = Vector3.ZERO
+
+var debugWire : bool = true
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"ui_accept\"):
+		debugWire = !debugWire
+		if debugWire: get_viewport().debug_draw = Viewport.DEBUG_DRAW_WIREFRAME
+		else: get_viewport().debug_draw = Viewport.DEBUG_DRAW_DISABLED
+
+
+func custom_look_at(node3d : Node3D, target_pos: Vector3) -> void:
+	var targetDirection = (target_pos - node3d.global_position).normalized()
+	var rotationDelta : Quaternion = Quaternion(-node3d.transform.basis.z ,targetDirection)
+	var targetRotation : Quaternion = rotationDelta * node3d.quaternion
+	node3d.quaternion = node3d.quaternion.slerp(targetRotation, get_process_delta_time() * 5)
+	
+	
+func _enter_tree() -> void:
+	await get_tree().process_frame
+	cam = get_viewport().get_camera_3d()
+
+
+func _process(_delta) -> void:
+	if not ObjectFollower: return
+	if prevPos.distance_to(ObjectFollower.global_position) > 0.1:
+		custom_look_at(ObjectFollower, prevPos)
+	prevPos = ObjectFollower.global_position
+	var mousePosG = cam.project_position(get_viewport().get_mouse_position(), depth)
+	ObjectFollower.global_position = mousePosG
+"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2e8xq"]
+
+[sub_resource type="Sky" id="Sky_jqkcl"]
+sky_material = SubResource("ProceduralSkyMaterial_2e8xq")
+
+[sub_resource type="Environment" id="Environment_78iq8"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_jqkcl")
+
+[sub_resource type="BoxMesh" id="BoxMesh_jqkcl"]
+
+[sub_resource type="Gradient" id="Gradient_f1p0m"]
+offsets = PackedFloat32Array(0, 0.074324325, 0.3412162, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tr5r1"]
+gradient = SubResource("Gradient_f1p0m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ac1ot"]
+render_priority = 0
+shader = ExtResource("1_hyou4")
+shader_parameter/ribbonColor = Color(0.84930354, 0.8493033, 0, 1)
+shader_parameter/ribbonTexture = ExtResource("2_xg7mj")
+shader_parameter/ribbonTextureSec = SubResource("GradientTexture1D_tr5r1")
+shader_parameter/texDataSize = Vector2(64, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvhl8"]
+render_priority = 0
+shader = ExtResource("1_hyou4")
+shader_parameter/ribbonColor = Color(0, 0.7983431, 3.85046e-07, 1)
+shader_parameter/texDataSize = Vector2(64, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eqx0h"]
+render_priority = 0
+shader = ExtResource("1_hyou4")
+shader_parameter/ribbonColor = Color(1, 1, 1, 1)
+shader_parameter/ribbonTexture = ExtResource("4_ypj6v")
+shader_parameter/texDataSize = Vector2(64, 64)
+
+[node name="FollowCursor" type="Node3D" unique_id=1610125446 node_paths=PackedStringArray("ObjectFollower")]
+script = SubResource("GDScript_ru3ny")
+ObjectFollower = NodePath("NodeToTrackRibbon")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=58824498]
+transform = Transform3D(0.9978825, -0.023218453, 0.06076557, 0.020955846, 0.9990729, 0.03761126, -0.06158251, -0.036258325, 0.99744344, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=951238378]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1784950966]
+environment = SubResource("Environment_78iq8")
+
+[node name="NodeToTrackRibbon" type="Node3D" parent="." unique_id=926896798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.4345436)
+top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NodeToTrackRibbon" unique_id=1510326756]
+mesh = SubResource("BoxMesh_jqkcl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NodeToTrackRibbon" unique_id=1487930085]
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0, 0.408804, -0.5803473)
+mesh = SubResource("BoxMesh_jqkcl")
+
+[node name="Node3D" type="Node3D" parent="NodeToTrackRibbon" unique_id=689294926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.474762, 0)
+
+[node name="BRibbon3" type="MeshInstance3D" parent="NodeToTrackRibbon/Node3D" unique_id=161617235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.2080998, 0)
+material_override = SubResource("ShaderMaterial_ac1ot")
+cast_shadow = 0
+script = ExtResource("3_dsahb")
+segmentCounts = 20
+segmentLength = 0.2
+updateDelta = 0.05
+drawDebugPoints = true
+metadata/_custom_type_script = "uid://03gwljeqfkcv"
+
+[node name="Node3D2" type="Node3D" parent="NodeToTrackRibbon" unique_id=460056138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5964646, 0)
+
+[node name="BRibbon3" type="MeshInstance3D" parent="NodeToTrackRibbon/Node3D2" unique_id=93106399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.2080998, 0)
+material_override = SubResource("ShaderMaterial_hvhl8")
+cast_shadow = 0
+script = ExtResource("3_dsahb")
+segmentCounts = 5
+segmentLength = 2.0
+metadata/_custom_type_script = "uid://03gwljeqfkcv"
+
+[node name="BRibbon2" type="MeshInstance3D" parent="NodeToTrackRibbon" unique_id=1113254598]
+material_override = SubResource("ShaderMaterial_eqx0h")
+cast_shadow = 0
+script = ExtResource("3_dsahb")
+segmentCounts = 20
+segmentLength = 0.2
+updateDelta = 0.05
+enableShrink = false
+metadata/_custom_type_script = "uid://03gwljeqfkcv"
+
+[node name="Control" type="Control" parent="." unique_id=1414925522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=1475364289]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press SPACE to toggle wireframe debug"

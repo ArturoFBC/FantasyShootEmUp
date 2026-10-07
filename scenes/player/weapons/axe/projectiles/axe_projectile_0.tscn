@@ -1,13 +1,65 @@
 [gd_scene format=3 uid="uid://cxr78ec577c24"]
 
 [ext_resource type="Script" uid="uid://dk0irqnkqipmv" path="res://scenes/weapons/projectiles/Projectile.gd" id="1_6dbfv"]
+[ext_resource type="Texture2D" uid="uid://cj7ktlunry3dl" path="res://graphics/vfx/ParticlePack/slash_02.png" id="2_q7cwr"]
 [ext_resource type="Texture2D" uid="uid://gjspq2equngv" path="res://graphics/props/Textures/colormap.png" id="2_wfg0r"]
+[ext_resource type="Texture2D" uid="uid://ko7y7meyur7x" path="res://graphics/vfx/ParticlePack/slash_03.png" id="3_cuwsv"]
 [ext_resource type="ArrayMesh" uid="uid://bkpjgmipswrqv" path="res://graphics/props/axe.res" id="3_q7cwr"]
+[ext_resource type="Script" uid="uid://03gwljeqfkcv" path="res://addons/bribbon/BRibbon.gd" id="4_6dbfv"]
 [ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="4_cuwsv"]
 [ext_resource type="AudioStream" uid="uid://05ppc76vskkk" path="res://audio/sounds/impacts/stone_impact_random_sound.tres" id="5_5mdam"]
 [ext_resource type="Script" uid="uid://psiw23yjj3bt" path="res://scenes/entities/DestroyOutOfBounds.gd" id="6_l6km4"]
 [ext_resource type="Script" uid="uid://ui5o043o7nv2" path="res://scenes/entities/SpawnOnDestroy.gd" id="8_ib4rg"]
 [ext_resource type="PackedScene" uid="uid://dmo3synhl8cjf" path="res://scenes/entities/vfx/spark_particles.tscn" id="9_wq0v1"]
+[ext_resource type="Texture2D" uid="uid://c5aa2ief40l5k" path="res://graphics/vfx/ParticlePack/spark_07.png" id="10_q7cwr"]
+
+[sub_resource type="Gradient" id="Gradient_vw5mi"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.2987013, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kulqa"]
+gradient = SubResource("Gradient_vw5mi")
+
+[sub_resource type="Curve" id="Curve_l6km4"]
+_data = [Vector2(0, 0.5076923), 0.0, 0.27044532, 0, 0, Vector2(1, 1), 1.0664738, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_aephx"]
+curve = SubResource("Curve_l6km4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ud75t"]
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 90, 0)
+rotation_3d_max = Vector3(0, 90, 0)
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_aephx")
+color = Color(0.8081692, 1.7730561, 1.8249996, 0.471)
+color_ramp = SubResource("GradientTexture1D_kulqa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwj8j"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_q7cwr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pltaw"]
+material = SubResource("StandardMaterial3D_hwj8j")
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfg0r"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(0.64476675, 2.454227, 2.3143203, 0.39215687)
+albedo_texture = ExtResource("3_cuwsv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_q7cwr"]
+flip_faces = true
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiy74"]
 albedo_texture = ExtResource("2_wfg0r")
@@ -19,27 +71,8 @@ backlight = Color(1, 1, 1, 1)
 backlight_texture = ExtResource("2_wfg0r")
 stencil_flags = 2
 
-[sub_resource type="Gradient" id="Gradient_5mdam"]
-interpolation_mode = 2
-colors = PackedColorArray(1, 1, 0, 1, 1, 0.69411767, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6dbfv"]
-gradient = SubResource("Gradient_5mdam")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfg0r"]
-transparency = 1
-blend_mode = 1
-shading_mode = 0
-albedo_texture = SubResource("GradientTexture2D_6dbfv")
-
-[sub_resource type="QuadMesh" id="QuadMesh_q7cwr"]
-flip_faces = true
-size = Vector2(0.3, 0.3)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_obkmn"]
+radius = 0.4
 
 [sub_resource type="Curve" id="Curve_5mdam"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.4471185, 0.0, 0, 0]
@@ -91,6 +124,78 @@ albedo_texture = SubResource("GradientTexture2D_ib4rg")
 material = SubResource("StandardMaterial3D_wq0v1")
 orientation = 1
 
+[sub_resource type="Shader" id="Shader_wfg0r"]
+resource_local_to_scene = true
+code = "shader_type spatial;
+render_mode skip_vertex_transform, shadows_disabled, cull_disabled, unshaded;
+uniform vec4 ribbonColor : source_color;
+uniform sampler2D ribbonTexture;
+uniform sampler2D ribbonTextureSec;
+// all parameters inside data parameters are used by ribbon system and not meant to be edited manually
+group_uniforms DataParameters;
+uniform sampler2D texData : filter_nearest, repeat_disable;
+uniform vec2 texDataSize = vec2(64.0, 64.0); // this should be static but need to be edited as param
+//const int maxPoints = 64;
+//uniform vec3 ribbonPos[maxPoints];
+//uniform mat3 ribbonRot[maxPoints];
+//uniform float ribbonUX[maxPoints];
+
+instance uniform int posID;
+instance uniform int rotID;
+instance uniform int norID;
+instance uniform int segID;
+
+
+void vertex() {
+	//int id = int(UV2.x);
+	//vec3 world = local + ribbonPos[id];
+	// rotate first
+	//vec3 local = ribbonRot[id] * VERTEX;
+	vec2 uv;
+	// construct mat3 from the pixel data (id +1 to 3)
+	uv = (vec2(UV2.x, float(rotID)) + 0.5) / texDataSize;
+	vec3 vmx =  texture(texData, uv).rgb;
+	uv = (vec2(UV2.x, float(rotID+1)) + 0.5) / texDataSize;
+	vec3 vmy =  texture(texData, uv).rgb;
+	uv = (vec2(UV2.x, float(rotID+2)) + 0.5) / texDataSize;
+	vec3 vmz =  texture(texData, uv).rgb;
+	mat3 cmat = mat3(vmx, vmy, vmz);
+	vec3 local = cmat * VERTEX;
+	// then set the world position
+	uv = (vec2(UV2.x, float(posID)) + 0.5) / texDataSize;
+	vec3 world = local + texture(texData, uv).rgb;
+	POSITION = PROJECTION_MATRIX * VIEW_MATRIX * vec4(world, 1.0);
+	//UV = vec2(ribbonUX[id],UV.y);
+	uv = (vec2(UV2.x, float(segID)) + 0.5) / texDataSize;
+	UV = vec2(texture(texData, uv).r, UV.y); // only R used
+}
+
+void fragment() {
+	vec4 prim = texture(ribbonTexture, UV);
+	vec4 sec = texture(ribbonTextureSec, UV);
+    ALBEDO = ribbonColor.rgb * prim.rgb * sec.rgb;
+    ALPHA = ribbonColor.a * prim.a * sec.a;
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_cuwsv"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.05, 0.665625, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0, 1.3945211, 1.3945211, 1, 0, 1.5720325, 1.5720325, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vw5mi"]
+gradient = SubResource("Gradient_cuwsv")
+use_hdr = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vw5mi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_wfg0r")
+shader_parameter/ribbonColor = Color(1, 1, 1, 1)
+shader_parameter/ribbonTexture = ExtResource("10_q7cwr")
+shader_parameter/ribbonTextureSec = SubResource("GradientTexture1D_vw5mi")
+shader_parameter/texDataSize = Vector2(64, 64)
+
 [node name="Area3D" type="Area3D" unique_id=808620645]
 collision_layer = 4
 collision_mask = 2
@@ -101,15 +206,47 @@ target_type = 1
 
 [node name="Node3D" type="Node3D" parent="." unique_id=366008064]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=809458543]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Node3D" unique_id=1155260694]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.004181668, 0.08876391, -0.064042866)
+amount = 10
+lifetime = 0.09999999999999999
+process_material = SubResource("ParticleProcessMaterial_ud75t")
+draw_pass_1 = SubResource("QuadMesh_pltaw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=2080864643]
+transform = Transform3D(10, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, -0.19617286, -0.2587913, -0.22349343)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D" unique_id=716856568]
+transform = Transform3D(4.9999995, 2.5980763, -1.1356552e-07, 0, -1.3113416e-07, -3, -8.6602545, 1.4999999, -6.556708e-08, -0.24034396, -0.2587913, 0.09476949)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D" unique_id=1137847770]
+transform = Transform3D(-5.0000005, 2.598076, -1.1356552e-07, 0, -1.3113416e-07, -3, -8.660254, -1.5000002, 6.5567086e-08, -0.09377482, -0.2587913, 0.2806553)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D" unique_id=1989608104]
+transform = Transform3D(-9.996749, -0.076497346, 3.3438052e-09, 0, -1.3113416e-07, -3, 0.25499114, -2.9990246, 1.3109153e-07, 0.16266134, -0.2587913, 0.28840625)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D" unique_id=714930391]
+transform = Transform3D(-4.777545, -2.6354802, 1.1520049e-07, 0, -1.3113416e-07, -3, 8.784934, -1.4332635, 6.264994e-08, 0.2761725, -0.2587913, -0.029066592)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D" unique_id=1882789231]
+transform = Transform3D(5.219203, -2.5589826, 1.1185668e-07, 0, -1.3113416e-07, -3, 8.529942, 1.565761, -6.844158e-08, 0.123972334, -0.2587913, -0.27430078)
+material_override = SubResource("StandardMaterial3D_wfg0r")
+mesh = SubResource("QuadMesh_q7cwr")
+
+[node name="Axe" type="MeshInstance3D" parent="Node3D" unique_id=809458543]
 transform = Transform3D(3.5, 0, 0, 0, -1.5298986e-07, -3.5, 0, 3.5, -1.5298986e-07, 0, 0, -0.44808674)
 material_override = SubResource("StandardMaterial3D_hiy74")
 mesh = ExtResource("3_q7cwr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MeshInstance3D" unique_id=2080864643]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121407226, 0.07394036)
-material_override = SubResource("StandardMaterial3D_wfg0r")
-mesh = SubResource("QuadMesh_q7cwr")
 
 [node name="Spin" type="Node" parent="Node3D" unique_id=1182133491 node_paths=PackedStringArray("target")]
 script = ExtResource("4_cuwsv")
@@ -127,6 +264,7 @@ layers = 4
 script = ExtResource("6_l6km4")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=857302054]
+visible = false
 amount = 5
 lifetime = 0.15000000000000002
 preprocess = 0.5
@@ -142,6 +280,16 @@ script = ExtResource("4_cuwsv")
 speed = 8.0
 deceleration = -25.0
 target = NodePath("..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1125449858 node_paths=PackedStringArray("objToTrack")]
+transform = Transform3D(3.5, 0, 0, 0, -1.5298986e-07, -3.5, 0, 3.5, -1.5298986e-07, -0.20823734, -7.1054274e-15, 0.33009446)
+visible = false
+material_override = SubResource("ShaderMaterial_vw5mi")
+cast_shadow = 0
+script = ExtResource("4_6dbfv")
+objToTrack = NodePath("../Node3D/GPUParticles3D2")
+ribbonWidth = 0.3
+segmentLength = 0.01
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="destroyed" from="." to="SpawnOnDestroy" method="_on_destroyed"]

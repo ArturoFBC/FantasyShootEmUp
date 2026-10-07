@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch8y8aqkutiv"
-path.s3tc="res://.godot/imported/window_03.png-89408491cef001f012475ed800f535ba.s3tc.ctex"
+uid="uid://bmu3rsmb04e6t"
+path.s3tc="res://.godot/imported/BRibbonLogo.png-dc44eb36f90f3415b7e762e06dedbe5d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/vfx/ParticlePack/window_03.png"
-dest_files=["res://.godot/imported/window_03.png-89408491cef001f012475ed800f535ba.s3tc.ctex"]
+source_file="res://addons/bribbon/BRibbonLogo.png"
+dest_files=["res://.godot/imported/BRibbonLogo.png-dc44eb36f90f3415b7e762e06dedbe5d.s3tc.ctex"]
 
 [params]
 

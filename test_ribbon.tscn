@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c4vtwj0cjkcxd"]
+
+[ext_resource type="PackedScene" uid="uid://dms08aw41r4ut" path="res://addons/bribbon/example/FollowCursor.tscn" id="1_ugpuy"]
+
+[node name="Node3D" type="Node3D" unique_id=1551851276]
+
+[node name="FollowCursor2" parent="." unique_id=1610125446 instance=ExtResource("1_ugpuy")]
+
+[node name="FollowCursor" parent="." unique_id=1559452407 instance=ExtResource("1_ugpuy")]
+depth = 5.0

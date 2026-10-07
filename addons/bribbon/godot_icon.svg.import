@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch8y8aqkutiv"
-path.s3tc="res://.godot/imported/window_03.png-89408491cef001f012475ed800f535ba.s3tc.ctex"
+uid="uid://ceobksa2pcsoc"
+path.s3tc="res://.godot/imported/godot_icon.svg-03ac62a6d6a35f9e74fcebe3470e2698.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/vfx/ParticlePack/window_03.png"
-dest_files=["res://.godot/imported/window_03.png-89408491cef001f012475ed800f535ba.s3tc.ctex"]
+source_file="res://addons/bribbon/godot_icon.svg"
+dest_files=["res://.godot/imported/godot_icon.svg-03ac62a6d6a35f9e74fcebe3470e2698.s3tc.ctex"]
 
 [params]
 
@@ -39,3 +39,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
