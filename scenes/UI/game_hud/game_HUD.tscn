@@ -13,9 +13,10 @@
 
 [sub_resource type="Theme" id="Theme_evmys"]
 
-[node name="GameHud" type="CanvasLayer" unique_id=152822922 node_paths=PackedStringArray("intro_screen", "victory_screen", "defeat_screen")]
+[node name="GameHud" type="CanvasLayer" unique_id=152822922 node_paths=PackedStringArray("intro_screen", "intro_level_label", "victory_screen", "defeat_screen")]
 script = ExtResource("1_q8ptm")
 intro_screen = NodePath("Intro")
+intro_level_label = NodePath("Intro/Label")
 victory_screen = NodePath("VictoryScreen")
 defeat_screen = NodePath("DefeatScreen")
 
@@ -160,4 +161,3 @@ text = "Windglide Hills"
 [node name="VictoryScreen" parent="." unique_id=645243157 instance=ExtResource("9_xerqx")]
 
 [node name="DefeatScreen" parent="." unique_id=1845610846 instance=ExtResource("10_32dab")]
-script = null

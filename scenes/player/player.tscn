@@ -37,4 +37,3 @@ flicker_effect = NodePath("../FlickerOnDamage")
 metadata/_custom_type_script = "uid://4yf0njowd1ji"
 
 [connection signal="death" from="PlayerHitPoints" to="OnDeathNotifyLevelManager" method="_on_player_hit_points_death"]
-[connection signal="health_picked_up" from="PowerUpCatcher" to="PlayerHitPoints" method="_on_power_up_catcher_health_picked_up"]

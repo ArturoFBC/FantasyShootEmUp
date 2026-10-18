@@ -3,8 +3,14 @@ extends HitPoints
 
 
 func _ready():
+	SignalBus.connect("health_picked_up", _on_power_up_catcher_health_picked_up)
 	SignalBus.emit_signal("player_maxHP_updated", max_hp, max_hp)
 	SignalBus.emit_signal("player_HP_updated", current_hp, current_hp)
+	
+
+func _exit_tree():
+	if SignalBus.is_connected("health_picked_up", _on_power_up_catcher_health_picked_up):
+		SignalBus.disconnect("health_picked_up", _on_power_up_catcher_health_picked_up)
 	
 
 func _damage_taken(damage: float, previous_hp: float) -> void:

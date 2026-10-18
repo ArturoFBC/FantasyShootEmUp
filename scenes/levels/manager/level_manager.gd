@@ -67,8 +67,8 @@ func _process(_delta: float) -> void:
 		LevelState.Outro:
 			if prev_state != current_state:
 				on_enter_outro()
-
-	prev_state = current_state
+	if current_state == next_state:
+		prev_state = current_state
 
 
 func go_to_state(new_state: LevelState) -> void:

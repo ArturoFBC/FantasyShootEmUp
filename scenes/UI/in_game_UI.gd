@@ -3,8 +3,9 @@ extends Node
 
 
 @export var intro_screen : Control 
+@export var intro_level_label : Label
 @export var victory_screen : VictoryScreen
-@export var defeat_screen : Control 
+@export var defeat_screen : DefeatScreen 
 @export var pause_menu : Control
 
 @export var level_timer : LevelTimer
@@ -12,6 +13,7 @@ extends Node
 
 
 func _ready() -> void:
+	intro_level_label.text = GlobalData.level_list[GlobalData.current_level_index].level_name
 	GlobalData.game_manager.level_state_changed.connect(_on_level_state_changed)
 	var current_state = GlobalData.game_manager.get_current_state()
 	if current_state != LevelManager.LevelState.None:
@@ -36,6 +38,7 @@ func _on_level_state_changed(prev_state: LevelManager.LevelState, new_state: Lev
 				LevelManager.VictoryState.Victory:
 					victory_screen._display(level_timer._get_time(), score_resource.get_score())
 				LevelManager.VictoryState.Defeat:
+					defeat_screen.level_name_label.text = GlobalData.level_list[GlobalData.current_level_index].level_name
 					defeat_screen.show()
 				_:
 					push_error("Game hud has received the Outro state signal, but victory state is not Victory nor Defeat")

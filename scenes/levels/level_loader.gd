@@ -1,8 +1,9 @@
 class_name LevelLoader
 extends Node
 
+@export var level_parent: Node
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	var level = GlobalData.level_list[GlobalData.current_level_index].level_scene.instantiate()
-	get_tree().root.add_child(level)
+	level_parent.add_child.call_deferred(level)

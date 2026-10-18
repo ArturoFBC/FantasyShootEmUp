@@ -29,23 +29,28 @@ func _process(_delta: float) -> void:
 	
 
 func _ready() -> void:
-	_connect_to_powerup_catcher()
+	_connect_to_signal_bus()
 	_create_projectile_spawn_points_array()
 
 
-func _connect_to_powerup_catcher() -> void:
-	var connected_to_powerup_catcher: bool = false
-	for sibling in get_parent().get_children():
-		if sibling is PowerUpCatcher :
-			if type == WeaponType.main :
-				sibling.power_up_main_grabbed.connect(_level_up)
-			else :
-				sibling.power_up_secondary_grabbed.connect(_level_up)
-			connected_to_powerup_catcher = true
-			break
-	
-	if connected_to_powerup_catcher == false:
-		push_error("Player weapon could not connect to power up catcher on player")
+func _exit_tree() -> void:
+	_disconnect_from_signal_bus()
+
+
+func _connect_to_signal_bus() -> void:
+	if type == WeaponType.main:
+		SignalBus.connect("power_up_main_grabbed", _level_up)
+	else:
+		SignalBus.connect("power_up_secondary_grabbed", _level_up)
+
+
+func _disconnect_from_signal_bus() -> void:
+	if type == WeaponType.main:
+		if SignalBus.is_connected("power_up_main_grabbed", _level_up):
+			SignalBus.disconnect("power_up_main_grabbed", _level_up)
+	else:
+		if SignalBus.is_connected("power_up_secondary_grabbed", _level_up):
+			SignalBus.disconnect("power_up_secondary_grabbed", _level_up)
 
 
 func _create_projectile_spawn_points_array() -> void:
@@ -74,20 +79,35 @@ func _shot() -> void:
 
 
 func _shot_internal() -> void:
+	if level >= spawn_points_by_level.size():
+		push_error("PlayerWeapon '%s': level %d exceeds spawn_points_by_level array size %d. Check the weapon's shot_point_containers export." % [name, level, spawn_points_by_level.size()])
+		return
 	for spawnPoint: PlayerProjectileSpawnPoint in spawn_points_by_level[level]:
 		if spawnPoint.alternative > spawnPoint.alternative_offset:
-			spawnPoint.alternative_offset =+ 1
+			spawnPoint.alternative_offset += 1
 		else:
 			spawnPoint.alternative_offset = 0
-			var projectile := projectiles[spawnPoint.projectile_level].instantiate()
+			var proj_level := spawnPoint.projectile_level
+			if proj_level >= projectiles.size():
+				push_error("PlayerWeapon '%s': projectile_level %d exceeds projectiles array size %d. Check the weapon's projectiles export and the spawn point's projectile_level." % [name, proj_level, projectiles.size()])
+				return
+			if proj_level >= damages.size():
+				push_error("PlayerWeapon '%s': projectile_level %d exceeds damages array size %d. Check the weapon's damages export and the spawn point's projectile_level." % [name, proj_level, damages.size()])
+				return
+			var projectile := projectiles[proj_level].instantiate()
 			get_tree().current_scene.add_child(projectile)
-			projectile.init(spawnPoint, damages[spawnPoint.projectile_level], spawnPoint.left_side)
+			projectile.init(spawnPoint, damages[proj_level], spawnPoint.left_side)
 
 
 func _wait_cooldown():
+	if level >= fire_rate.size():
+		push_error("PlayerWeapon '%s': level %d exceeds fire_rate array size %d. Check the weapon's fire_rate export." % [name, level, fire_rate.size()])
+		return
 	shot_on_cd = true
 	weapon_shot.emit(shot_on_cd)
 	await get_tree().create_timer(fire_rate[level]).timeout
+	if not is_inside_tree():
+		return
 	shot_on_cd = false
 	weapon_shot.emit(shot_on_cd)
 

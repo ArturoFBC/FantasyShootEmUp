@@ -123,6 +123,10 @@ lights_and_shadows/directional_shadow/size.mobile=8192
 [signal_bus]
 
 signals={
+"health_picked_up": [{
+"name": "amount",
+"type": 3
+}],
 "player_HP_updated": [{
 "name": "new_hp",
 "type": 3
@@ -143,5 +147,7 @@ signals={
 }, {
 "name": "previous_hp",
 "type": 3
-}]
+}],
+"power_up_main_grabbed": [],
+"power_up_secondary_grabbed": []
 }
