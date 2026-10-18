@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bhxb4oxpqhb5"]
 
-[ext_resource type="PackedScene" uid="uid://bd63ecpfvbn6v" path="res://scenes/UI/game_hud/screen/victory_screen.tscn" id="1_soi5h"]
+[ext_resource type="PackedScene" path="res://scenes/UI/game_hud/screen/end_game_screen.tscn" id="1_egs"]
 [ext_resource type="Script" path="res://scenes/UI/game_hud/screen/defeat_screen.gd" id="2_dscr"]
 
-[node name="DefeatScreen" unique_id=645243157 instance=ExtResource("1_soi5h")]
+[node name="DefeatScreen" unique_id=645243157 instance=ExtResource("1_egs")]
 script = ExtResource("2_dscr")
 
-[node name="VictoryLabel" parent="ScreenBackground/VictoryBackgroundTexture" parent_id_path=PackedInt32Array(1401666864) index="0" unique_id=916917464]
+[node name="ResultLabel" parent="ScreenBackground/BannerTexture" parent_id_path=PackedInt32Array(1401666864) index="0" unique_id=916917464]
 text = "Defeat!"
 
 [node name="ContinueButton" parent="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/ContinueHBoxContainer" index="0" unique_id=1832298718]

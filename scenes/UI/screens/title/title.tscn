@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bvxi33xxxd3sr" path="res://scenes/UI/screens/title/styles/title_terrain.tscn" id="1_p14e8"]
 [ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="4_4kwpi"]
-[ext_resource type="PackedScene" uid="uid://cqnynquhpgb7w" path="res://scenes/player_select.tscn" id="4_tgkt3"]
 [ext_resource type="Script" uid="uid://cc4ijemj5tak8" path="res://scenes/UI/screens/title/change_scene.gd" id="5_yvu5c"]
 [ext_resource type="PackedScene" uid="uid://c68a415dlhvwx" path="res://graphics/props/tool-axe.fbx" id="7_r7pwm"]
 [ext_resource type="Script" uid="uid://kuac2juairvm" path="res://scenes/UI/screens/title/quitting.gd" id="7_tgkt3"]
@@ -138,7 +137,7 @@ theme = ExtResource("4_4kwpi")
 theme_override_constants/h_separation = 10
 text = "Start game"
 script = ExtResource("5_yvu5c")
-new_scene = ExtResource("4_tgkt3")
+target = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Canvas/MarginContainer/VBoxContainer" unique_id=260231676]
 layout_mode = 2

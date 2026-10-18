@@ -1,7 +1,7 @@
 extends Node
 
-@export var new_scene: PackedScene
+@export var target: ScenePaths.Id
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_packed(new_scene)
+	get_tree().change_scene_to_file(ScenePaths.path(target))

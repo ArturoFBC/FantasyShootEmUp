@@ -15,7 +15,6 @@
 [ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="13_lubwm"]
 [ext_resource type="Script" uid="uid://clob8jpvux7mt" path="res://scenes/UI/screens/player_select/player_select_screen.gd" id="13_wmt0g"]
 [ext_resource type="Resource" uid="uid://coqc0rx3dkvc6" path="res://scenes/player/class-job/class_list.tres" id="14_7xgo4"]
-[ext_resource type="PackedScene" uid="uid://dbr46lbyeodql" path="res://scenes/levels/in_game.tscn" id="15_ewxmy"]
 [ext_resource type="Script" uid="uid://c8f0ql337rqmu" path="res://scenes/levels/level_data_resources/level_list_setup.gd" id="17_ewxmy"]
 [ext_resource type="Resource" uid="uid://bp7nayc86evq7" path="res://scenes/levels/level_data_resources/level_list.tres" id="18_w83dn"]
 
@@ -130,7 +129,6 @@ shape = SubResource("SphereShape3D_8g6yy")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=185918534]
 script = ExtResource("13_wmt0g")
 class_list = ExtResource("14_7xgo4")
-new_scene = ExtResource("15_ewxmy")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1222848761]
 anchors_preset = 15
