@@ -38,10 +38,21 @@ func _init() -> void:
 	GlobalData.game_manager = self
 	prev_state = LevelState.None
 	current_state = LevelState.Intro
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		match current_state:
+			LevelState.InGame:
+				request_pause()
+			LevelState.Paused:
+				request_unpause()
 
 
 func _process(_delta: float) -> void:
 	var next_state = current_state
+	var transitioned := false
 	match current_state:
 		LevelState.Intro:
 			if prev_state != current_state:
@@ -50,6 +61,7 @@ func _process(_delta: float) -> void:
 			if current_state != next_state:
 				on_exit_intro_state();
 				go_to_state(next_state)
+				transitioned = true
 		LevelState.InGame:
 			if prev_state != current_state:
 				on_enter_ingame()
@@ -57,6 +69,7 @@ func _process(_delta: float) -> void:
 			if current_state != next_state:
 				on_exit_ingame_state();
 				go_to_state(next_state)
+				transitioned = true
 		LevelState.Paused:
 			if prev_state != current_state:
 				on_enter_paused()
@@ -64,10 +77,11 @@ func _process(_delta: float) -> void:
 			if current_state != next_state:
 				on_exit_paused_state();
 				go_to_state(next_state)
+				transitioned = true
 		LevelState.Outro:
 			if prev_state != current_state:
 				on_enter_outro()
-	if current_state == next_state:
+	if not transitioned:
 		prev_state = current_state
 
 
@@ -116,6 +130,7 @@ func on_exit_ingame_state() -> void:
 #region PAUSED
 func on_enter_paused() -> void:
 	pause_requested = PauseRequest.NoRequest
+	get_tree().paused = true
 
 
 func pause_get_next_state() -> LevelState:
@@ -127,6 +142,7 @@ func pause_get_next_state() -> LevelState:
 
 func on_exit_paused_state() -> void:
 	pause_requested = PauseRequest.NoRequest
+	get_tree().paused = false
 #endregion
 
 

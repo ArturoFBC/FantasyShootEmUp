@@ -10,15 +10,17 @@
 [ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="7_oylr5"]
 [ext_resource type="PackedScene" uid="uid://bd63ecpfvbn6v" path="res://scenes/UI/game_hud/screen/victory_screen.tscn" id="9_xerqx"]
 [ext_resource type="PackedScene" uid="uid://bhxb4oxpqhb5" path="res://scenes/UI/game_hud/screen/defeat_screen.tscn" id="10_32dab"]
+[ext_resource type="PackedScene" uid="uid://cv7c4cd7kkkum" path="res://scenes/UI/game_hud/pause_menu.tscn" id="11_pause"]
 
 [sub_resource type="Theme" id="Theme_evmys"]
 
-[node name="GameHud" type="CanvasLayer" unique_id=152822922 node_paths=PackedStringArray("intro_screen", "intro_level_label", "victory_screen", "defeat_screen")]
+[node name="GameHud" type="CanvasLayer" unique_id=152822922 node_paths=PackedStringArray("intro_screen", "intro_level_label", "victory_screen", "defeat_screen", "pause_menu")]
 script = ExtResource("1_q8ptm")
 intro_screen = NodePath("Intro")
 intro_level_label = NodePath("Intro/Label")
 victory_screen = NodePath("VictoryScreen")
 defeat_screen = NodePath("DefeatScreen")
+pause_menu = NodePath("PauseMenu")
 
 [node name="ScoreBackground" type="NinePatchRect" parent="." unique_id=1460110263]
 self_modulate = Color(0, 0, 0, 0.25882354)
@@ -161,3 +163,6 @@ text = "Windglide Hills"
 [node name="VictoryScreen" parent="." unique_id=645243157 instance=ExtResource("9_xerqx")]
 
 [node name="DefeatScreen" parent="." unique_id=1845610846 instance=ExtResource("10_32dab")]
+
+[node name="PauseMenu" parent="." unique_id=557067712 instance=ExtResource("11_pause")]
+visible = false

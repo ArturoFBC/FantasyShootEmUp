@@ -23,16 +23,26 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	if GlobalData.game_manager.level_state_changed.is_connected(_on_level_state_changed):
 		GlobalData.game_manager.level_state_changed.disconnect(_on_level_state_changed)
-		
-		
+
+
 func _on_level_state_changed(prev_state: LevelManager.LevelState, new_state: LevelManager.LevelState) -> void:
 	match new_state:
 		LevelManager.LevelState.Intro:
 			intro_screen.show()
+			if pause_menu:
+				pause_menu.hide()
 		LevelManager.LevelState.InGame:
 			if prev_state == LevelManager.LevelState.Intro:
 				intro_screen.hide()
+			if pause_menu:
+				pause_menu.hide()
+		LevelManager.LevelState.Paused:
+			if pause_menu:
+				pause_menu.show()
+			print("activating pause menu")
 		LevelManager.LevelState.Outro:
+			if pause_menu:
+				pause_menu.hide()
 			var victory_state = GlobalData.game_manager.get_victory_state()
 			match victory_state:
 				LevelManager.VictoryState.Victory:

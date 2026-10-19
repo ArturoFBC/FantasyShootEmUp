@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cv7c4cd7kkkum"]
+
+[ext_resource type="Script" uid="uid://hmqxlpulxa2y" path="res://scenes/UI/game_hud/pause_menu.gd" id="1_q0opb"]
+[ext_resource type="Texture2D" uid="uid://daibehav2vtw4" path="res://graphics/UI/Default/panel_brown_dark_corners_b.png" id="3_ec2uk"]
+[ext_resource type="Theme" uid="uid://dyf27d8jqvjos" path="res://scenes/UI/screens/title/title.tres" id="3_ht7cf"]
+[ext_resource type="Texture2D" uid="uid://d1pw30ja6r8oy" path="res://graphics/UI/Default/banner_modern.png" id="4_ka8dg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdgsk"]
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_pd18x"]
+
+[node name="PauseMenu" type="Control" unique_id=557067711]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+process_mode = 3
+script = ExtResource("1_q0opb")
+
+[node name="Panel" type="Panel" parent="." unique_id=116096030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jdgsk")
+
+[node name="ScreenBackground" type="NinePatchRect" parent="." unique_id=748642442]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("3_ht7cf")
+texture = ExtResource("3_ec2uk")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="BannerTexture" type="TextureRect" parent="ScreenBackground" unique_id=1250286402]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 50.0
+offset_top = -40.0
+offset_right = -50.0
+offset_bottom = 85.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_ka8dg")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="ResultLabel" type="Label" parent="ScreenBackground/BannerTexture" unique_id=369110561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ht7cf")
+theme_override_colors/font_color = Color(0.49411765, 0.015686275, 0.003921569, 1)
+theme_override_colors/font_outline_color = Color(0.5911897, 0.2014035, 0.17597133, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 40
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenBackground" unique_id=1822662970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="LevelForm" type="VBoxContainer" parent="ScreenBackground/MarginContainer" unique_id=401726605]
+layout_mode = 2
+
+[node name="ContinueMarginContainer" type="MarginContainer" parent="ScreenBackground/MarginContainer/LevelForm" unique_id=1238692810]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_pd18x")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer" unique_id=221962257]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/VBoxContainer" unique_id=2069019965]
+layout_mode = 2
+text = "Resume"
+
+[node name="RetryButton" type="Button" parent="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/VBoxContainer" unique_id=1194762291]
+layout_mode = 2
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/VBoxContainer" unique_id=954236824]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="ScreenBackground/MarginContainer/LevelForm/ContinueMarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

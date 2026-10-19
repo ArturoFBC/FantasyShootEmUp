@@ -20,7 +20,6 @@ func _exit_tree() -> void:
 
 
 func _on_level_state_changed(_prev_state: LevelManager.LevelState, new_state: LevelManager.LevelState) -> void:
-	print("[ANS] _on_level_state_changed new_state=", new_state, " expected=", expected_state)
 	if new_state == expected_state:
 		if activation_or_deactivation:
 			target.process_mode = Node.PROCESS_MODE_INHERIT
@@ -32,4 +31,3 @@ func _on_level_state_changed(_prev_state: LevelManager.LevelState, new_state: Le
 				target.process_mode = Node.PROCESS_MODE_DISABLED
 			else:
 				target.process_mode = Node.PROCESS_MODE_INHERIT
-	print("[ANS] target.process_mode now=", target.process_mode)
