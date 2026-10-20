@@ -3,19 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkds2amifj86b"
-path="res://.godot/imported/character-keeper.fbx-517fcd4c0742c121278b83363033b950.scn"
+uid="uid://dgv0ewhtqrdxn"
+path="res://.godot/imported/crypt-small.fbx-9bb556f80c9a27bc3ba1c34e3d1bb6e3.scn"
 
 [deps]
 
-source_file="res://graphics/actors/models/from graveyard/character-keeper.fbx"
-dest_files=["res://.godot/imported/character-keeper.fbx-517fcd4c0742c121278b83363033b950.scn"]
+source_file="res://graphics/levels/from_graveyard/models/crypt-small.fbx"
+dest_files=["res://.godot/imported/crypt-small.fbx-9bb556f80c9a27bc3ba1c34e3d1bb6e3.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
