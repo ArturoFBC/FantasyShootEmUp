@@ -294,7 +294,7 @@ image = SubResource("Image_x1s84")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v81ca"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ee8vs"]
@@ -408,7 +408,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0fwa"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hpck1"]
@@ -480,7 +480,7 @@ image = SubResource("Image_ykhxd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sv5ju"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svbum"]
@@ -1518,7 +1518,7 @@ image = SubResource("Image_er6ss")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hax3"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia5b3"]
@@ -1596,7 +1596,7 @@ image = SubResource("Image_ipg16")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcdny"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8b4l"]
@@ -1674,7 +1674,7 @@ image = SubResource("Image_jrd2m")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwa8c"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0eej"]
@@ -1779,7 +1779,7 @@ image = SubResource("Image_r4wy2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbnwr"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cntd"]
@@ -1857,7 +1857,7 @@ image = SubResource("Image_dttgw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1q2c"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbxrl"]
@@ -2015,7 +2015,7 @@ image = SubResource("Image_iruyk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0olf"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buu16"]
@@ -2120,7 +2120,7 @@ image = SubResource("Image_t3pvp")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gipu"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iql33"]
@@ -2198,7 +2198,7 @@ image = SubResource("Image_5roc8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmbfb"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlikc"]
@@ -2276,7 +2276,7 @@ image = SubResource("Image_khhmu")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jv7xy"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejbgh"]
@@ -2381,7 +2381,7 @@ image = SubResource("Image_a60cm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43fo0"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_40tel"]
@@ -2433,7 +2433,7 @@ image = SubResource("Image_ywbi5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpadx"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sk03v"]
@@ -2485,7 +2485,7 @@ image = SubResource("Image_ulkv0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sm1ht"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ordph"]
@@ -2537,7 +2537,7 @@ image = SubResource("Image_6r048")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr4wb"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c8wue"]
@@ -2589,7 +2589,7 @@ image = SubResource("Image_btp01")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxnpm"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_10kei"]
@@ -2645,7 +2645,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhmxp"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rncq7"]
@@ -2831,7 +2831,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpiwe"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_falnd"]
@@ -2945,7 +2945,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbige"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cv7p7"]
@@ -3039,7 +3039,7 @@ image = SubResource("Image_bjcnc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e82j"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uigdk"]
@@ -3157,7 +3157,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8lvy"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bfifk"]
@@ -3259,7 +3259,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ol2n8"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvsv4"]
@@ -3359,7 +3359,7 @@ image = SubResource("Image_s7rwt")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0lqe"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tdyr"]
@@ -3521,7 +3521,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v4ve"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljbjc"]
@@ -3635,7 +3635,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fafh"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l3yco"]
@@ -3731,7 +3731,7 @@ image = SubResource("Image_s7dc5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64jqm"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n32k1"]
@@ -3961,7 +3961,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tb14"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_a6r5q"]
@@ -4065,7 +4065,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wvp2"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0eg2f"]
@@ -4165,7 +4165,7 @@ image = SubResource("Image_la0ih")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqg7u"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6n8d"]
@@ -4283,7 +4283,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sscw3"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnvoe"]
@@ -4417,7 +4417,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygpnq"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a167g"]
@@ -4551,7 +4551,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfcfo"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcijj"]
@@ -4673,7 +4673,7 @@ image = SubResource("Image_eekqs")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhop8"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyc5q"]
@@ -4807,7 +4807,7 @@ image = SubResource("Image_gfeim")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0563"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n28am"]
@@ -4947,7 +4947,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4fmv"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de2s0"]
@@ -5075,7 +5075,7 @@ image = SubResource("Image_g87w5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egmc3"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vdxjc"]
@@ -5375,7 +5375,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s64hl"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaa7y"]
@@ -5543,7 +5543,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24m2n"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0khx"]
@@ -5665,7 +5665,7 @@ image = SubResource("Image_05db6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc7s2"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ma8bl"]
@@ -5811,7 +5811,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jf4jv"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26w7p"]
@@ -5943,7 +5943,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3wt8"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ge5xt"]
@@ -6071,7 +6071,7 @@ image = SubResource("Image_3tvr8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndc6l"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mci1b"]
@@ -6205,7 +6205,7 @@ image = SubResource("Image_exli0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftg6i"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3ford"]
@@ -6255,7 +6255,7 @@ image = SubResource("Image_wo168")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7kpg"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4icu2"]
@@ -6363,7 +6363,7 @@ image = SubResource("Image_y2nyn")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiuah"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwaqn"]
@@ -8189,7 +8189,7 @@ image = SubResource("Image_0h27w")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05ehv"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_68ene"]
@@ -8239,7 +8239,7 @@ image = SubResource("Image_2bg5i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h86mr"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mrls2"]
@@ -8289,7 +8289,7 @@ image = SubResource("Image_74s4r")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17lg1"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gdalo"]
@@ -8339,7 +8339,7 @@ image = SubResource("Image_27fpd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6rtu"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5h5rb"]
@@ -8389,7 +8389,7 @@ image = SubResource("Image_udfhj")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yiw0w"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ehunu"]
@@ -8441,7 +8441,7 @@ image = SubResource("Image_nk6i0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xalkb"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_owowq"]
@@ -8493,7 +8493,7 @@ image = SubResource("Image_6l2ok")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p83q6"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cfsfu"]
@@ -8545,7 +8545,7 @@ image = SubResource("Image_glcuk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxipl"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2g70o"]
@@ -8597,7 +8597,7 @@ image = SubResource("Image_bjtj1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxfuu"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_04hue"]
@@ -8705,7 +8705,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co0vc"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ckabc"]
@@ -9042,7 +9042,7 @@ image = SubResource("Image_yqvb5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkirn"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lifd0"]
@@ -9098,7 +9098,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqixe"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c1m6a"]
@@ -9181,7 +9181,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q78io"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_aaqwb"]
@@ -9281,7 +9281,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewhnv"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cbwdn"]
@@ -9359,7 +9359,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ff67"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nwvy"]
@@ -9464,7 +9464,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuyo0"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_swj8p"]
@@ -9542,7 +9542,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6roc"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rja0"]
@@ -9641,7 +9641,7 @@ image = SubResource("Image_5mo23")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7iiw7"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egw4a"]
@@ -9719,7 +9719,7 @@ image = SubResource("Image_vf2s7")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6y0a"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gv86"]
@@ -9803,7 +9803,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ofy8"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h55jp"]
@@ -9875,7 +9875,7 @@ image = SubResource("Image_jcvwi")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmp1u"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy0sg"]
@@ -10087,7 +10087,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_174dw"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_b2ijv"]
@@ -10165,7 +10165,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lg5qq"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hsc8x"]
@@ -10243,7 +10243,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10tlo"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gv652"]
@@ -10315,7 +10315,7 @@ image = SubResource("Image_qtf5w")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5i3u"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooftp"]
@@ -10399,7 +10399,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow71x"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x0a7h"]
@@ -10477,7 +10477,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt41r"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_30vho"]
@@ -10555,7 +10555,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8efut"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f5rvm"]
@@ -10627,7 +10627,7 @@ image = SubResource("Image_brofh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psqrb"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcnd"]
@@ -10711,7 +10711,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b26w"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_77wrn"]
@@ -10789,7 +10789,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_um78t"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2rk7e"]
@@ -10947,7 +10947,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfyma"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5bhv"]
@@ -11054,7 +11054,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r720c"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ispuf"]
@@ -11166,7 +11166,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31y16"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rgoxe"]
@@ -11260,7 +11260,7 @@ image = SubResource("Image_ly5bp")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7t6l"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hvig"]
@@ -11371,7 +11371,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y4ye"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vh0mt"]
@@ -11476,7 +11476,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ut0jw"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aophc"]
@@ -11588,7 +11588,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwjbx"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_68s5f"]
@@ -11690,7 +11690,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_435wi"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hbpk"]
@@ -11797,7 +11797,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52mf8"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w8q4"]
@@ -11896,7 +11896,7 @@ image = SubResource("Image_88orc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcoi6"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wj63"]
@@ -14897,7 +14897,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ii65"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qvctm"]
@@ -15722,7 +15722,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ashxa"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_b7fph"]
@@ -15878,7 +15878,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tmse"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_efo7r"]
@@ -16034,7 +16034,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tswqi"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_px1og"]
@@ -16268,7 +16268,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j60u"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_blso3"]
@@ -16496,7 +16496,7 @@ image = SubResource("Image_uhq1i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sytq"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir2q1"]
@@ -16811,7 +16811,7 @@ image = SubResource("Image_i0gvo")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xoa78"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhgpg"]
@@ -16889,7 +16889,7 @@ image = SubResource("Image_sfgfa")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ka4nr"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w44su"]
@@ -17123,7 +17123,7 @@ image = SubResource("Image_gjyp7")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1ydo"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_natq6"]
@@ -17363,7 +17363,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hduoh"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sh8lp"]
@@ -17437,7 +17437,7 @@ image = SubResource("Image_a0c2m")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m814s"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx1ys"]
@@ -17617,7 +17617,7 @@ image = SubResource("Image_72agq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85gb5"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muukj"]
@@ -17695,7 +17695,7 @@ image = SubResource("Image_vr6ot")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lo3n"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmgeg"]
@@ -17773,7 +17773,7 @@ image = SubResource("Image_cfyvq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmxdp"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7l46"]
@@ -18532,7 +18532,7 @@ image = SubResource("Image_vicg5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xw1b"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukc7y"]
@@ -19390,7 +19390,7 @@ image = SubResource("Image_5pxsn")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwamo"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ytdy"]
@@ -19780,7 +19780,7 @@ image = SubResource("Image_4tqey")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cayq"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_154hd"]
@@ -20020,7 +20020,7 @@ image = SubResource("Image_gpb34")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df71t"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_namky"]
@@ -20254,7 +20254,7 @@ image = SubResource("Image_oyljb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wno2a"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaq8d"]
@@ -20338,7 +20338,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_we2ow"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2i386"]
@@ -20566,7 +20566,7 @@ image = SubResource("Image_y534g")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oq3y4"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov7ma"]
@@ -20800,7 +20800,7 @@ image = SubResource("Image_g11rx")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4ujq"]
 resource_name = "leafsGreen"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.43762976, 0.90041584, 0.83818716, 1)
+albedo_color = Color(0.306341, 0.630291, 0.586731, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77nmo"]
@@ -21034,7 +21034,7 @@ image = SubResource("Image_k568x")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85doj"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3x7g"]
@@ -21118,7 +21118,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxpyr"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fd7mw"]
@@ -21196,7 +21196,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6v8yj"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nr4ni"]
@@ -21274,7 +21274,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ukhm"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6nkuf"]
@@ -21352,7 +21352,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41cmw"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3ext5"]
@@ -21430,7 +21430,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkara"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_elois"]
@@ -21508,7 +21508,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uois"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x31lo"]
@@ -21686,7 +21686,7 @@ image = SubResource("Image_mgipb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iy4v2"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvu68"]
@@ -21764,7 +21764,7 @@ image = SubResource("Image_w72qn")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c651c"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ck6j5"]
@@ -22048,7 +22048,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6ea5"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wnqmh"]
@@ -22126,7 +22126,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88hn6"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_on2eo"]
@@ -22538,7 +22538,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie5ao"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iykau"]
@@ -22616,7 +22616,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me1qm"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sphp8"]
@@ -22894,7 +22894,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1i06"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkvdo"]
@@ -22999,7 +22999,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olqst"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb17q"]
@@ -23178,7 +23178,7 @@ image = SubResource("Image_njtqs")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjnb2"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtw4f"]
@@ -23256,7 +23256,7 @@ image = SubResource("Image_5kgvf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isqcp"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8x1b"]
@@ -23340,7 +23340,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxyon"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ek25v"]
@@ -23418,7 +23418,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6qg8"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tnnnq"]
@@ -23646,7 +23646,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gino"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fp0l1"]
@@ -23726,7 +23726,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84f0k"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xbpdn"]
@@ -23806,7 +23806,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkxar"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_maj8y"]
@@ -23966,7 +23966,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpqn2"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_p184n"]
@@ -24046,7 +24046,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hp7v"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_31dg4"]
@@ -24124,7 +24124,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8eegi"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_16mjb"]
@@ -24246,7 +24246,7 @@ image = SubResource("Image_7hbb8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a02pc"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hysv7"]
@@ -24324,7 +24324,7 @@ image = SubResource("Image_kg7d1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jeed0"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxylq"]
@@ -24402,7 +24402,7 @@ image = SubResource("Image_ayhqb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ueaw"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmkyo"]
@@ -24480,7 +24480,7 @@ image = SubResource("Image_x6vrq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6ifn"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2m0q"]
@@ -24575,7 +24575,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6like"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2gt6"]
@@ -24736,7 +24736,7 @@ emission_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3txce"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnl0j"]
@@ -25201,7 +25201,7 @@ image = SubResource("Image_3bs54")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cefbd"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mcl6k"]
@@ -25253,7 +25253,7 @@ image = SubResource("Image_u3tjy")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckawn"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h7kgs"]
@@ -25303,7 +25303,7 @@ image = SubResource("Image_ygnxk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0utar"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1l3jj"]
@@ -25353,7 +25353,7 @@ image = SubResource("Image_vw28q")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyxkm"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_otkpx"]
@@ -25403,7 +25403,7 @@ image = SubResource("Image_6pi53")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvo4s"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_e02la"]
@@ -25453,7 +25453,7 @@ image = SubResource("Image_p3olb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_doauc"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_we6dt"]
@@ -26189,7 +26189,7 @@ image = SubResource("Image_doymf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnic3"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1a548"]
@@ -26239,7 +26239,7 @@ image = SubResource("Image_ml756")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7b71"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8cvui"]
@@ -26289,7 +26289,7 @@ image = SubResource("Image_08b4f")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vd5c"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t8c7v"]
@@ -26420,7 +26420,7 @@ image = SubResource("Image_atjgr")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u470i"]
 resource_name = "grass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.45234025, 0.9295016, 0.8658767, 1)
+albedo_color = Color(0.316638, 0.650651, 0.606114, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gr7ss"]
