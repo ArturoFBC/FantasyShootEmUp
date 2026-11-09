@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://djtk7lw6fmaik"]
+
+[ext_resource type="Script" uid="uid://cb71yx633axqp" path="res://scenes/player/weapons/lance/projectiles/lance_projectile.gd" id="1_proj2"]
+[ext_resource type="Script" uid="uid://fadescale0003" path="res://scenes/entities/FadeScale.gd" id="2_fs2"]
+[ext_resource type="PackedScene" uid="uid://lancemodel0001" path="res://scenes/player/weapons/lance/lance_model.tscn" id="3_lancemodel"]
+
+[sub_resource type="CapsuleShape3D" id="Shape_2"]
+height = 5.0
+
+[sub_resource type="Curve" id="Curve_scale2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 1.3), 0.0, 0.0, 0, 0, Vector2(0.5, 1.0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Area3D2" type="Area3D" unique_id=908032706]
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_proj2")
+speed = 16.0
+damage = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=908132706]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 2.5)
+shape = SubResource("Shape_2")
+
+[node name="LanceModel" type="Node3D" parent="." instance=ExtResource("3_lancemodel")]
+
+[node name="FadeScale" type="Node" parent="." unique_id=908332706]
+script = ExtResource("2_fs2")
+fade_in = 0.2
+fade_out = 0.2
+hold_duration = 1.6
+scale_curve = SubResource("Curve_scale2")
+queue_free_on_complete = true

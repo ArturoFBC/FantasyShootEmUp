@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://lancewscene0001"]
+
+[ext_resource type="Script" uid="uid://lancescript0001" path="res://scenes/player/weapons/lance/weapon_lance.gd" id="1_lance"]
+[ext_resource type="PackedScene" uid="uid://lancefp0001" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_0.tscn" id="2_fp0"]
+[ext_resource type="PackedScene" uid="uid://lancefp0002" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_1.tscn" id="2_fp1"]
+[ext_resource type="PackedScene" uid="uid://lancefp0003" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_2.tscn" id="2_fp2"]
+[ext_resource type="PackedScene" uid="uid://lancefp0004" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_3.tscn" id="2_fp3"]
+[ext_resource type="PackedScene" uid="uid://lancefp0005" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_4.tscn" id="2_fp4"]
+[ext_resource type="PackedScene" uid="uid://lancefp0006" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_5.tscn" id="2_fp5"]
+[ext_resource type="PackedScene" uid="uid://lancefp0007" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_6.tscn" id="2_fp6"]
+[ext_resource type="PackedScene" uid="uid://lancefp0008" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_7.tscn" id="2_fp7"]
+[ext_resource type="PackedScene" uid="uid://lancefp0009" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_8.tscn" id="2_fp8"]
+[ext_resource type="PackedScene" uid="uid://lancefp0010" path="res://scenes/player/weapons/lance/fire_points/lance_fire_points_9.tscn" id="2_fp9"]
+[ext_resource type="PackedScene" uid="uid://lanceproj0001" path="res://scenes/player/weapons/lance/projectiles/lance_projectile_0.tscn" id="3_proj0"]
+[ext_resource type="PackedScene" uid="uid://lanceproj0002" path="res://scenes/player/weapons/lance/projectiles/lance_projectile_1.tscn" id="3_proj1"]
+[ext_resource type="PackedScene" uid="uid://lanceproj0003" path="res://scenes/player/weapons/lance/projectiles/lance_projectile_2.tscn" id="3_proj2"]
+[ext_resource type="AudioStream" uid="uid://c30mpkxv4mp87" path="res://audio/sounds/whoosh/WHOOSH_Wide_Fast_stereo.wav" id="4_audio"]
+
+[node name="WeaponLance" type="Node3D" unique_id=5200000001 node_paths=PackedStringArray("shot_point_containers")]
+script = ExtResource("1_lance")
+shot_point_containers = [NodePath("lance_fire_points_0"), NodePath("lance_fire_points_1"), NodePath("lance_fire_points_2"), NodePath("lance_fire_points_3"), NodePath("lance_fire_points_4"), NodePath("lance_fire_points_5"), NodePath("lance_fire_points_6"), NodePath("lance_fire_points_7"), NodePath("lance_fire_points_8"), NodePath("lance_fire_points_9")]
+fire_rate = Array[float]([0.6, 0.55, 0.5, 0.45, 0.4, 0.35, 0.3, 0.25, 0.2, 0.15])
+projectiles = Array[PackedScene]([ExtResource("3_proj0"), ExtResource("3_proj1"), ExtResource("3_proj2")])
+damages = Array[float]([2.0, 4.0, 6.0])
+
+[node name="lance_fire_points_0" parent="." unique_id=5201000000 instance=ExtResource("2_fp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_1" parent="." unique_id=5201000001 instance=ExtResource("2_fp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_2" parent="." unique_id=5201000002 instance=ExtResource("2_fp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_3" parent="." unique_id=5201000003 instance=ExtResource("2_fp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_4" parent="." unique_id=5201000004 instance=ExtResource("2_fp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_5" parent="." unique_id=5201000005 instance=ExtResource("2_fp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_6" parent="." unique_id=5201000006 instance=ExtResource("2_fp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_7" parent="." unique_id=5201000007 instance=ExtResource("2_fp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_8" parent="." unique_id=5201000008 instance=ExtResource("2_fp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="lance_fire_points_9" parent="." unique_id=5201000009 instance=ExtResource("2_fp9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=5200000101]
+stream = ExtResource("4_audio")
+volume_db = -5.0
+
+[connection signal="weapon_shot" from="." to="AudioStreamPlayer3D" method="set_playing"]

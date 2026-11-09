@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://lancefp0008"]
+
+[ext_resource type="Script" uid="uid://lancefps0008" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="1_fps7"]
+
+[node name="lance_fire_points_7" type="Node3D" unique_id=5201000007]
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=5202000007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_fps7")
+projectile_level = 2

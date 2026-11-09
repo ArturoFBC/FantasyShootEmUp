@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dl5ty837el0am"]
+
+[ext_resource type="PackedScene" path="res://.godot/imported/weapon-spear.fbx-63842267cb476281df1e95384b246bc7.scn" id="1_spear"]
+
+[node name="LanceModel" type="Node3D"]
+[node name="Spear" type="Node3D" parent="." instance=ExtResource("1_spear")]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)

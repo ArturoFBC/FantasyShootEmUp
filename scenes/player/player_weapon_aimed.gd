@@ -16,6 +16,6 @@ func _shot() -> void:
 		else:
 			input.y = Input.get_axis("aim_up","aim_down")
 
-	var direction = input.angle_to(Vector2.DOWN)
+	var direction = input.angle_to(Vector2.UP)
 	shot_point_containers[level].rotation = Vector3(0, direction, 0)
 	_shot_internal()

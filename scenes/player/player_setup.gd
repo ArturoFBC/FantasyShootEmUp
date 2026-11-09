@@ -13,10 +13,7 @@ func _ready() -> void:
 	flicker_effect.my_mesh = player_model
 	
 	var main_weapon = player_class.main_weapons[0].instantiate()
-	main_weapon.rotate(Vector3(0,1,0), PI)
 	base_player_node.add_child.call_deferred(main_weapon)
 	var off_weapon: Node3D = player_class.off_weapons[0].instantiate()
-	print(off_weapon.rotation_degrees)
-	off_weapon.rotate(Vector3(0,1,0), PI)
 	base_player_node.add_child.call_deferred(off_weapon)
 	print(off_weapon.rotation_degrees)
