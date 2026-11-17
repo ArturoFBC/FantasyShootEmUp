@@ -44,13 +44,13 @@ func _process(delta: float) -> void:
 
 	var factor: float
 	if fade_in > 0 and time_alive < fade_in:
-		var t = time_alive / fade_in
-		factor = _curve_factor(t)
+		var progress = time_alive / fade_in
+		factor = _curve_factor(progress)
 	elif hold_duration > 0 and time_alive < fade_in + hold_duration:
 		factor = 1.0
 	elif fade_out > 0:
-		var t = (time_alive - fade_in - hold_duration) / fade_out
-		factor = _curve_factor(1.0 - t)
+		var progress = (time_alive - fade_in - hold_duration) / fade_out
+		factor = _curve_factor(1.0 - progress)
 	else:
 		factor = 1.0
 

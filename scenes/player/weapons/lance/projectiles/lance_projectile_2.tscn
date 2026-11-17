@@ -1,33 +1,159 @@
 [gd_scene format=3 uid="uid://djtk7lw6fmaik"]
 
 [ext_resource type="Script" uid="uid://cb71yx633axqp" path="res://scenes/player/weapons/lance/projectiles/lance_projectile.gd" id="1_proj2"]
-[ext_resource type="Script" uid="uid://fadescale0003" path="res://scenes/entities/FadeScale.gd" id="2_fs2"]
-[ext_resource type="PackedScene" uid="uid://lancemodel0001" path="res://scenes/player/weapons/lance/lance_model.tscn" id="3_lancemodel"]
+[ext_resource type="Script" uid="uid://du8hfj5uceicq" path="res://scenes/entities/FadeScale.gd" id="2_fs2"]
+[ext_resource type="Texture2D" uid="uid://f0xbabur6yet" path="res://graphics/vfx/ParticlePack/twirl_03.png" id="4_opffv"]
+[ext_resource type="PackedScene" uid="uid://ouji80gkipxn" path="res://graphics/props/lance_3.fbx" id="5_qfrxv"]
+[ext_resource type="Texture2D" uid="uid://ju66vlf3nrq" path="res://graphics/props/colormap.png" id="6_lemge"]
+[ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="7_0viab"]
+[ext_resource type="Texture2D" uid="uid://dwd3swbv2w0x2" path="res://graphics/vfx/ParticlePack/trace_01.png" id="7_opffv"]
 
 [sub_resource type="CapsuleShape3D" id="Shape_2"]
 height = 5.0
 
 [sub_resource type="Curve" id="Curve_scale2"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 1.3), 0.0, 0.0, 0, 0, Vector2(0.5, 1.0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 1.3), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 4
+
+[sub_resource type="Curve" id="Curve_ft8h2"]
+_data = [Vector2(0, 0), 0.0, 5.5337267, 0, 0, Vector2(0.14071856, 1), 0.0, 0.0, 0, 0, Vector2(0.86826354, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.0216823, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_6jqyw"]
+curve = SubResource("Curve_ft8h2")
+
+[sub_resource type="Curve" id="Curve_qors1"]
+_limits = [0.0, 0.092307806, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_qbg2q"]
+_limits = [0.0, 0.5538461, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_cnrd7"]
+_data = [Vector2(0, 1), 0.0, -0.047755245, 0, 0, Vector2(1, 1), -0.01403935, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_sua5m"]
+curve_x = SubResource("Curve_qors1")
+curve_y = SubResource("Curve_qbg2q")
+curve_z = SubResource("Curve_cnrd7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rafv8"]
+emission_shape_scale = Vector3(0.1, 0.1, 2.5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -216.79999
+angle_max = 224.50002
+velocity_pivot = Vector3(0, 0, 1)
+direction = Vector3(0, 0, -5)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+orbit_velocity_min = 4.0000005
+orbit_velocity_max = 5.0000005
+orbit_velocity_curve = SubResource("CurveXYZTexture_sua5m")
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color = Color(1.0468172, 0.9939993, 1.9749014, 1)
+alpha_curve = SubResource("CurveTexture_6jqyw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75eou"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_opffv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rhnri"]
+material = SubResource("StandardMaterial3D_75eou")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wwon"]
+albedo_texture = ExtResource("6_lemge")
+
+[sub_resource type="Curve" id="Curve_qfrxv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.6755855, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lemge"]
+curve = SubResource("Curve_qfrxv")
+
+[sub_resource type="Curve" id="Curve_0viab"]
+_data = [Vector2(0, 0), 0.0, 2.4264953, 0, 0, Vector2(1, 1), 0.10075455, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ft8h2"]
+curve = SubResource("Curve_0viab")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qors1"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 20.0
+flatness = 0.5
+initial_velocity_min = -0.099999994
+initial_velocity_max = -0.099999994
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_ft8h2")
+color = Color(0, 2.0233006, 3.476578, 0.506)
+alpha_curve = SubResource("CurveTexture_lemge")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbg2q"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_opffv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cnrd7"]
+material = SubResource("StandardMaterial3D_qbg2q")
+center_offset = Vector3(0, 0.2, 0)
 
 [node name="Area3D2" type="Area3D" unique_id=908032706]
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_proj2")
-speed = 16.0
-damage = 6.0
+damage = 12.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=908132706]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 2.5)
 shape = SubResource("Shape_2")
 
-[node name="LanceModel" type="Node3D" parent="." instance=ExtResource("3_lancemodel")]
-
 [node name="FadeScale" type="Node" parent="." unique_id=908332706]
 script = ExtResource("2_fs2")
-fade_in = 0.2
-fade_out = 0.2
-hold_duration = 1.6
+hold_duration = 0.6
 scale_curve = SubResource("Curve_scale2")
-queue_free_on_complete = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=815646642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5686214)
+amount = 15
+lifetime = 0.2
+transform_align = 2
+process_material = SubResource("ParticleProcessMaterial_rafv8")
+draw_pass_1 = SubResource("QuadMesh_rhnri")
+
+[node name="lance_3" parent="." unique_id=1821572591 instance=ExtResource("5_qfrxv")]
+transform = Transform3D(1.2, 0, 0, 0, -6.556708e-08, -1.2, 0, 1.5, -5.2453668e-08, 0, 0, 0.22666538)
+
+[node name="cylinder" parent="lance_3" index="0" unique_id=871905528]
+surface_material_override/0 = SubResource("StandardMaterial3D_0wwon")
+
+[node name="Spin" type="Node" parent="lance_3" unique_id=2077110724 node_paths=PackedStringArray("target")]
+script = ExtResource("7_0viab")
+target = NodePath("..")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=478674392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22532654, 4.9988747)
+amount = 20
+lifetime = 0.2
+preprocess = 0.5
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_qors1")
+draw_pass_1 = SubResource("QuadMesh_cnrd7")
+
+[editable path="lance_3"]
