@@ -23,7 +23,7 @@ func _ready() -> void:
 	target = get_parent()
 	if target is Node3D:
 		original_scale = target.scale
-		target.scale = Vector3.ZERO
+		target.scale = Vector3(0.001, 0.001, 0.001)
 
 func _curve_factor(t: float) -> float:
 	t = clamp(t, 0.0, 1.0)
@@ -55,4 +55,5 @@ func _process(delta: float) -> void:
 		factor = 1.0
 
 	if target is Node3D:
+		factor = max(factor, 0.001)
 		target.scale = original_scale * factor

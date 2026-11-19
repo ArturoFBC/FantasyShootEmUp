@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://lancefp0005"]
 
-[ext_resource type="Script" uid="uid://lancefps0005" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="1_fps4"]
+[ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="1_fps4"]
 
-[node name="lance_fire_points_4" type="Node3D" unique_id=5201000004]
-[node name="SpawnPoint" type="Marker3D" parent="." unique_id=5202000004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="lance_fire_points_4" type="Node3D" unique_id=906032708]
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=693891257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 script = ExtResource("1_fps4")
 projectile_level = 1
+alternative = 1
+alternative_offset = 1
+
+[node name="SpawnPoint2" type="Marker3D" parent="." unique_id=1561360028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+script = ExtResource("1_fps4")
+projectile_level = 1
+alternative = 1

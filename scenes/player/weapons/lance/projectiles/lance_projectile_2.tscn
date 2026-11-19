@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cb71yx633axqp" path="res://scenes/player/weapons/lance/projectiles/lance_projectile.gd" id="1_proj2"]
 [ext_resource type="Script" uid="uid://du8hfj5uceicq" path="res://scenes/entities/FadeScale.gd" id="2_fs2"]
+[ext_resource type="Script" uid="uid://dulrsoa0wykgx" path="res://scenes/entities/Shake.gd" id="3_shake2"]
 [ext_resource type="Texture2D" uid="uid://f0xbabur6yet" path="res://graphics/vfx/ParticlePack/twirl_03.png" id="4_opffv"]
+[ext_resource type="AudioStream" uid="uid://bx7us3wl3o0op" path="res://audio/sounds/stab/GORE_Stab_01_mono.wav" id="4_stab0"]
 [ext_resource type="PackedScene" uid="uid://ouji80gkipxn" path="res://graphics/props/lance_3.fbx" id="5_qfrxv"]
+[ext_resource type="AudioStream" uid="uid://c13iy40jn7jgj" path="res://audio/sounds/stab/GORE_Stab_02_mono.wav" id="5_stab1"]
 [ext_resource type="Texture2D" uid="uid://ju66vlf3nrq" path="res://graphics/props/colormap.png" id="6_lemge"]
+[ext_resource type="AudioStream" uid="uid://labtp0d08q65" path="res://audio/sounds/stab/GORE_Stab_03_mono.wav" id="6_stab2"]
 [ext_resource type="Script" uid="uid://cc7qn27fiwdht" path="res://scenes/entities/Spin.gd" id="7_0viab"]
 [ext_resource type="Texture2D" uid="uid://dwd3swbv2w0x2" path="res://graphics/vfx/ParticlePack/trace_01.png" id="7_opffv"]
+[ext_resource type="Script" uid="uid://gicyppgmj35h" path="res://scenes/entities/HitParticleSpawner.gd" id="8_hps2"]
+[ext_resource type="PackedScene" uid="uid://daasn7nb2xu8c" path="res://scenes/entities/vfx/small_impact_particles.tscn" id="13_qbg2q"]
 
 [sub_resource type="CapsuleShape3D" id="Shape_2"]
 height = 5.0
@@ -100,7 +106,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 3.0
 scale_max = 5.0
 scale_curve = SubResource("CurveTexture_ft8h2")
-color = Color(0, 2.0233006, 3.476578, 0.506)
+color = Color(1.6312559, 1.7935926, 3.477, 0.506)
 alpha_curve = SubResource("CurveTexture_lemge")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbg2q"]
@@ -112,6 +118,13 @@ albedo_texture = ExtResource("7_opffv")
 [sub_resource type="QuadMesh" id="QuadMesh_cnrd7"]
 material = SubResource("StandardMaterial3D_qbg2q")
 center_offset = Vector3(0, 0.2, 0)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hit"]
+playback_mode = 1
+streams_count = 3
+stream_0/stream = ExtResource("4_stab0")
+stream_1/stream = ExtResource("5_stab1")
+stream_2/stream = ExtResource("6_stab2")
 
 [node name="Area3D2" type="Area3D" unique_id=908032706]
 collision_layer = 3
@@ -127,6 +140,12 @@ shape = SubResource("Shape_2")
 script = ExtResource("2_fs2")
 hold_duration = 0.6
 scale_curve = SubResource("Curve_scale2")
+
+[node name="Shake" type="Node" parent="." unique_id=908332707]
+script = ExtResource("3_shake2")
+shake_amount = 0.08
+shake_speed = 30.0
+shake_decay = 10.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=815646642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5686214)
@@ -144,16 +163,33 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0wwon")
 
 [node name="Spin" type="Node" parent="lance_3" unique_id=2077110724 node_paths=PackedStringArray("target")]
 script = ExtResource("7_0viab")
+radians_second = 1.0
 target = NodePath("..")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=478674392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22532654, 4.9988747)
 amount = 20
-lifetime = 0.2
+lifetime = 0.06999999999999999
 preprocess = 0.5
 fixed_fps = 60
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_qors1")
 draw_pass_1 = SubResource("QuadMesh_cnrd7")
+
+[node name="HitSound" type="AudioStreamPlayer3D" parent="." unique_id=908332710]
+stream = SubResource("AudioStreamRandomizer_hit")
+volume_db = -5.0
+
+[node name="HitSoundTimer" type="Timer" parent="." unique_id=908332711]
+wait_time = 0.1
+
+[node name="HitParticleSpawner" type="Node" parent="." unique_id=908332712]
+script = ExtResource("8_hps2")
+particle_scene = ExtResource("13_qbg2q")
+
+[connection signal="damage_started" from="." to="HitSoundTimer" method="start"]
+[connection signal="damage_stopped" from="." to="HitSoundTimer" method="stop"]
+[connection signal="damage_tick" from="." to="HitParticleSpawner" method="_on_damage_tick"]
+[connection signal="timeout" from="HitSoundTimer" to="HitSound" method="play"]
 
 [editable path="lance_3"]

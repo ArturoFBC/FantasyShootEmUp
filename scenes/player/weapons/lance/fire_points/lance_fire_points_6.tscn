@@ -1,9 +1,32 @@
 [gd_scene format=3 uid="uid://lancefp0007"]
 
-[ext_resource type="Script" uid="uid://lancefps0007" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="1_fps6"]
+[ext_resource type="Script" uid="uid://dy4gty6fm5luy" path="res://scenes/player/PlayerProjectileSpawnPoint.gd" id="1_fps6"]
 
-[node name="lance_fire_points_6" type="Node3D" unique_id=5201000006]
-[node name="SpawnPoint" type="Marker3D" parent="." unique_id=5202000006]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="lance_fire_points_6" type="Node3D" unique_id=906032710]
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1935675466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 script = ExtResource("1_fps6")
 projectile_level = 1
+alternative = 3
+
+[node name="SpawnPoint2" type="Marker3D" parent="." unique_id=361921713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+script = ExtResource("1_fps6")
+projectile_level = 1
+alternative = 3
+alternative_offset = 1
+
+[node name="SpawnPoint3" type="Marker3D" parent="." unique_id=972301996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+script = ExtResource("1_fps6")
+projectile_level = 2
+alternative = 3
+alternative_offset = 2
+
+[node name="SpawnPoint4" type="Marker3D" parent="." unique_id=843625107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+script = ExtResource("1_fps6")
+projectile_level = 2
+alternative = 3
+alternative_offset = 3
